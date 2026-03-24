@@ -1,91 +1,133 @@
 <!--
 文件：manuscript.md
-核心功能：作为 DaE 分支论文草稿，说明 AKM 在 persona 与顾问协作场景中的具体实现。
-输入：AKM 母定义、DaE 既有研究口径、DaE 的 profile-first 工作流。
-输出：供后续整理为正式子论文的分支稿件。
+核心功能：作为 DaE 分支论文的英文 markdown 稿，尽量贴近原始 DaE 论文线而不是仅作 AKM 摘要。
+输入：DaE 的 SSRN 版本、arXiv 风格稿、AKM 与 DaE 的当前仓库关系。
+输出：供 GitHub 阅读的 DaE 论文 markdown 版，保留原论文问题意识、理论框架与机制设计结构。
 -->
 
-# DaE as the First AKM Implementation
+# Reducing Alignment Debt in AI Advisory: The Dialogue-as-Elicitation Approach
+
+*This markdown manuscript aligns with the original DaE paper line. Two public variants exist in parallel: the arXiv-style draft, **Dialogue as Elicitation: Building High-Fidelity Personas for Personalized AI Advisors with LLMs**, and the SSRN version under the title above.*
 
 ## Abstract
 
-This paper presents Dialogue-as-Elicitation (DaE) as the first reference implementation of `Active Knowledge Modeling (AKM)` in persona-aware advisory and collaboration workflows. Rather than providing downstream advice directly, DaE first constructs a reusable user model through structured elicitation, outputs a `PersonaProfile`, and then uses that upstream asset to support planning, writing, research, and advisory tasks. The contribution of DaE is methodological: it shows how a profile-first workflow can function as reusable upstream infrastructure for downstream collaboration quality.
+In AI advisory, the main bottleneck is often not raw model capability but alignment transfer. Users typically carry tacit preferences, constraints, goals, and strategic tradeoffs that are expensive to communicate through ad-hoc prompting. This creates alignment debt: repeated correction effort, avoidable friction, and weak personalization in early interactions.
 
-## 1. Problem
+Dialogue-as-Elicitation (DaE) addresses this problem by treating persona construction as an explicit elicitation mechanism rather than as hidden pre-work. The method uses a dual-agent logic and a four-stage pipeline to build a reusable `PersonaProfile` as a personal strategic asset. Instead of paying alignment cost repeatedly in downstream sessions, the user invests in an upstream asset that can be reused across advisory tasks.
 
-Many advisory and collaboration workflows fail at an upstream layer. The issue is not only model capability. The issue is that downstream systems often begin acting before they have a structured model of the user they are working for.
+The DaE contribution is therefore not just a prompt pattern. It is a mechanism for turning scattered, high-noise user context into a structured, durable, and transferable alignment asset.
 
-Typical failure patterns include:
+## 1. Introduction: The Economics of Alignment
 
-- treating vague self-description as sufficient context
-- rebuilding user context from scratch in every new session
-- confusing personality labels with operational decision signals
-- optimizing downstream output without stabilizing upstream user modeling
+Large language models have lowered the cost of prediction, drafting, and synthesis. They have not eliminated the cost of alignment. In advisory settings, users still spend substantial effort restating context, correcting weak assumptions, and repairing generic outputs.
 
-In these conditions, even strong downstream models tend to produce generic, weakly aligned work.
+This recurring cost can be understood as **alignment debt**: the cumulative time, cognitive load, and friction required to make an AI system work in accordance with a specific user rather than an abstract average user.
 
-## 2. AKM in the DaE Scene
+The root problem is usually upstream. The AI does not begin with a sufficiently rich model of the principal it is supposed to serve. Many users cannot fully articulate their own values, constraints, and priorities in one pass. Much of the relevant information is sticky, tacit, and distributed across memory, habit, contradiction, and unfinished reflection.
 
-Within the AKM framework, DaE models the user as an upstream collaboration asset rather than as a loose conversational impression. The goal is to convert elicited user context into a reusable profile that can support multiple downstream tasks.
+DaE starts from a different premise: for high-level advisory work, dialogue itself can be designed as an active elicitation process whose product is not merely an answer, but a reusable user asset.
 
-The central object is `PersonaProfile`, which may include:
+## 2. Theoretical Framework
 
-- background
-- capabilities
-- resources
-- constraints
-- drives
-- goals
-- decision style
-- weaknesses
-- tensions
-- challenges
-- lessons
-- alignment checks
+### 2.1 The Principal-Agent Problem in AI Advisory
 
-This profile is not treated as biography for its own sake. It is treated as an operational context layer.
+AI advisory contains a principal-agent problem. The principal is the user. The agent is the model or advisory system. The failure is often not malicious divergence but information asymmetry. The agent lacks access to the user’s real utility function, hidden constraints, and tradeoff logic, so it defaults to generic or misaligned advice.
 
-## 3. Method Structure
+### 2.2 Bounded Rationality and Sticky Information
 
-DaE follows a profile-first workflow.
+Users do not hold a complete, ready-to-export specification of themselves. Their rationality is bounded, and much of their need-relevant information is sticky. It is expensive to compress into a single prompt, especially when the information includes conflict, ambivalence, and long-horizon preference structure.
 
-### 3.1 Elicitation
+DaE treats this not as a user failure but as a mechanism-design problem. The system should scaffold the externalization of sticky information rather than demand that the user perform perfect self-serialization in one shot.
 
-The system uses structured dialogue to extract user information that is often missing from ordinary prompting. The emphasis is on decision-relevant context rather than on decorative self-description.
+### 2.3 From Prompt Flow to Asset Stock
 
-### 3.2 Structuring
+Under ad-hoc prompting, user effort behaves like a flow variable. Context is spent and then disappears with session turnover. Under DaE, the goal is to convert that effort into a stock variable: a `PersonaProfile` that accumulates value over time and can be reused across agents and tasks.
 
-The elicited material is normalized into a `PersonaProfile`. This step turns raw dialogue into a reusable upstream asset.
+This shift matters because long-term advisory quality depends less on any single answer than on the continuity of aligned context.
 
-### 3.3 Injection
+## 3. The DaE Mechanism Design
 
-The resulting profile is injected into downstream workflows so that planning, analysis, or advisory work starts from a richer model of the operator.
+### 3.1 Core Asset: PersonaProfile
 
-## 4. Why DaE Is Not Just a Prompt Pattern
+DaE produces a structured `PersonaProfile` rather than an unstructured conversational impression. Typical fields include:
 
-DaE is not defined by wording style. Its distinguishing property is workflow position.
+- `Background`
+- `Capabilities`
+- `Resources`
+- `Values / Drives`
+- `Constraints`
+- `Goals`
+- `Weaknesses and Patterns`
+- `Challenges and Uncertainties`
+- `Strategic Paths`
 
-It does not merely ask better questions in isolation. It creates an upstream artifact that can be reused across tasks and across time. That is the difference between a better prompt and a reusable AKM implementation.
+The point of the profile is operational reuse. It is meant to be handed to downstream advisors, planners, writers, or agents as a stable context layer.
 
-A one-off prompt disappears after the session. A `PersonaProfile` persists as a reusable context asset.
+### 3.2 Dual-Agent Logic
 
-## 5. Evidence Form
+DaE conceptually separates two roles:
 
-The DaE line is supported by several kinds of evidence:
+- an **Elicitation Agent**, responsible for collection, contradiction surfacing, and refinement
+- an **Application Agent**, responsible for downstream advice using the completed profile
 
-- a complete profile-first workflow
-- a reusable structured output format
-- public release assets for the skill implementation
-- a research line explaining the method and its rationale
+This separation matters because learning the user and serving the user are related but distinct tasks. DaE treats user modeling as a specialized upstream phase rather than a side effect of later advisory work.
 
-The claim here is methodological, not universal. The evidence supports DaE as a coherent implementation pattern for persona-aware collaboration.
+### 3.3 Four-Stage Pipeline
 
-## 6. Boundaries
+DaE follows a four-stage process.
 
-DaE does not replace task-specific expertise. It does not guarantee that one elicitation session is permanently sufficient. It also does not treat self-description as reliable fact without structure or internal consistency checks.
+1. **Asset Collection**
+   The user provides an initial self-portrait covering background, skills, resources, constraints, goals, values, weaknesses, and current uncertainty.
 
-The system improves upstream modeling quality. It does not eliminate the need for downstream judgment.
+2. **Dialectical Audit**
+   The system identifies vague abstractions, hidden contradictions, and unstable priorities, often through Socratic questioning.
+
+3. **Asset Refinement**
+   Raw user language is rewritten into clearer, reusable profile statements.
+
+4. **Strategic Pathfinding**
+   The profile is used to generate initial strategic paths, not only to provide advice but also to test whether the asset is decision-relevant.
+
+This sequence converts noisy autobiographical material into a sharper advisory substrate.
+
+## 4. Comparative Framework Analysis
+
+DaE is best understood in contrast with ordinary ad-hoc prompting.
+
+### 4.1 Information Structure
+
+Ad-hoc prompting starts from high-noise, session-local context. DaE enforces structure through an explicit schema and iterative clarification.
+
+### 4.2 Cognitive Load Allocation
+
+Ad-hoc prompting keeps most alignment burden on the user. DaE shifts more of that burden to the elicitation procedure by scaffolding recall, contradiction detection, and refinement.
+
+### 4.3 Asset Nature
+
+Ad-hoc prompting produces disposable session context. DaE aims to build cumulative personal capital.
+
+### 4.4 Alignment Mode
+
+Ad-hoc prompting relies on ex-post correction. DaE emphasizes ex-ante elicitation. The goal is to prevent low-quality alignment before downstream recommendations are generated.
+
+## 5. Preliminary Evidence and Practical Usefulness
+
+The original DaE paper line includes preliminary evaluation and practical framing.
+The arXiv-style draft presents a small user study in which participants compared DaE-generated personas with baseline self-written profiles for initializing a long-term advisor. The reported direction of the results was favorable to DaE on perceived coverage, accuracy, and preference for downstream use.
+
+The SSRN version sharpens the argument in economic and mechanism-design terms. Its central claim is that DaE lowers the transaction cost of human-AI collaboration by turning repeated corrective effort into an up-front alignment asset.
+
+The evidence should be read as early-stage but real: DaE is not yet a universal evaluation benchmark, but it is more than a rhetorical prompt idea. It has a coherent mechanism, an explicit asset model, public release artifacts, and real-world reuse logic.
+
+## 6. Position Within AKM
+
+Within the current repository structure, AKM serves as the mother-hub framework and DaE is the first complete reference implementation in the persona-aware advisory scene.
+
+That relationship should not erase the original identity of the DaE paper line. Historically and intellectually, DaE developed as a standalone research line with its own titles, framing, and evidence claims. AKM now provides the broader umbrella under which that line is organized.
 
 ## 7. Conclusion
 
-DaE matters because it demonstrates the first complete AKM implementation in a concrete, reusable scene. It shows that user modeling can operate as upstream infrastructure for collaboration quality rather than as optional prompt decoration.
+DaE matters because it reframes alignment in AI advisory as an upstream elicitation and asset-construction problem.
+Instead of repeatedly repairing weak prompts and generic outputs, the user builds a structured, reusable alignment asset that can travel across advisors and over time.
+
+That is why the DaE contribution is more substantial than a better interview prompt. It is a mechanism for reducing alignment debt by improving the information supply chain between human principals and AI agents.
