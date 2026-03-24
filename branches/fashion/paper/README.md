@@ -1,28 +1,32 @@
-﻿<!--
+<!--
 文件：README.md
-核心功能：作为 Fashion 分支论文入口说明，交代论文定位、证据口径和与公开 skill 的关系。
+核心功能：作为 Fashion 分支论文的英文入口页，说明论文定位、证据口径与当前文件。
 输入：Fashion 分支方法结构、衣橱资产逻辑与 AKM 母定义。
-输出：供读者进入 Fashion 分支论文时使用的说明页。
+输出：供 GitHub 读者进入 Fashion 论文时使用的英文 README。
 -->
 
 # Fashion Paper
 
-## 定位
+<p align="center">
+  <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
 
-这不是一篇“AI 审美优于人类”论文。
+## Position
 
-它是一篇 **AKM 在穿搭与衣橱规划场景下的系统设计与方法论文**。
+This paper documents AKM in wardrobe planning and outfit decision workflows.
+It is framed as a systems-design and method paper rather than an aesthetics-claim paper.
 
-## 证据口径
+## Evidence Scope
 
-本文按 `单用户长期自用系统` 口径书写，不伪装成图像识别或大样本验证论文。
+The evidence model is `single-user long-term self-use`.
+It does not present itself as image recognition validation or broad-sample benchmarking.
 
-## 当前文件
+## Current File
 
 - [manuscript.md](./manuscript.md)
 
-## 与 skill 的关系
+## Relation to the Skill
 
-- 论文解释方法结构与场景边界
-- skill 提供可执行入口
-- 两者共用同一套前置建模逻辑
+- the paper explains structure, scope, and method boundaries
+- the skill provides the operational interface
+- both depend on the same upstream modeling logic

@@ -1,28 +1,32 @@
-﻿<!--
+<!--
 文件：README.md
-核心功能：作为 Fitness 分支论文入口说明，交代论文定位、证据口径和与公开 skill 的关系。
+核心功能：作为 Fitness 分支论文的英文入口页，说明论文定位、证据口径与当前文件。
 输入：Fitness 分支方法结构、训练日志与 AKM 母定义。
-输出：供读者进入 Fitness 分支论文时使用的说明页。
+输出：供 GitHub 读者进入 Fitness 论文时使用的英文 README。
 -->
 
 # Fitness Paper
 
-## 定位
+<p align="center">
+  <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
 
-这不是一篇“AI 健身效果验证”论文。
+## Position
 
-它是一篇 **AKM 在高约束训练场景下的系统与方法论文**。
+This paper documents AKM in a high-constraint training environment.
+It is framed as a systems-and-method paper rather than an outcome-claim paper.
 
-## 证据口径
+## Evidence Scope
 
-本文按 `n=1 长期纵向自用系统` 口径书写，不宣称大样本普适有效性。
+The evidence model is `n=1 longitudinal self-use`.
+It does not claim broad-sample effectiveness.
 
-## 当前文件
+## Current File
 
 - [manuscript.md](./manuscript.md)
 
-## 与 skill 的关系
+## Relation to the Skill
 
-- 论文解释方法论与系统结构
-- skill 提供可执行入口
-- 两者共用同一套上游建模逻辑
+- the paper explains system structure and method
+- the skill provides the operational interface
+- both depend on the same upstream modeling logic

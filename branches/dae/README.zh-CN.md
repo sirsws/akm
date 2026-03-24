@@ -1,8 +1,8 @@
 <!--
 文件：README.zh-CN.md
-核心功能：作为 DaE 分支在 AKM 母港中的中文说明页，供 GitHub 读者从英文主页切换进入。
+核心功能：作为 DaE 分支在 AKM 母港中的中文入口，说明分支定位、场景范围、核心资产与入口导航。
 输入：AKM 母定义、DaE 发布资产与研究资产。
-输出：供 GitHub 使用的中文分支 README。
+输出：供 GitHub 中文读者使用的 README。
 -->
 
 # DaE — AKM 参考实现
@@ -13,7 +13,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/branch-DaE-F6B042" alt="DaE" />
-  <img src="https://img.shields.io/badge/role-first_complete_reference-2ea44f" alt="Role" />
+  <img src="https://img.shields.io/badge/role-reference_implementation-2ea44f" alt="Role" />
   <img src="https://img.shields.io/badge/scene-persona_%2F_advisory_collaboration-6f42c1" alt="Scene" />
 </p>
 
@@ -21,22 +21,27 @@
   <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
-**DaE 是 AKM 在 Persona / 顾问协作场景下的首个完整参考实现。**
+**DaE 是 AKM 在 persona 感知顾问协作场景下的参考实现。**
 
-DaE 不再作为与 AKM 平行的独立母概念存在。
-它现在解决的是：如何把“先把人建模出来”做成 persona 感知协作工作流里的可复用系统。
+## 范围
 
-## 分支定位
+DaE 处理的核心问题是：当下游规划、建议或协作质量依赖一份稳定可复用的用户画像时，如何把这层上游建模做成标准化工作流。
 
-- 母概念：AKM
-- 场景：Persona / 顾问协作
-- 上游资产：`PersonaProfile`
-- 角色：首个完整参考实现
+## 核心资产
 
-## 为什么它重要
+这个分支的中心上游资产是 `PersonaProfile`。
+它用于在多轮任务中复用用户背景、约束、驱动和决策风格，而不是让每个下游 agent 都从零重建上下文。
 
-DaE 是第一条被做成完整方法包的 AKM 路线。
-它证明了：**用户建模不是润色，而是协作质量的上游基础设施。**
+## 这个分支的价值
+
+DaE 证明了一件事：用户建模可以作为上游基础设施存在，而不是可有可无的 prompt 修饰。
+
+## 当前交付
+
+- 分支总览
+- DaE 研究论文入口
+- DaE skill 入口
+- 提示词与验收标准参考材料
 
 ## 入口
 
