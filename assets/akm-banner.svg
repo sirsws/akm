@@ -5,20 +5,15 @@
       <stop offset="0.55" stop-color="#123B5A"/>
       <stop offset="1" stop-color="#E8F1E7"/>
     </linearGradient>
-    <linearGradient id="orb" x1="620" y1="180" x2="1160" y2="560" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#68C1A2" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#F6B042" stop-opacity="0.8"/>
+    <linearGradient id="orb" x1="700" y1="120" x2="1180" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#68C1A2" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#F6B042" stop-opacity="0.75"/>
     </linearGradient>
   </defs>
   <rect width="1280" height="640" rx="32" fill="url(#bg)"/>
-  <circle cx="1010" cy="170" r="170" fill="url(#orb)" fill-opacity="0.2"/>
-  <circle cx="1125" cy="470" r="118" fill="#F6B042" fill-opacity="0.1"/>
-  <circle cx="885" cy="430" r="210" fill="#68C1A2" fill-opacity="0.08"/>
-
-  <path d="M700 418C760 372 822 345 884 345C947 345 992 388 1044 388C1097 388 1140 350 1192 318" stroke="#DDEEE7" stroke-width="10" stroke-linecap="round" stroke-opacity="0.72"/>
-  <circle cx="884" cy="345" r="14" fill="#F6B042"/>
-  <circle cx="1044" cy="388" r="14" fill="#68C1A2"/>
-  <circle cx="1192" cy="318" r="14" fill="#4EA1FF"/>
+  <circle cx="1010" cy="170" r="170" fill="url(#orb)" fill-opacity="0.18"/>
+  <circle cx="1125" cy="470" r="118" fill="#F6B042" fill-opacity="0.08"/>
+  <circle cx="885" cy="430" r="210" fill="#68C1A2" fill-opacity="0.06"/>
 
   <path d="M150 176H560" stroke="#9FD0C1" stroke-width="4" stroke-linecap="round"/>
   <path d="M150 204H498" stroke="#9FD0C1" stroke-width="4" stroke-linecap="round" opacity="0.82"/>
