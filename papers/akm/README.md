@@ -1,26 +1,28 @@
-﻿<!--
+<!--
 文件：README.md
-核心功能：作为 AKM 母论文的入口说明页，交代当前产物、定位与引用关系。
+核心功能：作为 AKM 母论文的英文入口页，说明论文职责、当前产物、状态与引用位置。
 输入：AKM LaTeX 论文工程、已编译 PDF、SSRN 提交状态。
-输出：供母港读者进入 AKM 母论文时快速理解其职责与当前状态的说明文档。
+输出：供 GitHub 读者进入母论文时使用的英文说明页。
 -->
 
 # AKM Mother Paper
 
-## 定位
+[中文说明](./README.zh-CN.md)
 
-这篇论文负责三件事：
+## Role
 
-1. 给 `Active Knowledge Modeling (AKM)` 一个明确、可引用的母定义
-2. 把 AKM 与被动用户建模、一次性 prompt 定制、检索式个性化切开
-3. 为后续分支论文提供统一上游口径
+This paper is responsible for three things:
 
-## 当前产物
+1. giving `Active Knowledge Modeling (AKM)` a clear parent definition
+2. separating AKM from passive user modeling, one-off prompt customization, and retrieval-style personalization
+3. providing a stable upstream reference for future branch papers
+
+## Current Artifact
 
 - [AKM-main.pdf](./AKM-main.pdf)
 
-## 当前状态
+## Status
 
-- 本地论文工程：已完成
-- PDF：已生成
-- SSRN：已提交，等待公开 URL
+- local paper project: completed
+- PDF: generated
+- SSRN: submitted, public URL pending
