@@ -1,0 +1,33 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#123B5A"/>
+      <stop offset="1" stop-color="#E8F1E7"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="290" y1="120" x2="1040" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#68C1A2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#F6B042" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" rx="32" fill="url(#bg)"/>
+  <circle cx="980" cy="190" r="170" fill="url(#orb)" fill-opacity="0.22"/>
+  <circle cx="1110" cy="470" r="120" fill="#F6B042" fill-opacity="0.12"/>
+  <circle cx="860" cy="420" r="220" fill="#68C1A2" fill-opacity="0.08"/>
+  <path d="M168 426C246 328 321 279 392 279C472 279 531 337 598 337C664 337 716 281 802 281C872 281 940 327 1009 423" stroke="#DDEEE7" stroke-width="10" stroke-linecap="round" stroke-opacity="0.75"/>
+  <circle cx="392" cy="279" r="16" fill="#F6B042"/>
+  <circle cx="598" cy="337" r="16" fill="#68C1A2"/>
+  <circle cx="802" cy="281" r="16" fill="#F6B042"/>
+  <path d="M160 176H540" stroke="#9FD0C1" stroke-width="4" stroke-linecap="round"/>
+  <path d="M160 204H486" stroke="#9FD0C1" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <text x="154" y="142" fill="#F4F8F5" font-family="Segoe UI, Arial, sans-serif" font-size="76" font-weight="700">AKM</text>
+  <text x="158" y="252" fill="#E8F1E7" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600">Active Knowledge Modeling</text>
+  <text x="158" y="300" fill="#D7E8E0" font-family="Segoe UI, Arial, sans-serif" font-size="28">Build the user model first.</text>
+  <text x="158" y="340" fill="#D7E8E0" font-family="Segoe UI, Arial, sans-serif" font-size="28">Then let downstream agents work.</text>
+  <rect x="156" y="474" width="176" height="48" rx="24" fill="#F6B042" fill-opacity="0.95"/>
+  <text x="184" y="505" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">DaE</text>
+  <rect x="350" y="474" width="176" height="48" rx="24" fill="#68C1A2" fill-opacity="0.95"/>
+  <text x="372" y="505" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Fitness</text>
+  <rect x="544" y="474" width="176" height="48" rx="24" fill="#DDEEE7" fill-opacity="0.95"/>
+  <text x="567" y="505" fill="#0B1220" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">Fashion</text>
+</svg>

@@ -1,49 +1,45 @@
 <!--
 文件：README.md
-核心功能：作为 Fitness 分支在 AKM 母港中的英文主入口，说明该分支的定位、方法结构、证据形态、论文与 skill 入口，以及适用边界。
+核心功能：作为 Fitness 分支在 AKM 母港中的英文主入口，提供适合 GitHub 分支页展示的 hero、徽章、语言切换、定位说明与入口导航。
 输入：健身规则、训练日志、身体指标与 AKM 方法结构。
-输出：供 GitHub 分支页直接使用的英文总览页。
+输出：供 GitHub 分支页直接使用的英文 README。
 -->
 
 # AKM Fitness
 
-**AKM Fitness = build the training profile first, then make the training decision.**
+<p align="center">
+  <img src="../../assets/akm-banner.svg" alt="AKM banner" width="100%" />
+</p>
 
-[中文说明](./README.zh-CN.md)
+<p align="center">
+  <img src="https://img.shields.io/badge/branch-Fitness-68C1A2" alt="Fitness" />
+  <img src="https://img.shields.io/badge/case-n%3D1_longitudinal_system-2ea44f" alt="Case" />
+  <img src="https://img.shields.io/badge/output-paper_%2B_skill_%2B_prompts-6f42c1" alt="Output" />
+</p>
+
+<p align="center">
+  <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
+**AKM Fitness = build the training profile first, then make the training decision.**
 
 This is not a generic workout-plan generator.
 It is built for the harder and more realistic problem: when goals conflict, the body has limits, equipment changes, and time is constrained, what should training actually look like today?
 
-## What it solves
-
-Typical fitness AI systems assume too much:
-
-- one stable goal
-- no meaningful body constraints
-- full equipment access
-- normal recovery and execution conditions
-
-AKM Fitness reverses that logic.
-It clarifies the operator first, then allows execution.
-
-## Method structure
+## Method Structure
 
 1. `Elicitation`
-   Clarify goal ranking, body constraints, equipment context, time budget, recovery, and execution risk.
 2. `Record`
-   Store metrics, baselines, logs, and stage priorities as reusable upstream assets.
 3. `Execution`
-   Read the profile and output a real training decision with explicit risks and missing inputs.
 
-## Evidence form
+## Evidence Form
 
 This branch can be honestly framed as:
 
 **an n=1 longitudinal self-use AKM system case.**
 
-Its evidence includes logs, metrics, hard constraints, and external model behavior tests.
-
-## Entry points
+## Entry Points
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
+- [AKM Mother Hub](../../README.md)

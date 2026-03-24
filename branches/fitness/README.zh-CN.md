@@ -2,26 +2,35 @@
 文件：README.zh-CN.md
 核心功能：作为 Fitness 分支在 AKM 母港中的中文说明页，供 GitHub 读者从英文主页切换进入。
 输入：健身规则、训练日志、身体指标与 AKM 方法结构。
-输出：供 GitHub 使用的中文分支总览页。
+输出：供 GitHub 使用的中文分支 README。
 -->
 
 # AKM Fitness
 
+<p align="center">
+  <img src="../../assets/akm-banner.svg" alt="AKM banner" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/branch-Fitness-68C1A2" alt="Fitness" />
+  <img src="https://img.shields.io/badge/case-n%3D1_longitudinal_system-2ea44f" alt="Case" />
+  <img src="https://img.shields.io/badge/output-paper_%2B_skill_%2B_prompts-6f42c1" alt="Output" />
+</p>
+
+<p align="center">
+  <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
 **AKM Fitness = 先建立训练画像，再做训练裁决。**
 
-[English](./README.md)
-
 这不是一个泛泛生成训练计划的健身助手。
-它解决的是更真实的问题：当目标冲突、身体有限制、器械不稳定、时间被切碎时，今天到底该怎么练才合理。
+它处理的是更真实的问题：当目标冲突、身体有限制、器械变化、时间被切碎时，今天到底该怎么练才合理。
 
 ## 方法结构
 
 1. `Elicitation`
-   先问清目标排序、身体约束、器械条件、时间预算、恢复状态与执行风险。
 2. `Record`
-   把指标、基准、日志和阶段主线沉淀成上游资产。
 3. `Execution`
-   读取画像后输出真实训练裁决，并显式暴露风险与缺口。
 
 ## 证据形态
 
@@ -33,3 +42,4 @@
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
+- [AKM 母港](../../README.md)

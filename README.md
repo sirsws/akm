@@ -1,21 +1,35 @@
 <!--
 文件：README.md
-核心功能：作为 AKM 母港的英文主入口，提供适合 GitHub 框架仓展示的 hero、badges、语言切换、快速导航、分支地图、研究入口与生态仓导航。
-输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口与现有生态仓链接。
+核心功能：作为 AKM 母港的英文主入口，提供适合 GitHub 框架仓展示的 banner、badges、语言切换、快速导航、分支地图、研究入口与生态仓导航。
+输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口、生态仓链接与展示素材。
 输出：供 GitHub 首页直接展示的英文 README。
 -->
 
 # AKM — Active Knowledge Modeling
 
-![Status](https://img.shields.io/badge/status-active-2ea44f)
-![Paper](https://img.shields.io/badge/paper-SSRN_in_review-b31b1b)
-![Branches](https://img.shields.io/badge/branches-3-0969da)
-![Docs](https://img.shields.io/badge/docs-English%20%7C%20%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-6f42c1)
-![Stars](https://img.shields.io/github/stars/sirsws/akm?style=flat)
+<p align="center">
+  <img src="./assets/akm-banner.svg" alt="AKM banner" width="100%" />
+</p>
 
-[English](./README.md) | [简体中文](./README.zh-CN.md)
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-0969da" alt="License" /></a>
+  <img src="https://img.shields.io/badge/status-active-2ea44f" alt="Status" />
+  <img src="https://img.shields.io/badge/paper-SSRN_in_review-b31b1b" alt="Paper" />
+  <img src="https://img.shields.io/badge/branches-3-6f42c1" alt="Branches" />
+  <img src="https://img.shields.io/github/stars/sirsws/akm?style=flat" alt="GitHub stars" />
+</p>
 
-Quick Start | Core Idea | Branches | Research | Ecosystem
+<p align="center">
+  <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
+  <a href="#quick-start">Quick Start</a> |
+  <a href="#what-is-akm">Core Idea</a> |
+  <a href="#branches">Branches</a> |
+  <a href="#research">Research</a> |
+  <a href="#ecosystem">Ecosystem</a>
+</p>
 
 **Build the user model first. Then let downstream agents work.**
 
@@ -66,6 +80,12 @@ If this is your first time here:
 | [Fitness](./branches/fitness/README.md) | Training constraints, recovery, equipment, workout decisions | `FitnessProfile` | Public paper + skill + prompt package |
 | [Fashion](./branches/fashion/README.md) | Body shape, scenes, wardrobe assets, outfit / purchase decisions | `FashionProfile` | Public paper + skill + prompt package |
 
+### Why these branches matter
+
+- **DaE** proves AKM in persona-aware collaboration.
+- **Fitness** proves AKM under physical constraints, equipment reality, and recovery uncertainty.
+- **Fashion** proves AKM under wardrobe limits, body context, scene requirements, and purchase decisions.
+
 ---
 
 ## Why This Repository Matters
@@ -81,7 +101,7 @@ That is why this repository is organized around:
 - a parent concept
 - a parent paper
 - reusable branch implementations
-- public research and distribution repos
+- public research and distribution repositories
 
 ---
 
@@ -122,6 +142,12 @@ The two DaE repositories now point back into this mother-hub structure.
 - Fitness branch: public paper + skill + prompt package ready
 - Fashion branch: public paper + skill + prompt package ready
 - External model validation: one DeepSeek behavior-test round completed
+
+---
+
+## License
+
+This repository is released under the [Apache License 2.0](./LICENSE).
 
 ---
 

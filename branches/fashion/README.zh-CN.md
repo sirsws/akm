@@ -2,26 +2,35 @@
 文件：README.zh-CN.md
 核心功能：作为 Fashion 分支在 AKM 母港中的中文说明页，供 GitHub 读者从英文主页切换进入。
 输入：穿搭规则、衣橱资产、场景偏好与 AKM 方法结构。
-输出：供 GitHub 使用的中文分支总览页。
+输出：供 GitHub 使用的中文分支 README。
 -->
 
 # AKM Fashion
 
+<p align="center">
+  <img src="../../assets/akm-banner.svg" alt="AKM banner" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/branch-Fashion-DDEEE7" alt="Fashion" />
+  <img src="https://img.shields.io/badge/case-single_user_method_system-2ea44f" alt="Case" />
+  <img src="https://img.shields.io/badge/output-paper_%2Bskill_%2Bprompts-6f42c1" alt="Output" />
+</p>
+
+<p align="center">
+  <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
 **AKM Fashion = 先建立形象画像，再做穿搭与采购裁决。**
 
-[English](./README.md)
-
 这不是一个泛泛给单品建议的穿搭助手。
-它解决的是更真实的问题：当体型、场景、衣橱资产和功能约束都重要时，今天到底该怎么穿，接下来到底该补什么。
+它处理的是更真实的问题：当体型、场景、衣橱资产和功能约束都重要时，今天到底该怎么穿，接下来到底该补什么。
 
 ## 方法结构
 
 1. `Elicitation`
-   先问清场景、体型、衣橱、风格偏好和功能约束。
 2. `Record`
-   把画像、核心单品、缺口和禁区沉淀成上游资产。
 3. `Execution`
-   读取画像后输出穿搭裁决、短板分析与采购优先级。
 
 ## 证据形态
 
@@ -33,3 +42,4 @@
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
+- [AKM 母港](../../README.md)

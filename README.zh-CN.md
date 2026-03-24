@@ -1,21 +1,35 @@
 <!--
 文件：README.zh-CN.md
-核心功能：作为 AKM 母港的中文说明页，提供与英文主页对应的结构化导航、分支地图、研究入口与生态仓说明。
-输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口与现有生态仓链接。
+核心功能：作为 AKM 母港的中文说明页，提供与英文主页对应的 banner、徽章、语言切换、导航、分支地图、研究入口与生态仓说明。
+输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口、生态仓链接与展示素材。
 输出：供 GitHub 中文读者使用的 README。
 -->
 
 # AKM — 主动知识建模
 
-![状态](https://img.shields.io/badge/status-active-2ea44f)
-![论文](https://img.shields.io/badge/paper-SSRN审核中-b31b1b)
-![分支](https://img.shields.io/badge/branches-3-0969da)
-![文档](https://img.shields.io/badge/docs-English%20%7C%20%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-6f42c1)
-![Stars](https://img.shields.io/github/stars/sirsws/akm?style=flat)
+<p align="center">
+  <img src="./assets/akm-banner.svg" alt="AKM banner" width="100%" />
+</p>
 
-[English](./README.md) | [简体中文](./README.zh-CN.md)
+<p align="center">
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-0969da" alt="License" /></a>
+  <img src="https://img.shields.io/badge/status-active-2ea44f" alt="Status" />
+  <img src="https://img.shields.io/badge/paper-SSRN审核中-b31b1b" alt="Paper" />
+  <img src="https://img.shields.io/badge/branches-3-6f42c1" alt="Branches" />
+  <img src="https://img.shields.io/github/stars/sirsws/akm?style=flat" alt="GitHub stars" />
+</p>
 
-快速开始 | 核心概念 | 分支地图 | 研究入口 | 生态仓
+<p align="center">
+  <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
+  <a href="#快速开始">快速开始</a> |
+  <a href="#什么是-akm">核心概念</a> |
+  <a href="#分支地图">分支地图</a> |
+  <a href="#研究入口">研究入口</a> |
+  <a href="#生态仓">生态仓</a>
+</p>
 
 **先把用户建模出来，再让下游 agent 开工。**
 
@@ -66,6 +80,12 @@ AKM 之所以存在，是因为很多 AI 系统都死在同一层上游失真：
 | [DaE](./branches/dae/README.md) | Persona / 顾问协作 | `PersonaProfile` | 首个完整参考实现 |
 | [Fitness](./branches/fitness/README.md) | 训练约束、恢复限制、器械现实、训练裁决 | `FitnessProfile` | 已有公开版 paper + skill + prompt package |
 | [Fashion](./branches/fashion/README.md) | 体型、场景、衣橱资产、穿搭 / 采购裁决 | `FashionProfile` | 已有公开版 paper + skill + prompt package |
+
+### 这些分支为什么重要
+
+- **DaE** 证明 AKM 在 persona 感知协作中的有效落地。
+- **Fitness** 证明 AKM 可以在身体限制、器械现实和恢复不确定性下做训练裁决。
+- **Fashion** 证明 AKM 可以在衣橱资产、体型和场景约束下做穿搭与采购裁决。
 
 ---
 
@@ -123,6 +143,12 @@ AKM 是母港。
 - Fitness：公开版 paper + skill + prompt package 已就绪
 - Fashion：公开版 paper + skill + prompt package 已就绪
 - 外部模型验证：已完成一轮 DeepSeek 行为测试
+
+---
+
+## 许可证
+
+本仓库采用 [Apache License 2.0](./LICENSE)。
 
 ---
 
