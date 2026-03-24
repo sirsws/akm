@@ -5,12 +5,16 @@ description: "AKM implementation for wardrobe and outfit decision workflows. Mod
 
 <!--
 文件：SKILL.md
-核心功能：作为 AKM Fashion skill 的正式项目说明，定义其定位、输入要求、工作流、输出契约与使用边界。
+核心功能：作为 AKM Fashion skill 的正式英文说明页，定义其定位、输入要求、工作流、输出契约与使用边界。
 输入：Fashion 分支方法结构、提示词文件、记录模板与测试结论。
-输出：供 GitHub、技能市场或代理工具直接引用的正式 skill 文档。
+输出：供 GitHub、技能市场或代理工具直接引用的英文 skill 文档。
 -->
 
 # AKM Fashion Skill
+
+<p align="center">
+  <a href="./SKILL.md">English</a> | <a href="./SKILL.zh-CN.md">简体中文</a>
+</p>
 
 **No wardrobe model, no serious styling advice.**
 

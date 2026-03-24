@@ -5,12 +5,16 @@ description: "First AKM reference implementation for persona-aware advisory and 
 
 <!--
 文件：SKILL.md
-核心功能：作为 DaE skill 的正式项目说明，定义其定位、输入输出、核心资产与使用边界。
-输入：DaE 分支方法结构、PersonaProfile 字段定义与 AKM 母港关系。
-输出：供 GitHub、技能市场或代理工具直接引用的正式 skill 文档。
+核心功能：作为 DaE skill 的正式英文说明页，定义其定位、核心资产、适用场景与边界。
+输入：DaE 分支方法结构、PersonaProfile 字段设计、AKM 母港关系。
+输出：供 GitHub、技能市场或代理工具直接引用的英文 skill 文档。
 -->
 
 # DaE Skill
+
+<p align="center">
+  <a href="./SKILL.md">English</a> | <a href="./SKILL.zh-CN.md">简体中文</a>
+</p>
 
 **Profile first. Then collaborate.**
 
