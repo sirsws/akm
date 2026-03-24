@@ -1,38 +1,34 @@
 ---
 name: "dae-persona-context-injector"
-description: "AKM 在 Persona / 顾问协作场景下的首个完整参考实现。先建立 PersonaProfile，再让下游智能体开工。"
+description: "First AKM reference implementation for persona-aware advisory and collaboration workflows. Builds a reusable PersonaProfile before downstream work begins."
 ---
 
 <!--
 文件：SKILL.md
-核心功能：作为 DaE skill 的正式发布入口，说明其在 AKM 体系中的定位、输入输出与使用边界。
-输入：DaE 分支的方法结构、既有发布资产与 PersonaProfile 字段定义。
-输出：供 GitHub、技能市场或代理工具直接引用的正式 skill 说明。
+核心功能：作为 DaE skill 的正式项目说明，定义其定位、输入输出、核心资产与使用边界。
+输入：DaE 分支方法结构、PersonaProfile 字段定义与 AKM 母港关系。
+输出：供 GitHub、技能市场或代理工具直接引用的正式 skill 文档。
 -->
 
 # DaE Skill
 
 **Profile first. Then collaborate.**
 
-DaE 是 `AKM` 在 Persona / 顾问协作场景下的首个完整参考实现。
-它不是“让 agent 更懂你”的口号，而是一套先构建 `PersonaProfile`，再把它用于后续协作的上游方法。
+DaE is the operational skill package for AKM in persona-aware advisory and collaboration workflows.
+Its purpose is to construct a reusable `PersonaProfile` before downstream planning, writing, advising, or multi-agent collaboration begins.
 
-## 定位
+## Position
 
-用一句话概括：
+- parent concept: `AKM`
+- branch: `DaE`
+- role: `reference implementation`
 
-**先把用户画像做成结构化资产，再让下游 agent 开始规划、写作、建议或协作。**
+## Core Asset
 
-## 上游关系
+The central upstream asset is `PersonaProfile`.
+It captures structured user context for reuse across downstream tasks.
 
-- Parent concept: `AKM`
-- Branch: `DaE`
-- Role: `first complete reference implementation`
-
-## 核心产物
-
-DaE 的关键上游资产是 `PersonaProfile`。
-它至少覆盖这些字段：
+Expected profile fields include:
 
 - `Background`
 - `Capabilities`
@@ -47,15 +43,13 @@ DaE 的关键上游资产是 `PersonaProfile`。
 - `Lessons`
 - `AlignmentCheck`
 
-## 最适合的使用场景
+## Best-Fit Scenarios
 
-- 顾问协作前置建模
-- 多 agent 协作前的用户画像注入
-- 长期项目中的用户上下文复用
-- 需要减少 generic answer 的任务流
+Use this skill when the quality of downstream work depends on a stable, reusable profile layer.
+Typical cases include advisory collaboration, long-running projects, and multi-agent workflows that would otherwise rebuild user context from scratch.
 
-## 边界
+## Boundaries
 
-- 不替代具体任务领域知识
-- 不保证一次建模永远有效
-- 不把用户自述直接当事实而不校验
+- does not replace domain-specific expertise
+- does not guarantee permanent profile validity after one elicitation pass
+- does not treat self-description as verified fact without structure or cross-checking
