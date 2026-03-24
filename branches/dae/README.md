@@ -1,47 +1,44 @@
 <!--
 文件：README.md
-核心功能：作为 DaE 分支在 AKM 母港中的统一入口，明确其在 AKM 体系中的定位、论文入口、skill 入口与对外阅读路径。
-输入：AKM 母定义、DaE 既有发布资产与研究资产。
-输出：供外部读者一跳理解 DaE 与 AKM 关系的正式分支总览页。
+核心功能：作为 DaE 分支在 AKM 母港中的英文主入口，明确其在 AKM 体系中的定位、论文入口、skill 入口与阅读路径。
+输入：AKM 母定义、DaE 发布资产与研究资产。
+输出：供 GitHub 分支页直接使用的英文总览页。
 -->
 
 # DaE
 
-**DaE = AKM 在 Persona / 顾问协作场景下的首个完整参考实现。**
+**DaE is the first complete reference implementation of AKM in persona and advisory collaboration.**
 
-DaE 不再作为与 AKM 平行的独立母概念存在。
-它的角色已经非常明确：
+[中文说明](./README.zh-CN.md)
 
-**如果 AKM 解决的是“先把人建模出来”，那么 DaE 解决的是“在顾问协作和 persona 感知任务里，怎样把这件事做成一个可复用系统”。**
+DaE is no longer presented as a concept parallel to AKM.
 
-## 这个分支解决什么问题
+Its role is now explicit:
 
-很多协作型 agent 的问题，不是不会回答，而是还没理解用户就开始工作。
+**if AKM solves "model the person first," DaE solves how to operationalize that idea in persona-aware advisory and collaboration workflows.**
 
-DaE 处理的就是这层上游失真：
+## What this branch solves
 
-- 用户背景没有被结构化
-- 用户资源和约束没有被显式化
-- 用户目标、驱动力与决策风格没有被沉淀
-- 下游 agent 每次都像第一次见用户一样重来
+Many collaborative agents do not fail because they cannot answer.
+They fail because they start working before they understand the user.
 
-DaE 的做法是先生成一个可复用的 `PersonaProfile`，再把它注入后续协作流程。
+DaE addresses that upstream failure by building a reusable `PersonaProfile` before downstream collaboration begins.
 
-## 分支定位
+## Branch position
 
-- 母概念：AKM
-- 场景：Persona / 顾问协作
-- 上游资产：`PersonaProfile`
-- 角色：AKM 的首个完整参考实现
+- parent concept: AKM
+- scene: persona / advisory collaboration
+- upstream asset: `PersonaProfile`
+- role: first complete reference implementation
 
-## 为什么它重要
+## Why it matters
 
-DaE 是 AKM 最早被做成完整方法包的一条线。
-它证明了一件事：
+DaE was the first AKM line to become a complete method package.
+It demonstrates a core claim:
 
-**用户建模不是对话润色，而是下游协作质量的上游基础设施。**
+**user modeling is not conversational decoration; it is upstream infrastructure for downstream collaboration quality.**
 
-## 入口
+## Entry points
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)

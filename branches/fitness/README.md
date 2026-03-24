@@ -1,87 +1,49 @@
 <!--
 文件：README.md
-核心功能：作为 Fitness 分支在 AKM 母港中的统一入口，说明该分支的定位、方法结构、证据形态、论文与 skill 入口，以及适用边界。
-输入：健身智能体现有规则、训练日志、身体指标、AKM 母定义与分支级方法文件。
-输出：供外部读者和后续发布直接使用的 Fitness 分支正式总览页。
+核心功能：作为 Fitness 分支在 AKM 母港中的英文主入口，说明该分支的定位、方法结构、证据形态、论文与 skill 入口，以及适用边界。
+输入：健身规则、训练日志、身体指标与 AKM 方法结构。
+输出：供 GitHub 分支页直接使用的英文总览页。
 -->
 
 # AKM Fitness
 
-**AKM Fitness = 先建立训练画像，再做训练裁决。**
+**AKM Fitness = build the training profile first, then make the training decision.**
 
-这不是一个“随手生成训练计划”的健身助手。
-它处理的是更难也更真实的问题：当目标冲突、身体有限制、器械不稳定、时间被工作切碎时，今天到底该怎么练，才算合理。
+[中文说明](./README.zh-CN.md)
 
-## 它解决什么问题
+This is not a generic workout-plan generator.
+It is built for the harder and more realistic problem: when goals conflict, the body has limits, equipment changes, and time is constrained, what should training actually look like today?
 
-普通健身 AI 常见的失真点有四个：
+## What it solves
 
-- 默认用户目标单一且稳定
-- 默认身体没有关键禁区
-- 默认器械环境完整
-- 默认恢复、饮食和执行状态都正常
+Typical fitness AI systems assume too much:
 
-这些默认一旦不成立，所谓训练计划就会变成好看但难执行的文本。
+- one stable goal
+- no meaningful body constraints
+- full equipment access
+- normal recovery and execution conditions
 
-AKM Fitness 的逻辑相反：
+AKM Fitness reverses that logic.
+It clarifies the operator first, then allows execution.
 
-- 先确认主线目标，而不是接受“都要”
-- 先确认身体限制，而不是假装所有动作都可用
-- 先确认器械环境，而不是默认标准健身房
-- 先确认时间与恢复，而不是拿理想状态替代真实状态
-
-## 方法结构
-
-这个分支固定为三层：
+## Method structure
 
 1. `Elicitation`
-   先把目标排序、身体约束、器械条件、时间预算、恢复与执行风险挖清楚。
+   Clarify goal ranking, body constraints, equipment context, time budget, recovery, and execution risk.
 2. `Record`
-   把身体指标、动作基准、训练日志和阶段主线沉淀成结构化上游资产。
+   Store metrics, baselines, logs, and stage priorities as reusable upstream assets.
 3. `Execution`
-   在读取画像后，输出当日或阶段训练裁决，并显式暴露风险与缺口。
+   Read the profile and output a real training decision with explicit risks and missing inputs.
 
-## 为什么它不是普通 Prompt
+## Evidence form
 
-因为真正有价值的部分不是“怎么写一段像教练的话”，而是：
+This branch can be honestly framed as:
 
-- 先建模，再输出
-- 缺信息时不硬猜
-- 方案依赖真实记录，而不是用户一句模糊愿望
-- 当关键变量未闭合时，允许拒绝完整处方
+**an n=1 longitudinal self-use AKM system case.**
 
-这使它更像一个 **受限条件下的训练决策系统**，而不是健身文案生成器。
+Its evidence includes logs, metrics, hard constraints, and external model behavior tests.
 
-## 当前证据形态
-
-这个分支已经有足够诚实的证据基础：
-
-- 长期 append-only 训练日志
-- 身体指标快照
-- 器械环境清单
-- 明确的硬边界规则
-- 外部模型行为测试结果
-
-因此它适合被写成：
-
-**一个 n=1 的长期纵向自用 AKM 系统案例。**
-
-## 入口
+## Entry points
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
-
-## 公开版文件
-
-- [Skill package](./skill/SKILL.md)
-- [Elicitation prompt](./skill/ELICITATION_PROMPT.md)
-- [Record template](./skill/RECORD_TEMPLATE.md)
-- [Execution prompt](./skill/EXECUTION_PROMPT.md)
-- [Publishing checklist](./skill/PUBLISHING_CHECKLIST.md)
-
-## 边界
-
-- 不做医疗诊断
-- 不替代医生、康复师或线下教练
-- 不在缺少关键输入时强猜训练处方
-- 不把狠话、毅力或自责包装成方法

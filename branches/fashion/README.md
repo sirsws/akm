@@ -1,87 +1,49 @@
 <!--
 文件：README.md
-核心功能：作为 Fashion 分支在 AKM 母港中的统一入口，说明该分支的定位、方法结构、证据形态、论文与 skill 入口，以及适用边界。
-输入：穿搭智能体现有提示词、衣橱资产、场景偏好、AKM 母定义与分支级方法文件。
-输出：供外部读者和后续发布直接使用的 Fashion 分支正式总览页。
+核心功能：作为 Fashion 分支在 AKM 母港中的英文主入口，说明该分支的定位、方法结构、证据形态、论文与 skill 入口，以及适用边界。
+输入：穿搭规则、衣橱资产、场景偏好与 AKM 方法结构。
+输出：供 GitHub 分支页直接使用的英文总览页。
 -->
 
 # AKM Fashion
 
-**AKM Fashion = 先建立形象画像，再做穿搭与采购裁决。**
+**AKM Fashion = build the wardrobe and scene model first, then make outfit and purchase decisions.**
 
-这不是一个“给几个好看单品建议”的穿搭助手。
-它处理的是更真实的问题：当体型有限制、场景很具体、衣橱资产有限、功能约束很硬时，今天到底该怎么穿，接下来到底该补什么。
+[中文说明](./README.zh-CN.md)
 
-## 它解决什么问题
+This is not a generic styling assistant.
+It is built for the more realistic question: when body shape, scene requirements, wardrobe limits, and functional constraints all matter, what should the user actually wear, and what should be added next?
 
-普通穿搭 AI 常见的失真点有四个：
+## What it solves
 
-- 默认用户体型不重要
-- 默认衣橱资产无限
-- 默认场景模糊也能给方案
-- 默认风格标签可以直接替代执行建议
+Typical styling AI systems assume too much:
 
-这些默认一旦失真，输出就会迅速退化为平均正确的审美空话。
+- body shape barely matters
+- wardrobe assets are unlimited
+- scene ambiguity is acceptable
+- style labels can replace execution
 
-AKM Fashion 的逻辑相反：
+AKM Fashion reverses that logic.
+It models the operator and the wardrobe first, then allows execution.
 
-- 先确认场景排序，而不是笼统聊风格
-- 先确认体型与体态，而不是假装所有版型都适合
-- 先确认已有衣橱，而不是默认可以买一切
-- 先确认功能约束，而不是拿好看压过可用
-
-## 方法结构
-
-这个分支固定为三层：
+## Method structure
 
 1. `Elicitation`
-   先把场景、体型、衣橱、风格偏好和功能约束挖清楚。
+   Clarify scenes, body context, wardrobe assets, style preferences, and functional constraints.
 2. `Record`
-   把画像、核心单品、缺口和禁区沉淀成结构化上游资产。
+   Store profile, core items, gaps, and anti-patterns as reusable upstream assets.
 3. `Execution`
-   在读取画像后，输出穿搭建议、短板分析与采购优先级。
+   Read the profile and output outfit decisions, gap analysis, and purchase priorities.
 
-## 为什么它不是普通 Prompt
+## Evidence form
 
-因为真正有价值的部分不是“像个 stylist 一样说话”，而是：
+This branch is best framed as:
 
-- 先建模，再输出
-- 现有衣橱是输入，不是背景板
-- 功能约束被写进决策，而不是事后补一句
-- 信息不足时允许暴露缺口，而不是拿风格词糊弄过去
+**a long-term single-user AKM system design and method case.**
 
-这使它更像一个 **受场景与资产约束的形象决策系统**，而不是审美文案生成器。
+Its evidence includes stable wardrobe logic, explicit constraints, structured assets, and external model behavior tests.
 
-## 当前证据形态
-
-这个分支当前最适合被诚实地写成：
-
-**单用户长期自用的 AKM 场景系统设计与方法案例。**
-
-它已有的证据基础包括：
-
-- 稳定长期使用的形象决策系统
-- 显式的场景排序
-- 显式的风格偏好与禁区
-- 已结构化的衣橱资产清单
-- 外部模型行为测试结果
-
-## 入口
+## Entry points
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
-
-## 公开版文件
-
-- [Skill package](./skill/SKILL.md)
-- [Elicitation prompt](./skill/ELICITATION_PROMPT.md)
-- [Record template](./skill/RECORD_TEMPLATE.md)
-- [Execution prompt](./skill/EXECUTION_PROMPT.md)
-- [Publishing checklist](./skill/PUBLISHING_CHECKLIST.md)
-
-## 边界
-
-- 不冒充视觉识别系统
-- 不冒充虚拟试衣产品
-- 不在没有衣橱信息时假装知道用户现有资产
-- 不把风格标签当最终方案
