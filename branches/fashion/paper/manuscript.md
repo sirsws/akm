@@ -1,11 +1,11 @@
 <!--
 文件：manuscript.md
-核心功能：作为 Fashion 分支论文草稿，说明 AKM 在穿搭与衣橱配置场景下的工作方式，并明确其作为单用户长期自用系统的论文写法。
-输入：穿搭智能体的现有提示词、用户体型/场景/衣橱建模逻辑，以及外部模型行为测试结论。
-输出：供后续整理为正式子论文的穿搭场景稿件。
+核心功能：作为 Fashion 分支论文稿，说明 AKM 在穿搭与衣橱规划场景中的方法结构、证据形式与边界。
+输入：穿搭智能体提示词、场景与衣橱建模逻辑、约束条件与外部行为测试结论。
+输出：供后续整理为正式子论文的英文 markdown 稿件。
 -->
 
-# AKM in Fashion and Wardrobe Planning
+# Asset-Aware Wardrobe Planning and Outfit Decisions: An AKM Branch Case
 
 ## Abstract
 

@@ -1,11 +1,11 @@
 <!--
 文件：manuscript.md
-核心功能：作为 Fitness 分支论文草稿，说明 AKM 在健身与体能场景下的工作方式，并明确其为 n=1 长期纵向自用系统。
-输入：健身智能体的现有规则、器械环境、训练日志、身体指标与阶段主线，以及外部模型行为测试结论。
-输出：供后续整理为正式子论文的健身场景稿件。
+核心功能：作为 Fitness 分支论文稿，说明 AKM 在健身与体能规划场景中的方法结构、证据形式与边界。
+输入：健身智能体的规则、训练日志、体征记录、约束条件与外部行为测试结论。
+输出：供后续整理为正式子论文的英文 markdown 稿件。
 -->
 
-# AKM in Fitness Planning
+# Profile-First Fitness Planning Under Real Constraints: An AKM Branch Case
 
 ## Abstract
 
