@@ -1,32 +1,45 @@
 <!--
 文件：manuscript.md
-核心功能：作为 Fashion 分支论文稿，说明 AKM 在穿搭与衣橱规划场景中的方法结构、证据形式与边界。
-输入：穿搭智能体提示词、场景与衣橱建模逻辑、约束条件与外部行为测试结论。
-输出：供后续整理为正式子论文的英文 markdown 稿件。
+核心功能：作为 Fashion 分支 SSRN 风格论文草稿，说明 AKM 在穿搭与衣橱规划场景中的研究问题、方法结构、证据形式与边界。
+输入：穿搭系统一手证据、外部时尚推荐与可解释推荐文献、外部模型行为测试结果。
+输出：供人工审阅后再转 LaTeX 的英文 markdown 论文稿。
 -->
 
 # Asset-Aware Wardrobe Planning and Outfit Decisions: An AKM Branch Case
 
 ## Abstract
 
-This paper examines how `Active Knowledge Modeling (AKM)` operates in wardrobe planning and outfit decision workflows. Instead of producing styling output immediately, the system first models body context, scene requirements, wardrobe assets, functional constraints, and style preferences, and only then produces outfit recommendations, gap analysis, and purchase priorities. The paper is framed as a **long-term single-user system design and method case** rather than a broad validation claim. Its contribution is methodological: it shows how AKM converts styling from generic taste language into asset-aware and scene-constrained decision-making.
+This paper examines how `Active Knowledge Modeling (AKM)` operates in wardrobe planning and outfit decision workflows. Instead of producing styling output immediately, the system first models body context, scene requirements, wardrobe assets, functional constraints, and style preferences, and only then produces outfit recommendations, gap analysis, and purchase priorities. The paper is framed as a **single-user long-term system-design case** rather than a broad validation claim. Its contribution is methodological: it shows how AKM can convert styling from generic taste language into scene-aware and asset-aware decision making. The argument is supported by a local evidence base derived from a long-running private styling system and by external literature on personalized fashion recommendation, outfit compatibility, explainable recommendation, and capsule-wardrobe optimization [1]-[7].
 
-## 1. Problem
+## 1. Introduction
 
-Most styling systems fail because they ignore the structure of the operator. They do not know what the user owns, which scenes actually matter, what body context must be handled, or which functional constraints are non-negotiable.
+Most AI styling output fails for a simple reason: it does not know enough about the operator or the wardrobe. Systems that can describe style fluently still produce weak decisions when they ignore which scenes matter, what the user already owns, what body context must be handled, and which functional constraints are non-negotiable.
 
-When these upstream variables are absent, typical output degrades into:
+The research literature on fashion recommendation confirms this point from different angles. Outfit recommendation is not only a problem of item matching but also of compatibility, personalization, and context [1]-[4]. Explainable recommendation research further shows that useful recommendation output depends on making user-specific signals legible rather than relying on generic language alone [5], [6]. In wardrobe planning, the problem is even stricter: the recommendation is constrained not just by preference but by existing assets. Work on capsule wardrobes makes this explicit by treating the wardrobe as a combinational asset system rather than a flat list of isolated products [7].
 
-- vague taste language
-- scene-insensitive outfit suggestions
-- recommendations that assume unlimited wardrobe replacement
-- purchase advice detached from current assets
+This paper argues that AKM provides a useful framework for this scene because it forces the system to model the operator and the wardrobe before it generates styling output.
 
-The issue is not that the system cannot describe style. The issue is that it lacks the upstream model required for real decisions.
+## 2. Research Position
 
-## 2. AKM in the Fashion Scene
+This paper is not a computer-vision benchmark paper and not a large-sample fashion-recommendation evaluation. It is written as a branch-level systems and method paper. The question is whether AKM can organize wardrobe planning as a constrained decision workflow rather than a style-commentary workflow.
 
-In this scene, AKM models a wardrobe decision structure rather than a mood or identity label. The relevant upstream structure includes:
+The evidence model is `single-user long-term self-use`. The relevant issue is not whether the branch wins on a public benchmark, but whether profile-first modeling changes the structure and usability of fashion decisions in practice.
+
+## 3. Problem Definition
+
+When wardrobe-related upstream variables are absent, styling systems degrade in familiar ways:
+
+- they speak in vague taste language
+- they ignore scene hierarchy
+- they recommend items as if the user had no existing wardrobe constraints
+- they generate purchase advice detached from current assets
+- they offer polished explanations while lacking real user-specific grounding
+
+The literature helps explain why this happens. Personalized fashion recommendation remains difficult because user preference is sparse, outfit compatibility is combinational, and context is often incomplete [1], [3], [4]. Explainable recommendation systems try to connect generated explanation to user and item context [5], [6], but in ordinary use there is still a gap between explanation fluency and actual wardrobe decision quality.
+
+## 4. Method: AKM in the Fashion Scene
+
+In this scene, AKM models wardrobe feasibility rather than style mood alone. The relevant upstream structure includes:
 
 - scene hierarchy
 - body context
@@ -35,60 +48,72 @@ In this scene, AKM models a wardrobe decision structure rather than a mood or id
 - functional constraints
 - purchase priorities
 
-This shifts the task from generating styling commentary to making constrained decisions.
+The branch is implemented as a three-layer workflow.
 
-## 3. Method Structure
+### 4.1 Elicitation
 
-The branch is organized into three layers.
+The system first clarifies scenes, body context, existing assets, style preferences, and hard constraints. This step addresses the same personalization problem highlighted in the recommendation literature: preference cannot be approximated well if the system begins with too little user-specific context [1], [3].
 
-### 3.1 Elicitation
+### 4.2 Structured Record
 
-The system first clarifies scenes, body context, existing assets, style preferences, and hard constraints.
+The elicited material is converted into a reusable profile that covers both the operator and the wardrobe. This aligns with the asset-oriented logic visible in capsule-wardrobe research, where the value of a wardrobe depends on combinations, versatility, and the relationship between items rather than on isolated product descriptions [7].
 
-### 3.2 Structured Record
+### 4.3 Execution Decision
 
-The elicited material is stored as a reusable profile covering the operator, the wardrobe, and current gaps.
+Only after the profile is available does the system produce outfit recommendations, gap analysis, and purchase priorities. The output contract is designed to make missing context visible instead of hiding it behind aesthetic fluency.
 
-### 3.3 Execution Decision
+## 5. Why This Is Not a Generic Styling Prompt
 
-Only after the profile is available does the system produce outfit recommendations, gap analysis, and purchase priorities.
+A styling persona prompt can imitate fashion language without producing constrained decisions. The defining feature of this branch is not tone. It is workflow position. Wardrobe assets, scene hierarchy, and anti-patterns are treated as upstream inputs rather than optional flavor.
 
-## 4. Why This Is Not a Generic Styling Prompt
+This difference matters because contemporary fashion recommendation systems increasingly model outfit-level relations and user-specific preference embeddings [2]-[4]. AKM extends the same idea into a decision-support workflow: build the user-and-wardrobe model first, then decide.
 
-A styling persona prompt can imitate taste language without producing constrained decisions. This branch differs because wardrobe assets and scene requirements are treated as upstream inputs rather than optional flavor.
+## 6. Evidence Base
 
-The system is designed to expose what it does not know. If wardrobe or scene detail is incomplete, it should output missing inputs rather than pretending to know the user's closet.
+The local evidence base for this paper is listed in [local-evidence.md](./local-evidence.md). At a high level, it includes:
 
-## 5. Evidence Form
+- a long-running private styling system prompt
+- a derived public elicitation prompt
+- a structured wardrobe record template
+- an execution prompt for outfit recommendation and gap analysis
 
-This branch is best interpreted as a long-term single-user system design and method case. The evidence base includes:
+External-model testing was used as a method-boundary check. The key question was whether another model would still preserve the upstream discipline of the workflow.
 
-- stable scene logic
-- explicit body and style constraints
-- structured wardrobe assets
-- repeatable output types
-- external model behavior tests
+The critical behaviors were:
 
-This is not presented as image-recognition validation or large-sample aesthetic benchmarking. The contribution is methodological.
-
-## 6. External Behavior Testing
-
-External-model testing was used to check whether the method preserved constraint-aware reasoning under another model. The critical question was whether the workflow still avoided drifting into generic taste talk.
-
-The tested behaviors included:
-
-- eliciting scenes and wardrobe constraints before recommending outfits
-- making single-scene or cross-scene decisions from explicit assets
+- eliciting scenes and wardrobe constraints before recommendations
+- producing asset-aware outfit decisions instead of generic taste talk
 - surfacing `MissingInputs` when wardrobe or context detail remained incomplete
+- keeping purchase advice tied to gaps in the current wardrobe rather than to abstract aspiration
 
-These observations support the claim that AKM improves styling quality by strengthening upstream modeling rather than by increasing surface-level stylistic fluency.
+## 7. Discussion
 
-## 7. Boundaries
+The branch suggests that the practical value of AKM in fashion is not that it makes recommendations more fashionable in the abstract. Its value is that it changes the unit of reasoning. The system stops reasoning only over desired style and starts reasoning over scenes, constraints, and assets.
 
-This system does not replace a stylist, an image-recognition pipeline, or a virtual try-on product. It depends on user-provided information about wardrobe, body context, and scene requirements.
+This is exactly where wardrobe planning differs from ordinary product recommendation. A wardrobe is an evolving asset system. Recommendations should therefore be evaluated not only by whether an item looks good in isolation, but by whether it fits the user’s scenes, body context, existing inventory, and purchase priorities. That is why the asset-aware framing is central rather than decorative.
 
-When those inputs are incomplete, the correct behavior is constrained output and gap exposure rather than artificial certainty.
+## 8. Boundaries
 
-## 8. Conclusion
+This branch does not replace a stylist, an image-recognition pipeline, or a virtual try-on product. It also does not claim benchmark leadership. Its claim is narrower: AKM can be implemented as a profile-first wardrobe-decision system whose outputs stay closer to the user’s actual wardrobe reality.
 
-The fashion branch matters because it shows how AKM can turn styling from generic commentary into asset-aware and scene-constrained decision-making. Its contribution is not that AI can discuss clothing. Its contribution is that upstream modeling changes what kind of styling decision becomes possible.
+When inputs are incomplete, the correct behavior is constrained output and gap exposure rather than artificial certainty.
+
+## 9. Conclusion
+
+The fashion branch matters because it shows how AKM can convert styling from generic commentary into asset-aware and scene-constrained decision making. The contribution is methodological. It demonstrates that better upstream modeling changes not only what the system says, but what kind of recommendation becomes possible.
+
+## References
+
+[1] Lu, Z., Hu, Y., Jiang, Y., Chen, Y., & Zeng, B. (2019). *Learning Binary Code for Personalized Fashion Recommendation*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019.
+
+[2] Kang, W.-C., Kim, E., Leskovec, J., Rosenberg, C., & McAuley, J. (2019). *Complete the Look: Scene-Based Complementary Product Recommendation*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019.
+
+[3] Lu, Z., Jiang, Y., Hu, Y., Chen, Y., & Zeng, B. (2021). *Personalized Outfit Recommendation with Learnable Anchors*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2021.
+
+[4] Sarkar, R., Bodla, N., Vasileva, M., Lin, Y.-L., Beniwal, A., Lu, A., & Medioni, G. (2022). *OutfitTransformer: Outfit Representations for Fashion Recommendation*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), 2022.
+
+[5] Li, L., Zhang, Y., & Chen, L. (2021). *Personalized Transformer for Explainable Recommendation*. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics (ACL), 2021.
+
+[6] Cheng, H., Wang, S., Lu, W., Zhang, W., Zhou, M., Lu, K., & Liao, H. (2023). *Explainable Recommendation with Personalized Review Retrieval and Aspect Learning*. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (ACL), 2023.
+
+[7] Hsiao, W.-L., & Grauman, K. (2018). *Creating Capsule Wardrobes from Fashion Images*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2018.
