@@ -1,12 +1,12 @@
----
+﻿---
 name: "akm-fitness-planner"
 description: "AKM implementation for training decision workflows. Models goals, body limits, equipment context, time budget, and recovery before outputting a workout decision."
 ---
 
 <!--
 文件：SKILL.md
-核心功能：作为 AKM Fitness skill 的正式英文说明页，定义其定位、输入要求、工作流、输出契约与使用边界。
-输入：Fitness 分支方法结构、提示词文件、记录模板与测试结论。
+核心功能：作为 AKM Fitness skill 的英文正式说明页，定义其定位、输入要求、工作流、输出契约、双语规则与边界。
+输入：Fitness 分支方法结构、提示词文件、记录模板与公开 skill 设计。
 输出：供 GitHub、技能市场或代理工具直接引用的英文 skill 文档。
 -->
 
@@ -24,11 +24,9 @@ It is designed for situations where body limits, equipment reality, time budget,
 ## Position
 
 AKM Fitness is not a generic workout Q&A tool.
-It is a profile-first skill that turns training planning into a constrained decision process.
+It turns training planning into a profile-first decision process.
 
 ## Required Inputs
-
-Serious use requires at least the following:
 
 - `training goals`
 - `body limitations or injury constraints`
@@ -57,9 +55,11 @@ Outputs should include:
 - `NonNegotiables`
 - `MissingInputs`
 
-## Best-Fit Scenarios
+## Language Rule
 
-Use this skill when workout decisions are materially constrained by injury history, equipment changes, time limits, recovery instability, or conflicting goals.
+Public landing pages are English-first with a Chinese toggle.
+Field keys stay in English for output stability.
+Operational prompting is available in both English and Chinese.
 
 ## Boundaries
 

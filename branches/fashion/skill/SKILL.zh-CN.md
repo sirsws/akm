@@ -1,8 +1,13 @@
+﻿---
+name: "akm-fashion-strategist"
+description: "AKM 在衣橱与穿搭决策工作流中的实现，在输出穿搭决定前先建模体型语境、场景、衣橱资产与功能限制。"
+---
+
 <!--
 文件：SKILL.zh-CN.md
-核心功能：作为 AKM Fashion skill 的正式中文说明页，定义其定位、输入要求、工作流、输出契约与使用边界。
-输入：Fashion 分支方法结构、提示词文件、记录模板与测试结论。
-输出：供 GitHub 中文读者使用的 skill 文档。
+核心功能：作为 AKM Fashion skill 的中文正式说明页，定义其定位、输入要求、工作流、输出契约、双语规则与边界。
+输入：Fashion 分支方法结构、提示词文件、记录模板与公开 skill 设计。
+输出：供 GitHub 中文页、技能市场或代理工具直接引用的中文 skill 文档。
 -->
 
 # AKM Fashion Skill
@@ -11,19 +16,17 @@
   <a href="./SKILL.md">English</a> | <a href="./SKILL.zh-CN.md">简体中文</a>
 </p>
 
-**没有衣橱模型，就没有严肃穿搭建议。**
+**没有衣橱模型，就没有严肃穿搭决策。**
 
-AKM Fashion 是面向真实场景和资产约束的穿搭裁决 skill 包。
-它适用于那些体型、现有衣橱、场景要求和功能约束都会实质影响穿搭决策的场景。
+AKM Fashion 是一个面向真实场景与资产约束的衣橱 / 穿搭决策 skill 包。
+它处理的是体型语境、现有衣橱、场景要求和功能限制都会实质影响穿搭选择的场景。
 
 ## 定位
 
-AKM Fashion 不是 moodboard 生成器，也不是泛用 stylist 人设。
-它是一个 profile-first skill，用来把穿搭问题转化为受约束的决策过程。
+AKM Fashion 不是情绪板生成器。
+它把穿搭重写成“画像优先的决策流程”。
 
-## 必要输入
-
-严肃使用至少需要：
+## 必需输入
 
 - `body shape or posture notes`
 - `primary scenes`
@@ -31,7 +34,7 @@ AKM Fashion 不是 moodboard 生成器，也不是泛用 stylist 人设。
 - `wardrobe assets already owned`
 - `functional constraints`
 
-当关键输入缺失时，skill 应优先暴露 `MissingInputs`，而不是假装已经知道完整衣橱。
+缺关键输入时，skill 必须显式输出 `MissingInputs`，而不是假装衣橱已经已知。
 
 ## 工作流
 
@@ -50,13 +53,15 @@ AKM Fashion 不是 moodboard 生成器，也不是泛用 stylist 人设。
 - `PurchasePriority`
 - `MissingInputs`
 
-## 最适合的场景
+## 双语规则
 
-当穿搭决策依赖场景上下文、衣橱限制、体型条件、功能性要求和采购取舍时，应使用这个 skill。
+公开落地页采用英文主页 + 中文切换。
+字段 key 保持英文，以保证输出稳定。
+实际提示词提供英文版和中文版。
 
 ## 边界
 
 - 不是图像识别工具
-- 不是虚拟试衣产品
-- 不是泛用审美生成器
-- 不用漂亮话掩盖缺失上下文
+- 不是真人试衣产品
+- 不是泛审美生成器
+- 不能用漂亮措辞掩盖缺失上下文

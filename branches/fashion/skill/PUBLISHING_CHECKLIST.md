@@ -1,35 +1,28 @@
 ﻿<!--
 文件：PUBLISHING_CHECKLIST.md
-核心功能：作为 Fashion 分支公开发布前的检查清单，避免私有资产泄露、口径错位和结构缺失。
+核心功能：作为 Fashion 分支公开发布前的英文检查清单，避免私有资产泄露、口径错位和结构缺失。
 输入：Fashion 分支当前 skill 包、论文稿与发布页文案。
-输出：供发布前逐项核对的检查清单。
+输出：供发布前逐项核对的英文检查清单。
 -->
 
 # Fashion Publishing Checklist
 
-## 口径
+## Framing
 
-- [ ] 标题明确写成 AKM 的 Fashion 分支，而非独立母概念
-- [ ] 不夸大为视觉识别、虚拟试衣或大样本风格验证产品
-- [ ] 论文口径统一为 `单用户长期自用系统`
+- [ ] title clearly identifies this as the Fashion branch of AKM rather than a standalone parent concept
+- [ ] claims do not drift into image-recognition, virtual try-on, or broad benchmark language
+- [ ] paper framing is consistent with a method paper under scene and asset constraints
 
-## 隐私
+## Privacy
 
-- [ ] 不直接公开完整私有衣橱明细
-- [ ] 不直接公开仅对邵先生成立的身份与体态细节
-- [ ] 将风格偏好改写为可复用输入字段，而非实名自述
+- [ ] no full private wardrobe inventory is exposed
+- [ ] no identity-specific body or styling details are exposed
+- [ ] style preferences are rewritten as reusable input fields rather than named self-description
 
-## 结构
+## Structure
 
-- [ ] `ELICITATION_PROMPT.md` 可独立阅读
-- [ ] `RECORD_TEMPLATE.md` 可独立复用
-- [ ] `EXECUTION_PROMPT.md` 与前两者无冲突
-- [ ] `SKILL.md` 已说明方法不是单 Prompt
-- [ ] 发布页文案与 skill 口径一致
-
-## 发布前最后检查
-
-- [ ] 不存在 `Coming Soon`
-- [ ] 不存在空目录占位
-- [ ] 不存在假装知道用户衣橱资产的表述
-- [ ] 不存在把风格标签直接写成最终解决方案的表述
+- [ ] `ELICITATION_PROMPT.md` is readable on its own
+- [ ] `RECORD_TEMPLATE.md` is reusable on its own
+- [ ] `EXECUTION_PROMPT.md` does not conflict with the other two
+- [ ] `SKILL.md` makes it explicit that the method is not a single prompt
+- [ ] store copy and skill copy use the same framing

@@ -1,8 +1,13 @@
+﻿---
+name: "akm-fitness-planner"
+description: "AKM 在训练决策工作流中的实现，在输出训练决定前先建模目标、身体限制、器械环境、时间预算与恢复状态。"
+---
+
 <!--
 文件：SKILL.zh-CN.md
-核心功能：作为 AKM Fitness skill 的正式中文说明页，定义其定位、输入要求、工作流、输出契约与使用边界。
-输入：Fitness 分支方法结构、提示词文件、记录模板与测试结论。
-输出：供 GitHub 中文读者使用的 skill 文档。
+核心功能：作为 AKM Fitness skill 的中文正式说明页，定义其定位、输入要求、工作流、输出契约、双语规则与边界。
+输入：Fitness 分支方法结构、提示词文件、记录模板与公开 skill 设计。
+输出：供 GitHub 中文页、技能市场或代理工具直接引用的中文 skill 文档。
 -->
 
 # AKM Fitness Skill
@@ -11,19 +16,17 @@
   <a href="./SKILL.md">English</a> | <a href="./SKILL.zh-CN.md">简体中文</a>
 </p>
 
-**没有画像，就没有严肃训练方案。**
+**没有画像，就没有严肃训练决策。**
 
-AKM Fitness 是面向真实约束条件的训练裁决 skill 包。
-它适用于那些身体限制、器械现实、时间预算、恢复状态和目标层级都会实质影响训练决策的场景。
+AKM Fitness 是一个面向真实约束训练决策的 skill 包。
+它处理的是身体限制、器械现实、时间预算、恢复状态和目标层级都会实质影响训练选择的场景。
 
 ## 定位
 
-AKM Fitness 不是通用健身问答工具。
-它是一个 profile-first skill，用来把训练规划转化为受约束的决策过程。
+AKM Fitness 不是泛泛的训练问答工具。
+它把训练规划重写成“画像优先的决策流程”。
 
-## 必要输入
-
-严肃使用至少需要：
+## 必需输入
 
 - `training goals`
 - `body limitations or injury constraints`
@@ -32,7 +35,7 @@ AKM Fitness 不是通用健身问答工具。
 - `session time budget`
 - `recovery context`
 
-当关键输入缺失时，skill 应优先暴露 `MissingInputs`，而不是伪装确定性。
+缺关键输入时，skill 必须显式输出 `MissingInputs`，而不是伪造确定性。
 
 ## 工作流
 
@@ -52,13 +55,15 @@ AKM Fitness 不是通用健身问答工具。
 - `NonNegotiables`
 - `MissingInputs`
 
-## 最适合的场景
+## 双语规则
 
-当训练决策会被伤病史、器械变化、时间上限、恢复波动或多目标冲突显著影响时，应使用这个 skill。
+公开落地页采用英文主页 + 中文切换。
+字段 key 保持英文，以保证输出稳定。
+实际提示词提供英文版和中文版。
 
 ## 边界
 
 - 不是医疗诊断工具
 - 不替代康复建议
 - 不是健美模板生成器
-- 不用热血话术掩盖不确定性
+- 不能用鸡血语言掩盖不确定性

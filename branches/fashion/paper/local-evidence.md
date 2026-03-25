@@ -1,14 +1,14 @@
-<!--
+﻿<!--
 文件：local-evidence.md
-核心功能：记录 Fashion 分支论文使用的本地一手证据材料与其角色。
+核心功能：记录 Fashion 分支论文使用的本地设计记录材料及其角色。
 输入：穿搭工作区中的系统文件与提示词成果。
-输出：供论文审阅与后续 LaTeX 转换使用的本地证据清单。
+输出：供论文审阅与后续 LaTeX 转换使用的本地设计记录清单。
 -->
 
-# Fashion Local Evidence
+# Fashion Local Design Record
 
-This paper is framed as a `single-user long-term self-use` system-design case.
-The primary local evidence base currently includes:
+The branch is documented through a long-running private wardrobe and styling system.
+The primary local design record currently includes:
 
 - `G:\对话集\顾问团\“形象策略师”智能体.md`
   Role: core system prompt, wardrobe-asset logic, scene hierarchy, anti-patterns, and output conventions.

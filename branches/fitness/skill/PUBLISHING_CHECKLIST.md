@@ -1,36 +1,29 @@
 ﻿<!--
 文件：PUBLISHING_CHECKLIST.md
-核心功能：作为 Fitness 分支公开发布前的检查清单，避免私有数据、口径错位和结构缺失。
+核心功能：作为 Fitness 分支公开发布前的英文检查清单，避免私有数据泄露、口径错位和结构缺失。
 输入：Fitness 分支当前 skill 包、论文稿与发布页文案。
-输出：供发布前逐项核对的检查清单。
+输出：供发布前逐项核对的英文检查清单。
 -->
 
 # Fitness Publishing Checklist
 
-## 口径
+## Framing
 
-- [ ] 标题明确写成 AKM 的 Fitness 分支，而非独立母概念
-- [ ] 不夸大为医疗系统、康复系统或大样本验证产品
-- [ ] 论文口径统一为 `n=1 长期纵向自用系统`
+- [ ] title clearly identifies this as the Fitness branch of AKM rather than a standalone parent concept
+- [ ] claims do not drift into medical system, rehab system, or broad efficacy validation language
+- [ ] paper framing is consistent with a method paper under real constraints
 
-## 隐私
+## Privacy
 
-- [ ] 不直接公开原始训练日志全文
-- [ ] 不直接公开个人体重变化的全部历史细节
-- [ ] 不直接公开仅对邵先生成立的身份信息
-- [ ] 将身体限制改写为通用输入字段，而非实名自述
+- [ ] no raw training log is exposed in full
+- [ ] no complete personal body-history record is exposed
+- [ ] identity-specific details are removed or generalized
+- [ ] body limitations are rewritten as reusable input fields rather than named self-description
 
-## 结构
+## Structure
 
-- [ ] `ELICITATION_PROMPT.md` 可独立阅读
-- [ ] `RECORD_TEMPLATE.md` 可独立复用
-- [ ] `EXECUTION_PROMPT.md` 与前两者无冲突
-- [ ] `SKILL.md` 已说明方法不是单 Prompt
-- [ ] 发布页文案与 skill 口径一致
-
-## 发布前最后检查
-
-- [ ] 不存在 `Coming Soon`
-- [ ] 不存在空目录占位
-- [ ] 不存在与器械环境明显冲突的示例动作
-- [ ] 不存在把缺失输入硬写成完整计划的表述
+- [ ] `ELICITATION_PROMPT.md` is readable on its own
+- [ ] `RECORD_TEMPLATE.md` is reusable on its own
+- [ ] `EXECUTION_PROMPT.md` does not conflict with the other two
+- [ ] `SKILL.md` makes it explicit that the method is not a single prompt
+- [ ] store copy and skill copy use the same framing

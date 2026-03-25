@@ -1,11 +1,11 @@
-<!--
+﻿<!--
 文件：README.zh-CN.md
-核心功能：作为 DaE 分支在 AKM 母港中的中文入口，说明分支定位、场景范围、核心资产与入口导航。
-输入：AKM 母定义、DaE 发布资产与研究资产。
-输出：供 GitHub 中文读者使用的 README。
+核心功能：作为 DaE 分支在 AKM 母港中的中文主入口，说明分支定位、核心资产、场景与入口导航。
+输入：AKM 母定义、DaE 研究线、DaE skill 与旧公开仓关系。
+输出：供 GitHub 中文读者理解 DaE 分支角色的中文 README。
 -->
 
-# DaE — AKM 参考实现
+# DaE - AKM 参考实现
 
 <p align="center">
   <img src="../../assets/akm-banner.svg" alt="AKM banner" width="100%" />
@@ -21,30 +21,25 @@
   <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
-**DaE 是 AKM 在 persona 感知顾问协作场景下的参考实现。**
+**DaE 是 AKM 在 Persona 感知顾问协作场景里的首个完整参考实现。**
 
 ## 范围
 
-DaE 处理的核心问题是：当下游规划、建议或协作质量依赖一份稳定可复用的用户画像时，如何把这层上游建模做成标准化工作流。
+DaE 把 AKM 落地到这样一类工作流：下游质量取决于是否先建立一个可复用的用户画像层。
+它的核心场景是 Persona 感知的规划、顾问、写作、编码与多智能体协作。
 
 ## 核心资产
 
-这个分支的中心上游资产是 `PersonaProfile`。
-它用于在多轮任务中复用用户背景、约束、驱动和决策风格，而不是让每个下游 agent 都从零重建上下文。
+上游核心资产是 `PersonaProfile`。
+它把用户上下文整理成可复用结构，而不是每次对话都从零重建。
 
-## 这个分支的价值
+## 为什么这个分支存在
 
-DaE 证明了一件事：用户建模可以作为上游基础设施存在，而不是可有可无的 prompt 修饰。
-
-## 当前交付
-
-- 分支总览
-- DaE 研究论文入口
-- DaE skill 入口
-- 提示词与验收标准参考材料
+很多平台都允许用户提供上下文，但没有给出一套严肃、可复用的填法。
+DaE 提供的，就是 Persona 感知协作里的那层操作方法。
 
 ## 入口
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
-- [AKM 母港](../../README.md)
+- [AKM Mother Hub](../../README.md)
