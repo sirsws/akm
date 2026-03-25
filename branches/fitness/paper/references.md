@@ -24,7 +24,3 @@ Canonical URL: https://www.frontiersin.org/journals/neuroscience/articles/10.338
 [4] Fuente-Vidal, A., Guerra-Balic, M., Roda-Noguera, O., Jerez-Roig, J., & Montane, J. (2022). *Adherence to eHealth-Delivered Exercise in Adults with no Specific Health Conditions: A Scoping Review on a Conceptual Challenge*. International Journal of Environmental Research and Public Health, 19(16), 10214. DOI: 10.3390/ijerph191610214.
 Basis downloaded: `references/fuente-vidal-2022-adherence-ehealth-exercise-pubmed.html`
 Canonical URL: https://pubmed.ncbi.nlm.nih.gov/36011856/
-
-[5] Lee, J., Kim, D. I., & Jeon, J. Y. (2025). *Personalized exercise programs improve health-related quality of life in individuals with spinal cord injuries: an exploratory randomized clinical trial*. Physical Activity and Nutrition, 29(2), 11-18. DOI: 10.20463/pan.2025.0009.
-Basis downloaded: `references/lee-2025-personalized-exercise-programs-sci-pubmed.html`
-Canonical URL: https://pubmed.ncbi.nlm.nih.gov/40765067/

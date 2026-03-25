@@ -77,6 +77,40 @@ The local evidence base for this paper is listed in [local-evidence.md](./local-
 - a structured wardrobe record template
 - an execution prompt for outfit recommendation and gap analysis
 
+To make that basis visible, a representative decision trace is shown below. The example is anonymized and slightly compressed, but it preserves the real structure of the workflow.
+
+```json
+{
+  "SceneJudgment": "Primary need is smart-casual weekday wear with low-friction reuse across repeated office and city scenes.",
+  "OutfitRecommendation": {
+    "Top": "dark knit polo or clean long-sleeve shirt",
+    "Bottom": "mid-to-dark tailored trousers",
+    "OuterLayer": "light structured jacket if temperature or formality rises",
+    "Shoes": "minimal leather sneakers or simple loafers"
+  },
+  "WhyThisWorks": [
+    "The combination is anchored to repeat-use scenes rather than one-off styling theater.",
+    "Silhouette stays clean without requiring a full wardrobe reset.",
+    "The recommendation reuses likely core assets before suggesting purchases."
+  ],
+  "GapAnalysis": [
+    "Wardrobe baseline suggests a shortage of versatile mid-formality outerwear.",
+    "Footwear options may be too casual for cross-scene reuse."
+  ],
+  "PurchasePriority": [
+    "1. Lightweight structured jacket in a versatile neutral tone",
+    "2. One pair of cleaner leather footwear for smart-casual scenes"
+  ],
+  "MissingInputs": [
+    "Current full wardrobe inventory",
+    "Seasonal climate split",
+    "Non-negotiable fit dislikes"
+  ]
+}
+```
+
+This trace is not presented as proof of benchmark superiority. It is presented as proof of system behavior: the workflow makes scene, asset, and wardrobe gaps explicit before it escalates to recommendation or purchasing advice.
+
 External-model testing was used as a method-boundary check. The key question was whether another model would still preserve the upstream discipline of the workflow.
 
 The critical behaviors were:

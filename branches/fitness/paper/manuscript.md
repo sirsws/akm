@@ -9,7 +9,7 @@
 
 ## Abstract
 
-This paper examines how `Active Knowledge Modeling (AKM)` operates in fitness planning under real-world constraints. Instead of generating a workout plan directly, the system first models the user's training goals, body limitations, equipment context, time budget, recovery state, and execution risks, and only then produces a day-level or stage-level training decision. The paper is framed as an **n=1 longitudinal self-use system case** rather than a broad effectiveness claim. Its contribution is methodological: it shows how AKM can transform fitness planning from generic programming into profile-first, state-dependent decision making under real constraints. The argument is supported by a local evidence base composed of rules, metrics, logs, and monthly records, together with external literature on training-load monitoring, autoregulation, and adherence [1]-[5].
+This paper examines how `Active Knowledge Modeling (AKM)` operates in fitness planning under real-world constraints. Instead of generating a workout plan directly, the system first models the user's training goals, body limitations, equipment context, time budget, recovery state, and execution risks, and only then produces a day-level or stage-level training decision. The paper is framed as an **n=1 longitudinal self-use system case** rather than a broad effectiveness claim. Its contribution is methodological: it shows how AKM can transform fitness planning from generic programming into profile-first, state-dependent decision making under real constraints. The argument is supported by a local evidence base composed of rules, metrics, logs, and monthly records, together with external literature on training-load monitoring, autoregulation, and adherence [1]-[4].
 
 ## 1. Introduction
 
@@ -33,7 +33,7 @@ Most generic fitness prompting degrades in predictable ways when the user contex
 - recovery state is overwritten by split logic or template logic
 - the system behaves as if confidence were available even when key state variables are missing
 
-These failure patterns are consistent with a broader observation from adherence and intervention research: sustained exercise behavior depends not only on the nominal quality of the plan, but on whether the plan is matched to the user’s condition, context, and ability to comply over time [4], [5].
+These failure patterns are consistent with a broader observation from adherence and intervention research: sustained exercise behavior depends not only on the nominal quality of the plan, but on whether the plan is matched to the user’s condition, context, and ability to comply over time [4].
 
 ## 4. Method: AKM in the Fitness Scene
 
@@ -88,7 +88,37 @@ The local evidence base for this paper is listed in [local-evidence.md](./local-
 - append-only execution logs
 - monthly retrospective records
 
-This does not create broad causal proof. It does provide a traceable basis for a longitudinal systems case. In addition, external-model testing was used as a behavioral boundary check. The question was not whether another model would outperform the original setup, but whether the workflow still enforced AKM discipline under another model.
+This does not create broad causal proof. It does provide a traceable basis for a longitudinal systems case. To make that basis visible, a representative decision trace is shown below. The example is lightly anonymized and shortened, but it preserves the logic of the actual workflow.
+
+```json
+{
+  "StateJudgment": "Recovery state partially unclear; lower-back risk remains a live constraint.",
+  "PrimaryDecision": "Do not assign heavy compound lifting today. Use a lower-risk session or pause pending clarification.",
+  "DecisionConfidence": "Low",
+  "Plan": [
+    "Confirm current lumbar discomfort level and sleep quality before loading decisions.",
+    "If discomfort is elevated, switch to mobility, light accessories, and walking.",
+    "If discomfort is low and recovery is acceptable, resume with conservative volume only."
+  ],
+  "RiskNotes": [
+    "Generic split logic is not sufficient under unresolved recovery and injury uncertainty.",
+    "The main failure mode is acting as if readiness were already known."
+  ],
+  "NonNegotiables": [
+    "No heavy axial loading until state is clarified.",
+    "Do not infer readiness from schedule alone."
+  ],
+  "MissingInputs": [
+    "Current lumbar discomfort score (1-10)",
+    "Previous session load and residual soreness",
+    "Sleep and recovery status over the last 24 hours"
+  ]
+}
+```
+
+This trace is not presented as proof of effectiveness. It is presented as proof of system behavior: the workflow makes uncertainty visible, exposes missing inputs, and degrades confidence instead of pretending to know more than it knows.
+
+In addition, external-model testing was used as a behavioral boundary check. The question was not whether another model would outperform the original setup, but whether the workflow still enforced AKM discipline under another model.
 
 The critical behaviors were:
 
@@ -122,5 +152,3 @@ The fitness branch matters because it shows how AKM can convert workout generati
 [3] Haddad, M., Stylianides, G., Djaoui, L., Dellal, A., & Chamari, K. (2017). *Session-RPE Method for Training Load Monitoring: Validity, Ecological Usefulness, and Influencing Factors*. Frontiers in Neuroscience, 11, 612. DOI: 10.3389/fnins.2017.00612.
 
 [4] Fuente-Vidal, A., Guerra-Balic, M., Roda-Noguera, O., Jerez-Roig, J., & Montane, J. (2022). *Adherence to eHealth-Delivered Exercise in Adults with no Specific Health Conditions: A Scoping Review on a Conceptual Challenge*. International Journal of Environmental Research and Public Health, 19(16), 10214. DOI: 10.3390/ijerph191610214.
-
-[5] Lee, J., Kim, D. I., & Jeon, J. Y. (2025). *Personalized exercise programs improve health-related quality of life in individuals with spinal cord injuries: an exploratory randomized clinical trial*. Physical Activity and Nutrition, 29(2), 11-18. DOI: 10.20463/pan.2025.0009.
