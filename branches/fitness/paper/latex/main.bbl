@@ -1,9 +1,16 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Foschini et~al.(2025)Foschini, Defresne, Gamba, Bogaerts, and
+  Guns]{foschini2025preference}
+Marco Foschini, Marianne Defresne, Emilio Gamba, Bart Bogaerts, and Tias Guns.
+\newblock Preference elicitation for step-wise explanations in logic puzzles,
+  2025.
+\newblock URL \url{https://arxiv.org/abs/2511.10436}.
 
 \bibitem[Foster et~al.(2017)Foster, Rodriguez-Marroyo, and
   de~Koning]{foster2017trainingloads}
@@ -35,6 +42,19 @@ M.~Haddad, G.~Stylianides, L.~Djaoui, A.~Dellal, and K.~Chamari.
 \newblock URL
   \url{https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2017.00612/full}.
 
+\bibitem[Holstein et~al.(2025)Holstein, Hemmer, Satzger, and
+  Sun]{holstein2025thinking}
+Joshua Holstein, Patrick Hemmer, Gerhard Satzger, and Wei Sun.
+\newblock When thinking pays off: Incentive alignment for human-ai
+  collaboration, 2025.
+\newblock URL \url{https://arxiv.org/abs/2511.09612}.
+
+\bibitem[Oyemike et~al.(2025)Oyemike, Akpan, and
+  Herv{\'e}-Berdys]{oyemike2025alignment}
+Cumi Oyemike, Elizabeth Akpan, and Pierre Herv{\'e}-Berdys.
+\newblock Alignment debt: The hidden work of making ai usable, 2025.
+\newblock URL \url{https://arxiv.org/abs/2511.09663}.
+
 \bibitem[Shattock and Tee(2022)]{shattock2022autoregulation}
 K.~Shattock and J.~C. Tee.
 \newblock Autoregulation in resistance training: A comparison of subjective
@@ -43,5 +63,13 @@ K.~Shattock and J.~C. Tee.
   (3):\penalty0 641--648, 2022.
 \newblock \doi{10.1519/JSC.0000000000003530}.
 \newblock URL \url{https://pubmed.ncbi.nlm.nih.gov/32058357/}.
+
+\bibitem[White et~al.(2023)White, Fu, Hays, Sandborn, Olea, Gilbert, Elnashar,
+  Spencer-Smith, and Schmidt]{white2023prompt}
+Jules White, Quchen Fu, Sam Hays, Peter Sandborn, Carlos Olea, Henry Gilbert,
+  Ashraf Elnashar, Jesse Spencer-Smith, and Douglas~C. Schmidt.
+\newblock A prompt pattern catalog to enhance prompt engineering with chatgpt,
+  2023.
+\newblock URL \url{https://arxiv.org/abs/2302.11382}.
 
 \end{thebibliography}

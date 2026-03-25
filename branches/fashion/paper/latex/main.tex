@@ -1,7 +1,7 @@
 ﻿% <!--
 % 文件：main.tex
-% 核心功能：Fashion 分支论文的 LaTeX 主文件，用于生成可提交 SSRN 的英文稿。
-% 输入：paper 目录中的 manuscript、abstract、keywords、references 与 local-evidence 所固化的方法结构。
+% 核心功能：Fashion 分支论文的 LaTeX 主文件，用于生成可提交 SSRN 的英文长稿。
+% 输入：paper 目录中的 manuscript、local-evidence 与 refs.bib 所固化的方法结构和参考文献。
 % 输出：一篇以 AKM 为母框架、Fashion 为场景分支的方法论文 PDF。
 % -->
 \documentclass[11pt]{article}
@@ -13,12 +13,15 @@
 \usepackage{setspace}
 \usepackage{enumitem}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage[numbers]{natbib}
 \usepackage[hidelinks]{hyperref}
 \usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
 
-\setstretch{1.12}
-\setlength{\parskip}{0.5em}
+\setstretch{1.08}
+\setlength{\parskip}{0.45em}
 \setlength{\parindent}{0pt}
 
 \title{Profile-First Wardrobe Planning Under Real Constraints: Active Knowledge Modeling in Styling Decision Systems}
@@ -30,7 +33,7 @@
 \maketitle
 
 \begin{abstract}
-Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they provide little guidance on how those fields should be populated in real wardrobe and outfit decisions. This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. It shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer. Local design records and representative decision traces are used to make workflow behavior visible, not to claim universal fashion performance.
+Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they provide little guidance on how those fields should be populated for real wardrobe decisions. This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. The branch shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer rather than an afterthought attached to generic taste language.
 \end{abstract}
 
 \textbf{Keywords:} active knowledge modeling, profile-first planning, wardrobe decision systems, user-context modeling, outfit recommendation, explainable recommendation, capsule wardrobe
@@ -39,9 +42,13 @@ Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or s
 
 Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they rarely provide a rigorous method for constructing the state that should populate them. Styling systems expose the gap clearly. Generic outfit advice often assumes that body shape, wardrobe inventory, scene demands, and functional limits are already known or can be safely guessed.
 
-The problem is upstream. If outfit quality depends on body context, scene logic, wardrobe reality, and functional tradeoffs, then the system should not begin with a suggestion. It should begin with a model of what the user actually owns, needs, rejects, and can plausibly wear.
+The problem is upstream. If outfit quality depends on body context, scene logic, wardrobe reality, and functional tradeoffs, then the system should not begin with a suggestion. It should begin with a model of what the user actually owns, needs, rejects, and can plausibly wear. The central claim of this branch paper is therefore narrow but consequential: a wardrobe-planning agent becomes useful only after profile construction is formalized as a method, not when it is treated as a side note in a prompt.
 
-\section{Problem Definition}
+This claim matters because modern styling tools already operate inside ecosystems where context slots exist but method is missing. Personalized recommendation research has long shown that item compatibility, scene fit, explainability, and user preference structure matter for output quality \citep{lu2019binarycode,kang2019completelook,lu2021learnableanchors,sarkar2022outfittransformer,li2021personalizedtransformer,cheng2023erra,hsiao2018capsulewardrobes,salemi2023lamp}. Recent work on alignment debt, human-AI collaboration, and preference elicitation adds a parallel lesson: useful systems require real upstream modeling work rather than downstream improvisation \citep{white2023prompt,oyemike2025alignment,holstein2025thinking,foschini2025preference}. The fashion branch of AKM operationalizes that lesson for wardrobe decision systems.
+
+\section{Problem Landscape}
+
+Wardrobe planning looks deceptively simple when reduced to taste language. A typical prompt asks for a business-casual look, a minimalist wardrobe, or a better summer outfit. What disappears in this simplification is the decision structure that real users actually face. They do not choose among abstract aesthetics. They choose among available garments, climate conditions, body constraints, comfort limits, maintenance burden, scene expectations, and replacement priorities.
 
 When upstream context is weak, generic styling prompts degrade in predictable ways:
 
@@ -51,94 +58,188 @@ When upstream context is weak, generic styling prompts degrade in predictable wa
 \item wardrobe assets are assumed rather than modeled
 \item functional constraints are treated as optional details
 \item purchase advice is detached from existing wardrobe structure
+\item anti-preferences are under-specified and later violated by the model
+\item wardrobe gaps are confused with random shopping opportunities
 \end{itemize}
 
-These failures align with a broader lesson from personalized recommendation research: recommendation quality depends on explicit user state, asset modeling, and explainable constraint handling rather than on loose taste language alone \citep{lu2019binarycode,kang2019completelook,lu2021learnableanchors,sarkar2022outfittransformer,li2021personalizedtransformer,cheng2023erra,hsiao2018capsulewardrobes}.
+These failures align with a broader lesson from personalized recommendation research: recommendation quality depends on explicit user state, asset modeling, and explainable constraint handling rather than on loose taste language alone \citep{lu2019binarycode,kang2019completelook,lu2021learnableanchors,sarkar2022outfittransformer,li2021personalizedtransformer,cheng2023erra,hsiao2018capsulewardrobes}. LaMP and related personalization work also make clear that personalization is not just a better generation trick; it depends on a retrievable and structured representation of user state \citep{salemi2023lamp}. AKM treats wardrobe planning as exactly this upstream state-construction problem.
 
-\section{Method: AKM in the Fashion Scene}
+\section{Why Existing Platform Context Fields Are Insufficient}
 
-In the fashion scene, AKM models wardrobe feasibility rather than abstract identity. The relevant upstream state includes:
+The existence of a profile box or a system prompt field does not solve the wardrobe problem by itself. A slot can store information, but it does not define what should be extracted, how it should be stabilized, when it should be updated, or how conflicting constraints should be resolved. In fashion workflows this gap becomes visible very quickly.
 
-\begin{itemize}[leftmargin=1.5em]
-\item body shape and posture notes
-\item primary scenes
-\item wardrobe assets already owned
-\item style preferences and anti-preferences
-\item functional constraints
-\item purchase tolerance and replacement logic
-\end{itemize}
+A user can write ``I prefer clean and mature looks'' into a profile field, but that statement leaves open almost every variable that matters in practice: which silhouettes are flattering, what inventory already exists, which colors are overrepresented, what functional requirements dominate commuting, whether pockets matter, whether the user tolerates layering, or whether purchases should optimize replacement, versatility, or experimentation.
 
-The branch is implemented as a three-layer workflow.
+The insufficiency of context slots can therefore be stated more formally. Existing platform fields are storage endpoints. They are not elicitation protocols, not record schemas, and not decision contracts. They can host AKM outputs, but they do not specify how those outputs should be built. Without an upstream method, the downstream agent keeps guessing. The branch paper is about defining that upstream method for wardrobe systems.
+
+\section{Branch Method}
+
+In the fashion scene, AKM models wardrobe feasibility rather than abstract identity. The relevant upstream state includes body shape and posture notes, primary scenes, wardrobe assets already owned, style preferences and anti-preferences, functional constraints, purchase tolerance, replacement logic, and maintenance burden. The branch is implemented as a four-step workflow.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  node distance=1.8cm,
+  box/.style={draw, rounded corners, align=center, minimum width=2.8cm, minimum height=1cm},
+  arrow/.style={-{Latex[length=2mm]}, thick}
+]
+\node[box] (a) {Elicitation};
+\node[box, right=of a] (b) {Structured\\Record};
+\node[box, right=of b] (c) {Execution\\Decision};
+\node[box, right=of c] (d) {Update\\Cycle};
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\draw[arrow] (c) -- (d);
+\end{tikzpicture}
+\caption{Core workflow of the AKM fashion branch.}
+\end{figure}
 
 \subsection{Elicitation}
 
-The system first asks what kind of outfit decision is even valid. It clarifies scenes, body context, preference structure, functional limits, and wardrobe inventory before recommending anything.
+The system first asks what kind of outfit decision is even valid. It clarifies scenes, body context, preference structure, functional limits, wardrobe inventory, and purchase tolerance before recommending anything. The elicitation layer is not a social conversation add-on. It is the extraction protocol for building the wardrobe state that later recommendations must obey.
 
 \subsection{Structured Record}
 
-The elicited information is converted into persistent upstream state through wardrobe records, scene maps, preference notes, and purchase-priority records.
+The elicited information is converted into persistent upstream state through wardrobe records, scene maps, anti-pattern notes, and purchase-priority records. This is the branch point where a loose stylist conversation is transformed into a maintainable operator system.
 
 \subsection{Execution Decision}
 
-Only after profile and current wardrobe state are available does the system produce a decision. The output contract includes:
+Only after profile and current wardrobe state are available does the system produce a decision. The output contract includes fields such as \texttt{SceneJudgment}, \texttt{OutfitRecommendation}, \texttt{WhyThisWorks}, \texttt{GapAnalysis}, \texttt{PurchasePriority}, and \texttt{DoNotBuy}.
 
-\begin{itemize}[leftmargin=1.5em]
-\item \texttt{SceneJudgment}
-\item \texttt{OutfitRecommendation}
-\item \texttt{WhyThisWorks}
-\item \texttt{GapAnalysis}
-\item \texttt{PurchasePriority}
-\item \texttt{MissingInputs}
-\end{itemize}
+\subsection{Update Cycle}
 
-\section{Design Record}
+Wardrobe systems drift if they are not updated. Garments wear out, scenes change, seasonal constraints shift, and purchases alter the compatibility structure of the wardrobe. AKM therefore treats outfit planning as a maintained state rather than a one-shot answer. The update cycle is part of the method, not an optional bookkeeping step.
 
-The local design record for this branch includes style rules and anti-rules, wardrobe asset records, scene notes, outfit decision files, purchase-priority records, and long-running revision notes. These records are not presented as a benchmark claim. They are used to make workflow behavior visible.
+\section{Variable Structure}
 
-A representative decision trace is shown below.
+The branch can be represented as a constraint map rather than a taste map.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  node distance=1.2cm,
+  box/.style={draw, rounded corners, align=center, minimum width=3.2cm, minimum height=0.9cm},
+  centerbox/.style={draw, rounded corners, align=center, minimum width=3.6cm, minimum height=1cm, fill=gray!10},
+  arrow/.style={-{Latex[length=2mm]}, thick}
+]
+\node[box] (a) at (0,2.4) {Body and\\Posture};
+\node[box] (b) at (0,1.2) {Scene\\Hierarchy};
+\node[box] (c) at (0,0) {Wardrobe\\Assets};
+\node[box] (d) at (0,-1.2) {Preferences and\\Anti-Preferences};
+\node[box] (e) at (0,-2.4) {Functional\\Constraints};
+\node[box] (f) at (0,-3.6) {Purchase\\Tolerance};
+\node[centerbox] (g) at (5,-0.6) {Decision State};
+\node[box] (h) at (10,0.8) {Outfit\\Choice};
+\node[box] (i) at (10,-0.6) {Gap\\Analysis};
+\node[box] (j) at (10,-2.0) {Purchase\\Decision};
+\foreach \x in {a,b,c,d,e,f} {\draw[arrow] (\x.east) -- (g.west);}
+\draw[arrow] (g.east) -- (h.west);
+\draw[arrow] (g.east) -- (i.west);
+\draw[arrow] (g.east) -- (j.west);
+\end{tikzpicture}
+\caption{Constraint-oriented variable map for wardrobe decision systems.}
+\end{figure}
+
+This structure matters because it separates variables that users often compress into a single sentence. Body context is not the same as scene logic. Scene logic is not the same as wardrobe inventory. Inventory is not the same as style preference. Functional constraints such as commuting, pockets, temperature tolerance, maintenance cost, or fabric comfort are not decorative details; they are veto-capable variables. The branch becomes useful only when these variables are made explicit and persisted.
+
+\section{Design Record and Reference Trace}
+
+The branch is documented through a long-running private styling system and then translated into public-facing assets. The purpose of the design record is not to prove universal fashion performance. It is to make visible what kind of upstream state the branch stores and how that state changes the shape of downstream recommendations.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  node distance=2.0cm,
+  box/.style={draw, rounded corners, align=center, minimum width=3.2cm, minimum height=1cm},
+  arrow/.style={-{Latex[length=2mm]}, thick}
+]
+\node[box] (a) {Private Styling\\System};
+\node[box, right=of a] (b) {Branch Skill\\Assets};
+\node[box, right=of b] (c) {Paper and Public\\Documentation};
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\end{tikzpicture}
+\caption{How local design records are translated into public branch assets.}
+\end{figure}
+
+Table~\ref{tab:records} summarizes the core record types used by the branch.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}p{0.38\textwidth} >{\raggedright\arraybackslash}p{0.26\textwidth}}
+\toprule
+Record type & Role in the branch & Typical update trigger \\
+\midrule
+Body and posture note & Keeps outfit advice tied to silhouette and fit reality & Weight change, new posture insight, fit failure \\
+Scene map & Ranks scenes instead of treating style as context-free & New work mode, travel pattern, seasonal switch \\
+Wardrobe inventory record & Prevents the model from hallucinating garments or gaps & New purchase, retirement, item failure \\
+Anti-preference note & Stores what should be ruled out even if fashionable & Repeated rejection, comfort failure \\
+Purchase-priority list & Converts shopping from impulse to structural repair & Recurring wardrobe gap, low versatility, wear-out \\
+\bottomrule
+\end{tabular}
+\caption{Core record types in the AKM fashion branch.}
+\label{tab:records}
+\end{table}
+
+A representative decision trace is shown below in abbreviated JSON form.
 
 \begin{verbatim}
 {
-  "SceneJudgment": "Business-casual office scene with movement needs and no tie requirement.",
-  "OutfitRecommendation": "Use a dark knit polo, lightweight tailored trousers, and clean leather sneakers.",
-  "WhyThisWorks": [
-    "The combination preserves structure without over-formality.",
-    "The knit top reduces stiffness while keeping the upper body clean.",
-    "The trouser-sneaker pairing keeps mobility and visual balance."
-  ],
-  "GapAnalysis": [
-    "Current tops are stronger than current trousers for this scene.",
-    "Outerwear coverage is still weak for mild-temperature transition days."
-  ],
-  "PurchasePriority": [
-    "Add one darker lightweight trouser with cleaner drape.",
-    "Add one transitional jacket that preserves line without bulk."
-  ],
-  "MissingInputs": [
-    "Exact weather range",
-    "Shoes currently available for the scene",
-    "Whether the user expects client-facing formality"
-  ]
+  "Scene": "city commuting plus semi-formal meetings",
+  "BodyContext": ["shorter leg line", "needs clean vertical structure"],
+  "WardrobeAssets": ["navy overshirt", "grey wool trousers", "white sneakers"],
+  "AntiPreferences": ["bulky streetwear", "large logo graphics"],
+  "FunctionalConstraints": ["walkability", "usable pockets", "easy maintenance"],
+  "Decision": {
+    "OutfitRecommendation": "navy overshirt + light knit + grey wool trousers + white sneakers",
+    "WhyThisWorks": "maintains clean vertical lines while staying commute-friendly",
+    "GapAnalysis": "outer layer versatility acceptable; footwear rotation remains thin",
+    "PurchasePriority": "dark leather sneaker or derby-level substitute",
+    "DoNotBuy": "heavy oversized bomber"
+  }
 }
 \end{verbatim}
 
-This trace illustrates workflow behavior under partial information. It is not a proof of universal styling effectiveness.
+The value of this trace is structural. It shows that the branch does not jump directly from vague taste language to a shopping suggestion. It first stabilizes scene, body, inventory, anti-preference, and function, and only then allows a recommendation to emerge.
 
-\section{Discussion}
+\section{Comparative Discussion}
 
-The main value of AKM in fashion is asset preservation. It reduces the tendency of an agent to answer as if styling were only a matter of taste labels and inspiration boards.
+The branch becomes easier to evaluate when compared with two simpler upstream strategies: generic prompting and memory-only context storage.
 
-Real wardrobe decisions depend on existing clothes, scene expectations, body context, function, and tradeoffs. A system that ignores those variables may sound stylish, but it will produce friction. A system that models them upstream is narrower, but more actionable.
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.19\textwidth} >{\raggedright\arraybackslash}p{0.29\textwidth} >{\raggedright\arraybackslash}p{0.39\textwidth}}
+\toprule
+Strategy & Upstream state handling & Typical failure in wardrobe planning \\
+\midrule
+Generic prompting & Reconstructs context from each prompt & Repeats intake, guesses inventory, ignores anti-preferences \\
+Memory-only storage & Stores notes but lacks a stable schema & Context drifts and important constraints are unevenly retrieved \\
+AKM fashion branch & Uses elicitation, schema, execution contract, and update loop & Higher setup cost, but lower drift and better purchase discipline \\
+\bottomrule
+\end{tabular}
+\caption{Comparison between generic prompting, memory-only context, and the AKM fashion branch.}
+\end{table}
 
-\section{Boundaries}
+This comparison shows why the branch should not be reduced to a stylish prompt. The methodological gain comes from formalizing how state is collected, stored, and reused. The cost is real: the branch requires disciplined intake and maintenance. But this cost is precisely what alignment-debt and human-AI collaboration research would predict \citep{oyemike2025alignment,holstein2025thinking}. Systems become more useful when hidden coordination work is made explicit and reusable.
 
-This paper is not an image-recognition paper, not a virtual try-on paper, and not a broad aesthetics theory paper. Its claim is narrower: AKM can be implemented as a profile-first wardrobe decision system under real scene and asset constraints.
+The branch also differs from mainstream recommendation papers. Most recommendation literature optimizes item ranking, compatibility prediction, or explainability inside fixed datasets \citep{lu2019binarycode,kang2019completelook,lu2021learnableanchors,sarkar2022outfittransformer,li2021personalizedtransformer,cheng2023erra,hsiao2018capsulewardrobes}. The fashion branch instead focuses on the operator problem that appears before dataset-like inputs even exist: how a real user constructs and maintains the state that a downstream agent should honor.
+
+\section{Boundaries and Failure Modes}
+
+The branch has several boundaries. First, it is not an image-understanding system. It assumes that wardrobe assets can be described or cataloged, not magically inferred. Second, it is not a fashion-trend engine. If the user wants novelty without wardrobe coherence, the branch is the wrong tool. Third, it does not remove taste conflict. A structured record can stabilize constraints, but it cannot eliminate the possibility that the user wants mutually incompatible outcomes such as maximum versatility, minimal spending, strong individuality, and zero maintenance burden at the same time.
+
+Failure modes are therefore predictable. The branch weakens when wardrobe inventory is stale, when anti-preferences are not recorded, when scenes are inaccurately ranked, or when purchase decisions ignore replacement logic. It also weakens when the public branch assets are used without enough intake depth. In those cases the system can still produce fluent styling language, but fluency should not be mistaken for grounded judgment.
 
 \section{Conclusion}
 
-The fashion branch matters because it shows how AKM converts styling from generic taste output into a decision process grounded in wardrobe state, scene logic, and explicit tradeoffs. The contribution is methodological: better upstream modeling can matter more than more polished aesthetic language.
+The fashion branch of AKM argues that wardrobe planning should be treated as an upstream modeling problem rather than a downstream styling prompt. Existing platforms already provide places where user context can be stored, but they do not provide a disciplined method for deciding what that context should contain. AKM supplies that missing layer by defining a branch workflow that elicits, records, applies, and updates the variables that make outfit and purchase decisions coherent.
+
+The broader implication is not limited to fashion. Wardrobe planning simply makes the gap visible because constraints, assets, and preferences are tightly coupled. The same lesson extends to other profile-first systems: if the upstream state is not built with care, downstream outputs remain generic no matter how fluent the model becomes.
 
 \bibliographystyle{plainnat}
 \bibliography{refs}
 
 \end{document}
+
