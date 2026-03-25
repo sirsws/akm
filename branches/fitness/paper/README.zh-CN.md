@@ -31,5 +31,7 @@
 - [中文摘要](./abstract.zh-CN.md)
 - [英文关键词](./keywords.md)
 - [中文关键词](./keywords.zh-CN.md)
+- [LaTeX 工程](./latex/README.md)
+
 
 

@@ -1,0 +1,149 @@
+﻿% <!--
+% 文件：main.tex
+% 核心功能：Fitness 分支论文的 LaTeX 主文件，用于生成可提交 SSRN 的英文稿。
+% 输入：paper 目录中的 manuscript、abstract、keywords、references 与 local-evidence 所固化的方法结构。
+% 输出：一篇以 AKM 为母框架、Fitness 为场景分支的方法论文 PDF。
+% -->
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[numbers]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{verbatim}
+
+\setstretch{1.12}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\title{Profile-First Fitness Planning Under Real Constraints: Active Knowledge Modeling in Training Decision Systems}
+\author{Weishi Shao}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they provide little guidance on how those fields should be populated in real decision environments. This paper presents the fitness branch of Active Knowledge Modeling (AKM) as a profile-first method for training decisions under real constraints. Instead of generating a workout plan first, the branch elicits and structures ranked goals, injury limits, equipment availability, time budget, recovery uncertainty, and execution risk before producing a recommendation. The contribution is methodological rather than outcome-validational. It shows how a fitness workflow can be redesigned so that upstream user modeling becomes a stable decision layer rather than an afterthought in prompting. Local design records and representative decision traces are used to make workflow behavior visible, not to claim broad efficacy.
+\end{abstract}
+
+\textbf{Keywords:} active knowledge modeling, profile-first planning, fitness decision systems, user-context modeling, constraint-aware prompting, training load monitoring, autoregulation
+
+\section{Introduction}
+
+Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they rarely provide a rigorous method for constructing the state that should populate them. Fitness advice makes the gap especially visible. Generic plans often assume stable goals, healthy movement capacity, reliable recovery, and interchangeable equipment. Real users do not live inside those assumptions.
+
+The problem is therefore upstream. If training decisions depend on body condition, recovery state, time budget, and equipment access, then the system should not begin with a plan. It should begin with a model of what can actually be advanced under the current constraints.
+
+\section{Problem Definition}
+
+Generic fitness prompting degrades in predictable ways when upstream context is weak:
+
+\begin{itemize}[leftmargin=1.5em]
+\item injury or pain signals are flattened into normal programming assumptions
+\item equipment limitations are treated as details rather than determinants
+\item time budgets are treated as flexible when they are actually hard constraints
+\item recovery uncertainty is overwritten by split logic or template logic
+\item the system behaves as if confidence already exists even when key state variables are missing
+\end{itemize}
+
+These failure modes match a broader lesson from training-load monitoring, autoregulation, and adherence research: training quality depends on the interaction between workload, readiness, and context rather than on a fixed template alone \citep{foster2017trainingloads,shattock2022autoregulation,haddad2017sessionrpe,fuentevidal2022adherence}.
+
+\section{Method: AKM in the Fitness Scene}
+
+In the fitness scene, AKM does not model abstract identity for its own sake. It models training feasibility. The relevant upstream state includes:
+
+\begin{itemize}[leftmargin=1.5em]
+\item ranked goals
+\item injury history and movement restrictions
+\item available equipment
+\item weekly frequency
+\item session time budget
+\item recovery state
+\item execution risk and adherence risk
+\end{itemize}
+
+The branch is implemented as a three-layer workflow.
+
+\subsection{Elicitation}
+
+The system first asks what kind of training decision is even valid. It clarifies goal hierarchy, body limitations, equipment reality, weekly rhythm, and recovery-relevant information before recommending anything.
+
+\subsection{Structured Record}
+
+The elicited information is converted into persistent upstream state. In this branch, the state is maintained through structured records such as metrics snapshots, equipment records, append-only logs, and monthly summaries.
+
+\subsection{Execution Decision}
+
+Only after profile and recent state are available does the system produce a training decision. The output contract includes:
+
+\begin{itemize}[leftmargin=1.5em]
+\item \texttt{StateJudgment}
+\item \texttt{PrimaryDecision}
+\item \texttt{DecisionConfidence}
+\item \texttt{Plan}
+\item \texttt{RiskNotes}
+\item \texttt{NonNegotiables}
+\item \texttt{MissingInputs}
+\end{itemize}
+
+Missing information is treated as part of the decision rather than something to hide behind fluent language.
+
+\section{Design Record}
+
+The local design record for this branch includes hard system rules, structured body metrics, equipment context records, day-level decision files, append-only execution logs, and monthly retrospective records. These records are not presented as broad proof of effectiveness. They are used to make workflow behavior visible.
+
+A representative decision trace is shown below.
+
+\begin{verbatim}
+{
+  "StateJudgment": "Recovery state partially unclear; lower-back risk remains a live constraint.",
+  "PrimaryDecision": "Do not assign heavy compound lifting today. Use a lower-risk session or pause pending clarification.",
+  "DecisionConfidence": "Low",
+  "Plan": [
+    "Confirm current lumbar discomfort level and sleep quality before loading decisions.",
+    "If discomfort is elevated, switch to mobility, light accessories, and walking.",
+    "If discomfort is low and recovery is acceptable, resume with conservative volume only."
+  ],
+  "RiskNotes": [
+    "Generic split logic is not sufficient under unresolved recovery and injury uncertainty.",
+    "The main failure mode is acting as if readiness were already known."
+  ],
+  "NonNegotiables": [
+    "No heavy axial loading until state is clarified.",
+    "Do not infer readiness from schedule alone."
+  ],
+  "MissingInputs": [
+    "Current lumbar discomfort score (1-10)",
+    "Previous session load and residual soreness",
+    "Sleep and recovery status over the last 24 hours"
+  ]
+}
+\end{verbatim}
+
+This trace illustrates workflow behavior under uncertainty. It is not a treatment outcome claim.
+
+\section{Discussion}
+
+The main value of AKM in fitness is constraint preservation. It reduces the tendency of an agent to behave as if all fitness decisions were generic programming problems.
+
+That matters because real users live inside changing schedules, soreness, equipment limits, old injuries, and inconsistent recovery. A planning system that ignores these variables may look confident, but it creates downstream friction. A planning system that models them upstream is narrower, but more usable.
+
+\section{Boundaries}
+
+This paper is not a medical paper. The branch does not replace physicians, rehabilitation specialists, or in-person coaching. Its claim is narrower: AKM can be implemented as a profile-first planning system in a high-constraint training environment.
+
+\section{Conclusion}
+
+The fitness branch matters because it shows how AKM converts workout generation into a decision process grounded in user state, constraints, and explicit uncertainty. The contribution is methodological: better upstream modeling can matter more than better downstream phrasing.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

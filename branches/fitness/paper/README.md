@@ -31,5 +31,7 @@ its claim is that fitness planning improves when upstream modeling happens befor
 - [Chinese abstract](./abstract.zh-CN.md)
 - [English keywords](./keywords.md)
 - [Chinese keywords](./keywords.zh-CN.md)
+- [LaTeX project](./latex/README.md)
+
 
 

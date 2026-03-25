@@ -119,18 +119,19 @@ The fashion branch matters because it shows how AKM converts styling from generi
 
 ## References
 
-[1] Tangseng, P., Okatani, T., & Yamaguchi, K. (2017). *Toward Explainable Fashion Recommendation*. arXiv:1711.04394.
+[1] Lu, Z., Hu, Y., Jiang, Y., Chen, Y., & Zeng, B. (2019). *Learning Binary Code for Personalized Fashion Recommendation*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019.
 
-[2] Han, X., Wu, Z., Jiang, Y.-G., & Davis, L. S. (2017). *Learning Fashion Compatibility with Bidirectional LSTMs*. ACM Multimedia 2017. DOI: 10.1145/3123266.3123315.
+[2] Kang, W.-C., Kim, E., Leskovec, J., Rosenberg, C., & McAuley, J. (2019). *Complete the Look: Scene-Based Complementary Product Recommendation*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2019.
 
-[3] Hsiao, W.-L., Grauman, K. (2018). *Creating Capsule Wardrobes from Fashion Images*. CVPR 2018. DOI: 10.1109/CVPR.2018.00760.
+[3] Lu, Z., Jiang, Y., Hu, Y., Chen, Y., & Zeng, B. (2021). *Personalized Outfit Recommendation with Learnable Anchors*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2021.
 
-[4] Jagadeesh, V., Piramuthu, R., Bhardwaj, A., et al. (2014). *Large Scale Visual Recommendations from Street Fashion Images*. KDD 2014. DOI: 10.1145/2623330.2623358.
+[4] Sarkar, R., Bodla, N., Vasileva, M., Lin, Y.-L., Beniwal, A., Lu, A., & Medioni, G. (2022). *OutfitTransformer: Outfit Representations for Fashion Recommendation*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW), 2022.
 
-[5] McAuley, J., Targett, C., Shi, Q., & van den Hengel, A. (2015). *Image-based Recommendations on Styles and Substitutes*. SIGIR 2015. DOI: 10.1145/2766462.2767755.
+[5] Li, L., Zhang, Y., & Chen, L. (2021). *Personalized Transformer for Explainable Recommendation*. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics (ACL), 2021.
 
-[6] Yu, M., Liu, X., Song, Y., & Han, X. (2021). *Explainable Fashion Recommendation: A Semantic Attribute Region Guided Approach*. CIKM 2021. DOI: 10.1145/3459637.3482449.
+[6] Cheng, H., Wang, S., Lu, W., Zhang, W., Zhou, M., Lu, K., & Liao, H. (2023). *Explainable Recommendation with Personalized Review Retrieval and Aspect Learning*. Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (ACL), 2023.
 
-[7] Hidayati, S. C., Chen, H., Yang, K., et al. (2018). *Personality in Fashion: Prediction and Styling*. ACM Multimedia 2018. DOI: 10.1145/3240508.3240634.
+[7] Hsiao, W.-L., & Grauman, K. (2018). *Creating Capsule Wardrobes from Fashion Images*. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2018.
+
 
 

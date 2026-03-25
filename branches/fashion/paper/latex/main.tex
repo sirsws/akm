@@ -1,0 +1,144 @@
+﻿% <!--
+% 文件：main.tex
+% 核心功能：Fashion 分支论文的 LaTeX 主文件，用于生成可提交 SSRN 的英文稿。
+% 输入：paper 目录中的 manuscript、abstract、keywords、references 与 local-evidence 所固化的方法结构。
+% 输出：一篇以 AKM 为母框架、Fashion 为场景分支的方法论文 PDF。
+% -->
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[numbers]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{verbatim}
+
+\setstretch{1.12}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\title{Profile-First Wardrobe Planning Under Real Constraints: Active Knowledge Modeling in Styling Decision Systems}
+\author{Weishi Shao}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they provide little guidance on how those fields should be populated in real wardrobe and outfit decisions. This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. It shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer. Local design records and representative decision traces are used to make workflow behavior visible, not to claim universal fashion performance.
+\end{abstract}
+
+\textbf{Keywords:} active knowledge modeling, profile-first planning, wardrobe decision systems, user-context modeling, outfit recommendation, explainable recommendation, capsule wardrobe
+
+\section{Introduction}
+
+Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they rarely provide a rigorous method for constructing the state that should populate them. Styling systems expose the gap clearly. Generic outfit advice often assumes that body shape, wardrobe inventory, scene demands, and functional limits are already known or can be safely guessed.
+
+The problem is upstream. If outfit quality depends on body context, scene logic, wardrobe reality, and functional tradeoffs, then the system should not begin with a suggestion. It should begin with a model of what the user actually owns, needs, rejects, and can plausibly wear.
+
+\section{Problem Definition}
+
+When upstream context is weak, generic styling prompts degrade in predictable ways:
+
+\begin{itemize}[leftmargin=1.5em]
+\item body shape becomes a vague aesthetic label instead of a decision variable
+\item scene requirements are flattened into broad style categories
+\item wardrobe assets are assumed rather than modeled
+\item functional constraints are treated as optional details
+\item purchase advice is detached from existing wardrobe structure
+\end{itemize}
+
+These failures align with a broader lesson from personalized recommendation research: recommendation quality depends on explicit user state, asset modeling, and explainable constraint handling rather than on loose taste language alone \citep{lu2019binarycode,kang2019completelook,lu2021learnableanchors,sarkar2022outfittransformer,li2021personalizedtransformer,cheng2023erra,hsiao2018capsulewardrobes}.
+
+\section{Method: AKM in the Fashion Scene}
+
+In the fashion scene, AKM models wardrobe feasibility rather than abstract identity. The relevant upstream state includes:
+
+\begin{itemize}[leftmargin=1.5em]
+\item body shape and posture notes
+\item primary scenes
+\item wardrobe assets already owned
+\item style preferences and anti-preferences
+\item functional constraints
+\item purchase tolerance and replacement logic
+\end{itemize}
+
+The branch is implemented as a three-layer workflow.
+
+\subsection{Elicitation}
+
+The system first asks what kind of outfit decision is even valid. It clarifies scenes, body context, preference structure, functional limits, and wardrobe inventory before recommending anything.
+
+\subsection{Structured Record}
+
+The elicited information is converted into persistent upstream state through wardrobe records, scene maps, preference notes, and purchase-priority records.
+
+\subsection{Execution Decision}
+
+Only after profile and current wardrobe state are available does the system produce a decision. The output contract includes:
+
+\begin{itemize}[leftmargin=1.5em]
+\item \texttt{SceneJudgment}
+\item \texttt{OutfitRecommendation}
+\item \texttt{WhyThisWorks}
+\item \texttt{GapAnalysis}
+\item \texttt{PurchasePriority}
+\item \texttt{MissingInputs}
+\end{itemize}
+
+\section{Design Record}
+
+The local design record for this branch includes style rules and anti-rules, wardrobe asset records, scene notes, outfit decision files, purchase-priority records, and long-running revision notes. These records are not presented as a benchmark claim. They are used to make workflow behavior visible.
+
+A representative decision trace is shown below.
+
+\begin{verbatim}
+{
+  "SceneJudgment": "Business-casual office scene with movement needs and no tie requirement.",
+  "OutfitRecommendation": "Use a dark knit polo, lightweight tailored trousers, and clean leather sneakers.",
+  "WhyThisWorks": [
+    "The combination preserves structure without over-formality.",
+    "The knit top reduces stiffness while keeping the upper body clean.",
+    "The trouser-sneaker pairing keeps mobility and visual balance."
+  ],
+  "GapAnalysis": [
+    "Current tops are stronger than current trousers for this scene.",
+    "Outerwear coverage is still weak for mild-temperature transition days."
+  ],
+  "PurchasePriority": [
+    "Add one darker lightweight trouser with cleaner drape.",
+    "Add one transitional jacket that preserves line without bulk."
+  ],
+  "MissingInputs": [
+    "Exact weather range",
+    "Shoes currently available for the scene",
+    "Whether the user expects client-facing formality"
+  ]
+}
+\end{verbatim}
+
+This trace illustrates workflow behavior under partial information. It is not a proof of universal styling effectiveness.
+
+\section{Discussion}
+
+The main value of AKM in fashion is asset preservation. It reduces the tendency of an agent to answer as if styling were only a matter of taste labels and inspiration boards.
+
+Real wardrobe decisions depend on existing clothes, scene expectations, body context, function, and tradeoffs. A system that ignores those variables may sound stylish, but it will produce friction. A system that models them upstream is narrower, but more actionable.
+
+\section{Boundaries}
+
+This paper is not an image-recognition paper, not a virtual try-on paper, and not a broad aesthetics theory paper. Its claim is narrower: AKM can be implemented as a profile-first wardrobe decision system under real scene and asset constraints.
+
+\section{Conclusion}
+
+The fashion branch matters because it shows how AKM converts styling from generic taste output into a decision process grounded in wardrobe state, scene logic, and explicit tradeoffs. The contribution is methodological: better upstream modeling can matter more than more polished aesthetic language.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

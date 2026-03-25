@@ -1,0 +1,69 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cheng et~al.(2023)Cheng, Wang, Lu, Zhang, Zhou, Lu, and
+  Liao]{cheng2023erra}
+Hao Cheng, Shuo Wang, Wei Lu, Wen Zhang, Mingxuan Zhou, Kun Lu, and Hongming
+  Liao.
+\newblock Explainable recommendation with personalized review retrieval and
+  aspect learning.
+\newblock In \emph{Proceedings of the 61st Annual Meeting of the Association
+  for Computational Linguistics}, 2023.
+\newblock URL \url{https://aclanthology.org/2023.acl-long.4.pdf}.
+
+\bibitem[Hsiao and Grauman(2018)]{hsiao2018capsulewardrobes}
+Wei-Lin Hsiao and Kristen Grauman.
+\newblock Creating capsule wardrobes from fashion images.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition}, 2018.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content_cvpr_2018/papers/Hsiao_Creating_Capsule_Wardrobes_CVPR_2018_paper.pdf}.
+
+\bibitem[Kang et~al.(2019)Kang, Kim, Leskovec, Rosenberg, and
+  McAuley]{kang2019completelook}
+Wang-Cheng Kang, Eric Kim, Jure Leskovec, Charles Rosenberg, and Julian
+  McAuley.
+\newblock Complete the look: Scene-based complementary product recommendation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition}, 2019.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content_CVPR_2019/papers/Kang_Complete_the_Look_Scene-Based_Complementary_Product_Recommendation_CVPR_2019_paper.pdf}.
+
+\bibitem[Li et~al.(2021)Li, Zhang, and Chen]{li2021personalizedtransformer}
+Lei Li, Yongfeng Zhang, and Li~Chen.
+\newblock Personalized transformer for explainable recommendation.
+\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
+  for Computational Linguistics}, 2021.
+\newblock URL \url{https://aclanthology.org/2021.acl-long.383.pdf}.
+
+\bibitem[Lu et~al.(2019)Lu, Hu, Jiang, Chen, and Zeng]{lu2019binarycode}
+Zhi Lu, Yang Hu, Yu~Jiang, Yuwang Chen, and Bin Zeng.
+\newblock Learning binary code for personalized fashion recommendation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition}, 2019.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content_CVPR_2019/papers/Lu_Learning_Binary_Code_for_Personalized_Fashion_Recommendation_CVPR_2019_paper.pdf}.
+
+\bibitem[Lu et~al.(2021)Lu, Jiang, Hu, Chen, and Zeng]{lu2021learnableanchors}
+Zhi Lu, Yu~Jiang, Yang Hu, Yuwang Chen, and Bin Zeng.
+\newblock Personalized outfit recommendation with learnable anchors.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition}, 2021.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content/CVPR2021/papers/Lu_Personalized_Outfit_Recommendation_With_Learnable_Anchors_CVPR_2021_paper.pdf}.
+
+\bibitem[Sarkar et~al.(2022)Sarkar, Bodla, Vasileva, Lin, Beniwal, Lu, and
+  Medioni]{sarkar2022outfittransformer}
+Raktim Sarkar, Navaneeth Bodla, Mihaela Vasileva, Yen-Liang Lin, Aman Beniwal,
+  Alan Lu, and Gerard Medioni.
+\newblock Outfittransformer: Outfit representations for fashion recommendation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition Workshops}, 2022.
+\newblock URL
+  \url{https://openaccess.thecvf.com/content/CVPR2022W/CVFAD/papers/Sarkar_OutfitTransformer_Outfit_Representations_for_Fashion_Recommendation_CVPRW_2022_paper.pdf}.
+
+\end{thebibliography}
