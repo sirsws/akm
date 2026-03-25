@@ -32,6 +32,9 @@ its claim is that styling improves when upstream modeling happens before outfit 
 - [English keywords](./keywords.md)
 - [Chinese keywords](./keywords.zh-CN.md)
 - [LaTeX project](./latex/README.md)
+- [SSRN submission package](../../../submissions/fashion-ssrn-package.md)
+
+
 
 
 

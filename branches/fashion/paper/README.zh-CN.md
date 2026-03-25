@@ -32,6 +32,9 @@
 - [英文关键词](./keywords.md)
 - [中文关键词](./keywords.zh-CN.md)
 - [LaTeX 工程](./latex/README.md)
+- [SSRN 提交包](../../../submissions/fashion-ssrn-package.md)
+
+
 
 
 
