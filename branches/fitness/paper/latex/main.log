@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.16)  25 MAR 2026 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.16)  26 MAR 2026 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -738,7 +738,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--86
 []|\T1/lmr/m/n/10.95 Equipment con-
  []
 
-[3]
+[3] [4]
 Overfull \hbox (82.1234pt too wide) in paragraph at lines 116--116
 []\T1/lmtt/m/n/10.95 {"StateJudgment":"Recovery state partially unclear; lower-
 back risk remains a live constraint.", 
@@ -750,7 +750,7 @@ Overfull \hbox (225.84174pt too wide) in paragraph at lines 117--117
 day. Use a lower-risk session or pause pending clarification.",[] 
  []
 
-[4]
+
 Overfull \hbox (1053.65936pt too wide) in paragraph at lines 119--119
 []\T1/lmtt/m/n/10.95 "Plan":["Confirm current lumbar discomfort level and sleep
  quality before loading decisions.","If discomfort is elevated, switch to mobil
@@ -824,25 +824,25 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 425F468D48501AB3B6B58B7182A37C52;2560.
+(rerunfilecheck)             Checksum: 3BDE3CFC73E08EF7B55A553A4217D59D;2618.
  ) 
 Here is how much of TeX's memory you used:
  21709 strings out of 474486
  408759 string characters out of 5753569
- 1940542 words of memory out of 5000000
+ 1938542 words of memory out of 5000000
  43586 multiletter control sequences out of 15000+600000
  605694 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,107p,1184b,806s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,11n,107p,1359b,806s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><d:/Program Files/M
 iKTeX/fonts/type1/public/lm/lmbx12.pfb><d:/Program Files/MiKTeX/fonts/type1/pub
 lic/lm/lmr10.pfb><d:/Program Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><d:/P
 rogram Files/MiKTeX/fonts/type1/public/lm/lmr17.pfb><d:/Program Files/MiKTeX/fo
 nts/type1/public/lm/lmri10.pfb><d:/Program Files/MiKTeX/fonts/type1/public/lm/l
 mtt10.pfb>
-Output written on main.pdf (7 pages, 234930 bytes).
+Output written on main.pdf (7 pages, 235921 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
+ 192 PDF objects out of 1000 (max. 8388607)
  37 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

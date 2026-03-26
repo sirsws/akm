@@ -1,6 +1,6 @@
 ﻿<!--
 文件：README.zh-CN.md
-核心功能：作为 AKM 母港的中文入口页，提供与英文主页对应的定位语、双语切换、快速导航、分支地图、研究入口与生态仓链接，并明确 AKM 对主流平台上下文槽位的上游方法论定位。
+核心功能：作为 AKM 母港的中文入口页，提供与英文主页对应的定位语、双语切换、快速导航、分支地图、研究入口与生态仓链接，并明确 AKM 对主流平台上下文承载面的上游方法论定位。
 输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口、旧 DaE 公共仓链接与状态信息。
 输出：供 GitHub 中文读者理解 AKM 方法框架的中文 README。
 -->
@@ -31,14 +31,16 @@
   <a href="#生态仓">生态仓</a>
 </p>
 
-**OpenClaw、ChatGPT、Gemini 这类平台已经给了 `user/context` 槽位。AKM 要解决的，是这些槽位到底该怎么填。**
+**OpenClaw、ChatGPT、Gemini 这类平台已经提供了用户与 agent 状态的上下文承载面。AKM 要解决的，是这些承载面里的状态该如何被挖掘、结构化、更新和回灌。**
 
 AKM 是一套面向 AI 协作的主动式、结构化用户建模框架。
 它把画像构建视为基础设施，而不是对话修饰。
 
 OpenClaw、ChatGPT、Gemini 这类平台都允许用户提供上下文。
-真正缺失的，往往不是输入框，而是如何主动挖掘、结构化记录、再把这些信息稳定回灌到下游任务里的方法。
+其中 OpenClaw 通过 injected workspace files 和 system-prompt reconstruction 把这件事做得最显式，例如 `USER.md`、`IDENTITY.md`、`AGENTS.md`、`MEMORY.md` 这样的文件会被纳入上下文重建。真正缺失的，往往不是输入框，而是如何主动挖掘、结构化记录、更新，再把这些信息稳定回灌到下游任务里的方法。
 AKM 定义的，就是这一层上游方法。
+
+OpenClaw 官方依据：[Context](https://docs.openclaw.ai/context/)、[System Prompt](https://docs.openclaw.ai/concepts/system-prompt)、[USER Template](https://docs.openclaw.ai/templates/USER)、[IDENTITY Template](https://docs.openclaw.ai/reference/templates/IDENTITY)、[AGENTS Template](https://docs.openclaw.ai/reference/templates/AGENTS)、[Memory](https://docs.openclaw.ai/concepts/memory)
 
 > 学术入口：母论文已提交 SSRN，公开 URL 待补。当前入口见 [AKM Mother Paper](./papers/akm/README.md)
 
@@ -52,7 +54,7 @@ AKM 定义的，就是这一层上游方法。
 - 把挖出的信息整理成可复用的上游资产
 - 在规划、写作、顾问、编码、执行前，把这些资产注入工作流
 
-AKM 之所以存在，是因为很多 AI 系统虽然有上下文槽位，却没有一套严肃的填法：
+AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面，却没有一套严肃的填法：
 
 - 目标未排序就开始规划
 - 约束未澄清就开始建议
@@ -128,6 +130,11 @@ AKM 之所以存在，是因为很多 AI 系统虽然有上下文槽位，却没
 ## 许可证
 
 本仓库采用 [Apache License 2.0](./LICENSE)。
+
+
+
+
+
 
 
 

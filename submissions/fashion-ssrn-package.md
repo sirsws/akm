@@ -17,7 +17,7 @@
 
 ## SSRN 摘要短版
 
-Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they provide little guidance on how those fields should be populated in real wardrobe and outfit decisions. This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. It shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer. Local design records and representative decision traces are used to make workflow behavior visible, not to claim universal fashion performance.
+Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they provide little guidance on how the state behind those surfaces should be elicited, structured, updated, and reused in real wardrobe and outfit decisions. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. It shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer. Local design records and representative decision traces are used to make workflow behavior visible, not to claim universal fashion performance.
 
 ## 关键词
 
@@ -48,4 +48,6 @@ This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a p
 
 - 本文定位是方法论文，不是图像识别论文，也不是虚拟试衣论文。
 - `Design Record` 和代表性 JSON trace 用于展示工作流行为，不用于宣称普遍穿搭效果。
-- 对外说明时保持与 AKM 母框架一致：平台已有上下文槽位，AKM 定义其填法，Fashion 是其中一个场景分支。
+- 对外说明时保持与 AKM 母框架一致：平台已有上下文承载面，AKM 定义其填法，Fashion 是其中一个场景分支。
+
+

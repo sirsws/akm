@@ -1,6 +1,6 @@
 ﻿<!--
 文件：README.zh-CN.md
-核心功能：作为 AKM 母论文的中文入口页，说明母论文在整个方法框架中的角色、当前状态、阅读路径，以及 AKM 与主流平台上下文槽位的关系。
+核心功能：作为 AKM 母论文的中文入口页，说明母论文在整个方法框架中的角色、当前状态、阅读路径，以及 AKM 与主流平台上下文承载面的关系。
 输入：AKM LaTeX 论文工程、已编译 PDF、SSRN 提交状态与分支论文关系。
 输出：供 GitHub 中文读者理解 AKM 母论文角色的中文 README。
 -->
@@ -13,8 +13,10 @@
 
 **AKM 母概念的标准论文入口。**
 
-OpenClaw、ChatGPT、Gemini 这类平台已经暴露出上下文字段。
-这篇论文要定义的，是这些字段背后的上游填法。
+OpenClaw、ChatGPT、Gemini 这类平台已经提供了用户与 agent 状态的上下文承载面。
+其中 OpenClaw 通过 injected workspace files 和 system-prompt reconstruction 把这件事做得最显式。这篇论文要定义的，是这些承载面背后的上游填法，也就是状态该如何被挖掘、结构化、更新和复用。
+
+OpenClaw 官方依据：[Context](https://docs.openclaw.ai/context/)、[System Prompt](https://docs.openclaw.ai/concepts/system-prompt)、[USER Template](https://docs.openclaw.ai/templates/USER)
 
 ## 角色
 
@@ -33,5 +35,9 @@ OpenClaw、ChatGPT、Gemini 这类平台已经暴露出上下文字段。
 - 本地论文工程：已完成
 - PDF：已生成
 - SSRN：已提交，公开 URL 待补
+
+
+
+
 
 

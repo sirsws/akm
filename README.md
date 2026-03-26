@@ -1,6 +1,6 @@
 ﻿<!--
 文件：README.md
-核心功能：作为 AKM 母港的英文主入口页，提供适合 GitHub 项目首页展示的定位语、双语切换、快速导航、分支地图、研究入口与生态仓链接，并明确 AKM 对主流平台上下文槽位的上游方法论定位。
+核心功能：作为 AKM 母港的英文主入口页，提供适合 GitHub 项目首页展示的定位语、双语切换、快速导航、分支地图、研究入口与生态仓链接，并明确 AKM 对主流平台上下文承载面的上游方法论定位。
 输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口、旧 DaE 公共仓链接与状态信息。
 输出：供 GitHub 外部读者直接进入 AKM 方法框架的英文 README。
 -->
@@ -31,14 +31,16 @@
   <a href="#ecosystem">Ecosystem</a>
 </p>
 
-**Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context slots. AKM defines how to fill them before downstream agents begin to work.**
+**Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state. AKM defines how that state should be elicited, structured, updated, and reused before downstream agents begin to work.**
 
 AKM is a framework for active, structured user modeling in AI collaboration.
 It treats profile construction as infrastructure rather than prompt decoration.
 
 Platforms such as OpenClaw, ChatGPT, and Gemini already let users supply context.
-What they usually lack is a repeatable method for eliciting, structuring, and reusing that context.
+OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction across files such as `USER.md`, `IDENTITY.md`, `AGENTS.md`, and `MEMORY.md`. What these platforms usually lack is a repeatable method for eliciting, structuring, updating, and reusing the state that should populate those context endpoints.
 AKM defines that missing upstream layer.
+
+Official OpenClaw anchors: [Context](https://docs.openclaw.ai/context/), [System Prompt](https://docs.openclaw.ai/concepts/system-prompt), [USER Template](https://docs.openclaw.ai/templates/USER), [IDENTITY Template](https://docs.openclaw.ai/reference/templates/IDENTITY), [AGENTS Template](https://docs.openclaw.ai/reference/templates/AGENTS), [Memory](https://docs.openclaw.ai/concepts/memory)
 
 > Academic foundation: parent paper in review at SSRN. Public landing page: [AKM Mother Paper](./papers/akm/README.md)
 
@@ -52,7 +54,7 @@ AKM defines that missing upstream layer.
 - the elicited information is structured into reusable upstream assets
 - those assets are injected before planning, writing, advising, coding, or execution begins
 
-AKM exists because many AI systems expose context fields without giving users a rigorous way to populate them:
+AKM exists because many AI systems already provide context endpoints without giving users a rigorous way to populate them:
 
 - goals are not ranked before planning begins
 - constraints are not clarified before advice is generated
@@ -128,6 +130,12 @@ The two DaE repositories remain public historical entry points, but they now poi
 ## License
 
 This repository is released under the [Apache License 2.0](./LICENSE).
+
+
+
+
+
+
 
 
 

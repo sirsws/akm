@@ -17,7 +17,7 @@ Dialogue-as-Elicitation (DaE) addresses this problem by treating persona constru
 
 ## 1. Introduction
 
-Many AI platforms already provide a place to supply user context. What they rarely provide is a disciplined method for constructing that context. In advisory settings, the result is familiar: users restate background, goals, and constraints in every new session, while the system repeatedly falls back to generic advice.
+Many AI platforms already provide persistent context surfaces for user and agent state. OpenClaw makes this especially explicit through injected workspace files and context reconstruction, while ChatGPT and Gemini expose their own forms of reusable context entry. What these platforms rarely provide is a disciplined method for eliciting, structuring, updating, and reusing the state that should populate those surfaces. In advisory settings, the result is familiar: users restate background, goals, and constraints in every new session, while the system repeatedly falls back to generic advice.
 
 This recurring cost can be understood as **alignment debt**: the cumulative time, cognitive load, and friction required to make an AI system work in accordance with a specific user rather than an abstract average user.
 
@@ -102,3 +102,4 @@ That repository relationship should not erase the original identity of the DaE p
 DaE reframes alignment in AI advisory as an upstream elicitation and asset-construction problem. Instead of repeatedly repairing weak prompts and generic outputs, the user builds a structured alignment asset that can travel across advisors and over time.
 
 That is why DaE remains more substantial than a prompt pattern. It is an operational method for reducing alignment debt by improving the information supply chain between human principals and AI agents.
+

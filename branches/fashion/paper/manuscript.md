@@ -1,6 +1,6 @@
 ﻿<!--
 文件：manuscript.md
-核心功能：作为 Fashion 分支论文的英文 markdown 稿，说明 AKM 如何在衣橱与场景决策中把穿搭重写成画像优先的决策系统，并明确其对主流平台上下文槽位的上游方法论补位。
+核心功能：作为 Fashion 分支论文的英文 markdown 稿，说明 AKM 如何在衣橱与场景决策中把穿搭重写成画像优先的决策系统，并明确其对主流平台上下文承载面的上游方法论补位。
 输入：穿搭私有系统、本地设计记录、衣橱资产信息与外部个性化推荐文献。
 输出：供人工审阅、GitHub 展示和后续 LaTeX 转换使用的英文长稿。
 -->
@@ -9,15 +9,15 @@
 
 ## Abstract
 
-Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they provide little guidance on how those fields should be populated for real wardrobe decisions. This paper presents the fashion branch of `Active Knowledge Modeling (AKM)` as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. The branch shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer rather than an afterthought attached to generic taste language.
+Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they provide little guidance on how the state behind those surfaces should be elicited, structured, updated, and reused for real wardrobe decisions. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. This paper presents the fashion branch of `Active Knowledge Modeling (AKM)` as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. The branch shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer rather than an afterthought attached to generic taste language.
 
 ## 1. Introduction
 
-Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they rarely provide a rigorous method for constructing the state that should populate them. Styling systems expose the gap clearly. Generic outfit advice often assumes that body shape, wardrobe inventory, scene demands, and functional limits are already known or can be safely guessed.
+Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they rarely provide a rigorous method for constructing the state that should populate them. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. Styling systems expose the gap clearly. Generic outfit advice often assumes that body shape, wardrobe inventory, scene demands, and functional limits are already known or can be safely guessed.
 
 The problem is upstream. If outfit quality depends on body context, scene logic, wardrobe reality, and functional tradeoffs, then the system should not begin with a suggestion. It should begin with a model of what the user actually owns, needs, rejects, and can plausibly wear. The central claim of this branch paper is therefore narrow but consequential: a wardrobe-planning agent becomes useful only after profile construction is formalized as a method, not when it is treated as a side note in a prompt.
 
-This claim matters because modern styling tools already operate inside ecosystems where context slots exist but method is missing. Personalized recommendation research has long shown that item compatibility, scene fit, explainability, and user preference structure matter for output quality [1]-[8]. Recent work on alignment debt, human-AI collaboration, and preference elicitation adds a parallel lesson: useful systems require real upstream modeling work rather than downstream improvisation [9]-[12]. The fashion branch of AKM operationalizes that lesson for wardrobe decision systems.
+This claim matters because modern styling tools already operate inside ecosystems where persistent context surfaces exist but method is missing. Personalized recommendation research has long shown that item compatibility, scene fit, explainability, and user preference structure matter for output quality [1]-[8]. Recent work on alignment debt, human-AI collaboration, and preference elicitation adds a parallel lesson: useful systems require real upstream modeling work rather than downstream improvisation [9]-[12]. The fashion branch of AKM operationalizes that lesson for wardrobe decision systems.
 
 ## 2. Problem Landscape
 
@@ -35,13 +35,13 @@ When upstream context is weak, generic styling prompts degrade in predictable wa
 
 These failures align with a broader lesson from personalized recommendation research: recommendation quality depends on explicit user state, asset modeling, and explainable constraint handling rather than on loose taste language alone [1]-[7]. `LaMP` and related personalization work also make clear that personalization is not just a better generation trick; it depends on a retrievable and structured representation of user state [8]. AKM treats wardrobe planning as exactly this upstream state-construction problem.
 
-## 3. Why Existing Platform Context Fields Are Insufficient
+## 3. Why Existing Platform Context Surfaces Are Insufficient
 
-The existence of a profile box or a system prompt field does not solve the wardrobe problem by itself. A slot can store information, but it does not define what should be extracted, how it should be stabilized, when it should be updated, or how conflicting constraints should be resolved. In fashion workflows this gap becomes visible very quickly.
+The existence of a profile surface or a system prompt layer does not solve the wardrobe problem by itself. A platform can store or inject information, but it does not define what should be extracted, how it should be stabilized, when it should be updated, or how conflicting constraints should be resolved. In fashion workflows this gap becomes visible very quickly.
 
 A user can write "I prefer clean and mature looks" into a profile field, but that statement leaves open almost every variable that matters in practice: which silhouettes are flattering, what inventory already exists, which colors are overrepresented, what functional requirements dominate commuting, whether pockets matter, whether the user tolerates layering, or whether purchases should optimize replacement, versatility, or experimentation.
 
-The insufficiency of context slots can therefore be stated more formally. Existing platform fields are storage endpoints. They are not elicitation protocols, not record schemas, and not decision contracts. They can host AKM outputs, but they do not specify how those outputs should be built. Without an upstream method, the downstream agent keeps guessing. The branch paper is about defining that upstream method for wardrobe systems.
+The insufficiency of platform context surfaces can therefore be stated more formally. Existing platform endpoints are storage or injection endpoints. They are not elicitation protocols, not record schemas, and not decision contracts. They can host AKM outputs, but they do not specify how those outputs should be built. Without an upstream method, the downstream agent keeps guessing. The branch paper is about defining that upstream method for wardrobe systems.
 
 ## 4. Branch Method
 
@@ -190,3 +190,10 @@ The broader implication is not limited to fashion. Wardrobe planning simply make
 [11] Holstein, J., Hemmer, P., Satzger, G., & Sun, W. (2025). *When Thinking Pays Off: Incentive Alignment for Human-AI Collaboration*. arXiv:2511.09612.
 
 [12] Foschini, M., Defresne, M., Gamba, E., Bogaerts, B., & Guns, T. (2025). *Preference Elicitation for Step-Wise Explanations in Logic Puzzles*. arXiv:2511.10436.
+
+
+
+
+
+
+

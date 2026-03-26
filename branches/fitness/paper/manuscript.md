@@ -9,11 +9,11 @@
 
 ## Abstract
 
-Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they provide little guidance on how those fields should be populated in real decision environments. The gap becomes highly visible in fitness planning, where training decisions depend on ranked goals, injury history, recovery volatility, equipment access, and time budget. This paper presents the fitness branch of Active Knowledge Modeling (AKM) as a profile-first method for training decisions under real constraints. Instead of generating a workout plan first, the branch elicits and structures the state that should govern the decision, then routes downstream planning through an explicit execution contract. The contribution is methodological rather than outcome-validational. The paper clarifies why ordinary prompting, memory-only personalization, and split-based template logic break down in high-constraint training settings; specifies the three-layer branch workflow of elicitation, structured record, and execution decision; and shows how local design records can make workflow behavior inspectable without pretending to be broad clinical evidence. The broader claim is that in constrained fitness environments, better upstream user modeling can matter more than more fluent downstream phrasing.
+Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they provide little guidance on how the state behind those surfaces should be elicited, structured, updated, and reused in real decision environments. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. The gap becomes highly visible in fitness planning, where training decisions depend on ranked goals, injury history, recovery volatility, equipment access, and time budget. This paper presents the fitness branch of Active Knowledge Modeling (AKM) as a profile-first method for training decisions under real constraints. Instead of generating a workout plan first, the branch elicits and structures the state that should govern the decision, then routes downstream planning through an explicit execution contract. The contribution is methodological rather than outcome-validational. The paper clarifies why ordinary prompting, memory-only personalization, and split-based template logic break down in high-constraint training settings; specifies the three-layer branch workflow of elicitation, structured record, and execution decision; and shows how local design records can make workflow behavior inspectable without pretending to be broad clinical evidence. The broader claim is that in constrained fitness environments, better upstream user modeling can matter more than more fluent downstream phrasing.
 
 ## 1. Introduction
 
-Platforms such as OpenClaw, ChatGPT, and Gemini already expose user-context or system-prompt fields, but they rarely provide a rigorous method for constructing the state that should populate them. In many tasks this omission is tolerable because the downside of generic output is only mediocre usefulness. In fitness planning the omission is more consequential. A generic answer can silently overwrite constraints that should dominate the decision: injury risk, movement limits, equipment availability, low recovery, or a hard session-time ceiling.
+Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they rarely provide a rigorous method for constructing the state that should populate them. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. In many tasks this omission is tolerable because the downside of generic output is only mediocre usefulness. In fitness planning the omission is more consequential. A generic answer can silently overwrite constraints that should dominate the decision: injury risk, movement limits, equipment availability, low recovery, or a hard session-time ceiling.
 
 The problem is therefore upstream. If a training decision depends on body condition, recovery state, time budget, equipment access, and adherence risk, then the system should not begin with a plan. It should begin with a model of what can actually be advanced under the current constraints. The central AKM claim is that user understanding should become an explicit pre-task layer rather than a weak side effect of downstream dialogue.
 
@@ -33,16 +33,16 @@ Generic fitness prompting degrades in predictable ways when upstream context is 
 
 These failure modes are not accidental style defects. They reflect a structural mismatch between what the decision actually depends on and what the workflow models explicitly. Research on training-load monitoring and autoregulation makes this point from a different angle: training quality depends on the interaction among workload, readiness, and context rather than on a fixed template alone [1]-[3]. Research on adherence further shows that exercise systems fail not only because the workout is suboptimal in theory, but because real-world delivery and execution conditions are mismatched to the operator [4].
 
-### 2.2 Why platform context fields are still insufficient
+### 2.2 Why existing platform context surfaces are still insufficient
 
-The existence of a context field is not the same thing as a usable upstream method. In fitness, the missing pieces are usually not raw data volume but state construction discipline:
+The existence of a persistent context surface is not the same thing as a usable upstream method. In fitness, the missing pieces are usually not raw data volume but state construction discipline:
 
 - the system does not force goal ranking before plan generation
 - the system does not distinguish hard limits from soft preferences
 - the system does not persist recent execution evidence as a reusable state layer
 - the system does not surface uncertainty as an explicit output object
 
-That is why fitness planning remains a strong example of the AKM thesis. Existing platform affordances allow users to paste context, but they do not define how the context should be elicited, structured, updated, and reloaded before the next decision.
+That is why fitness planning remains a strong example of the AKM thesis. Existing platform affordances allow users to store or inject context, but they do not define how the state behind those endpoints should be elicited, structured, updated, and reloaded before the next decision.
 
 ## 3. Branch Method
 
@@ -226,3 +226,8 @@ The branch therefore supports a stronger claim than “fitness can be personaliz
 [7] Foschini, M., Defresne, M., Gamba, E., Bogaerts, B., & Guns, T. (2025). *Preference Elicitation for Step-Wise Explanations in Logic Puzzles*. arXiv:2511.10436.
 
 [8] White, J., Fu, Q., Hays, S., Sandborn, P., Olea, C., Gilbert, H., Elnashar, A., Spencer-Smith, J., & Schmidt, D. C. (2023). *A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT*. arXiv:2302.11382.
+
+
+
+
+
