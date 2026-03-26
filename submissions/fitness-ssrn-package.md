@@ -2,7 +2,7 @@
 文件：Fitness_SSRN提交包.md
 核心功能：Provide the SSRN-facing metadata package for the Fitness branch paper.
 输入：Fitness branch paper final materials, including abstract, keywords, manuscript, and the AKM parent framing.
-输出：A fixed title, short abstract, keywords, author line, page copy, and upload guidance for SSRN.
+输出：A fixed title, short abstract, keywords, author line, SSRN classification guidance, page copy, and upload guidance for SSRN.
 -->
 
 # Fitness SSRN Submission Package
@@ -33,6 +33,18 @@ Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent conte
 - Author: `Weishi Shao`
 - Affiliation: `Independent Researcher`
 - Date line: `March 2026`
+
+## SSRN Classifications
+
+- Primary: `Information Systems & Decision Support`
+- Secondary: `Artificial Intelligence / Human-AI Collaboration`
+- Secondary: `Personalization / User Modeling`
+- Secondary: `Health Informatics / Digital Health` (only if the SSRN backend offers a close match)
+
+Selection guidance:
+- Prefer the **information systems, decision support, AI collaboration, and user-modeling** line.
+- Do not classify this paper under clinical medicine, sports-medicine efficacy studies, or rehabilitation trials.
+- If SSRN does not provide an exact label match, choose the closest available entries under `Information Systems`, `Decision Support Systems`, `Artificial Intelligence`, `Human-Computer Interaction`, or `Health Informatics`.
 
 ## Page Description
 
