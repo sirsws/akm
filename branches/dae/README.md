@@ -21,11 +21,11 @@
   <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
-**DaE is the first complete AKM reference implementation for persona-aware advisory and collaboration workflows.**
+**DaE is the first complete AKM reference implementation for persona modeling, advisory decision support, and human-AI collaboration workflows.**
 
 ## Scope
 
-DaE operationalizes AKM in workflows where downstream quality depends on a reusable user profile.
+DaE operationalizes AKM in workflows where downstream quality depends on reusable persona modeling, profile construction, and advisory decision support.
 Its primary scene is persona-aware collaboration across planning, advisory, writing, coding, and multi-agent work.
 
 ## Core Asset
@@ -35,7 +35,7 @@ It captures structured user context for reuse across downstream tasks instead of
 
 ## Why This Branch Exists
 
-Many platforms let users provide context, but they do not provide a disciplined way to build that context.
+Many platforms let users provide context, but they do not provide a disciplined way to build reusable persona state for personalization and human-AI collaboration.
 DaE supplies that missing operational layer for persona-aware collaboration.
 
 ## Entry Points

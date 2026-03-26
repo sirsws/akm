@@ -1,53 +1,51 @@
 ﻿<!--
 文件：Fashion_SSRN提交包.md
-核心功能：汇总 Fashion 分支论文对应的 SSRN 投稿外围材料，供页面提交与摘要页同步使用。
-输入：Fashion 论文 LaTeX 定稿、paper 目录下的 abstract/keywords/manuscript 与 AKM 母框架口径。
-输出：标题、摘要短版、关键词、作者口径、页面短句与上传指引。
+核心功能：Provide the SSRN-facing metadata package for the Fashion branch paper.
+输入：Fashion branch paper final materials, including abstract, keywords, manuscript, and the AKM parent framing.
+输出：A fixed title, short abstract, keywords, author line, page copy, and upload guidance for SSRN.
 -->
 
-# Fashion SSRN 提交包
+# Fashion SSRN Submission Package
 
-## 标题备选
+## Fixed Title
 
-1. **Profile-First Wardrobe Planning Under Real Constraints: Active Knowledge Modeling in Styling Decision Systems**
-2. **Active Knowledge Modeling in Wardrobe Planning: A Profile-First Method for Scene and Asset Constraints**
-3. **Constraint-Aware Styling Through Active Knowledge Modeling**
+**Profile-First Wardrobe Planning Under Real Constraints: Active Knowledge Modeling for Personalized Outfit Decision Support**
 
-推荐使用第 1 个。
+## SSRN Short Abstract
 
-## SSRN 摘要短版
+Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they provide little guidance on how that state should be elicited, structured, updated, and reused in real wardrobe and outfit decisions. This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for personalized outfit decision support under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. It shows how wardrobe planning can be redesigned as an upstream user-modeling, profile-construction, context-engineering, and decision-support problem within human-AI collaboration. Local design records and representative decision traces are used to make workflow behavior visible, not to claim universal fashion performance.
 
-Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they provide little guidance on how the state behind those surfaces should be elicited, structured, updated, and reused in real wardrobe and outfit decisions. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. It shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer. Local design records and representative decision traces are used to make workflow behavior visible, not to claim universal fashion performance.
-
-## 关键词
+## Keywords
 
 - Active Knowledge Modeling
 - Wardrobe Planning
+- Personalized Outfit Decision Support
 - User Modeling
+- Profile Construction
+- Context Engineering
+- Human-AI Collaboration
 - Outfit Recommendation
 - Explainable Recommendation
 - Capsule Wardrobe
 
-## 作者口径
+## Author Line
 
 - Author: `Weishi Shao`
 - Affiliation: `Independent Researcher`
 - Date line: `March 2026`
 
-## 页面说明短句
+## Page Description
 
-This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for wardrobe planning under scene, asset, and functional constraints. It should be read as a branch paper within the broader AKM framework rather than as an image-recognition or benchmark paper.
+This paper presents the fashion branch of Active Knowledge Modeling (AKM) as a profile-first method for personalized outfit decision support, wardrobe planning, and context engineering under real constraints.
 
-## 上传文件
+## Upload Files
 
 - Main PDF: `AKM工作区/AKM母港/branches/fashion/paper/latex/main.pdf`
 - Main LaTeX source: `AKM工作区/AKM母港/branches/fashion/paper/latex/main.tex`
 - Reference metadata: `AKM工作区/AKM母港/branches/fashion/paper/latex/refs.bib`
 
-## 提交备注
+## Submission Notes
 
-- 本文定位是方法论文，不是图像识别论文，也不是虚拟试衣论文。
-- `Design Record` 和代表性 JSON trace 用于展示工作流行为，不用于宣称普遍穿搭效果。
-- 对外说明时保持与 AKM 母框架一致：平台已有上下文承载面，AKM 定义其填法，Fashion 是其中一个场景分支。
-
-
+- This paper is positioned as a method paper rather than an image-recognition or virtual try-on paper.
+- `Design Record` and representative JSON traces are used to make workflow behavior visible, not to claim universal styling performance.
+- Public framing should stay aligned with the AKM parent framework: platforms already provide context surfaces, AKM defines how to populate them, and Fashion is one branch implementation.

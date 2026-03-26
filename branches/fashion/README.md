@@ -21,7 +21,7 @@
   <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
-**AKM Fashion = model the wardrobe and scene first, then make outfit and purchase decisions.**
+**AKM Fashion = model the wardrobe and scene first, then make personalized outfit and purchase decisions.**
 
 This branch is not a generic styling assistant.
 It handles the harder question: when body shape, scene requirements, wardrobe limits, and functional constraints all matter, what should the user actually wear and what should be added next?
@@ -34,7 +34,7 @@ It handles the harder question: when body shape, scene requirements, wardrobe li
 
 ## Paper Position
 
-The paper line is a method paper about profile-first wardrobe and outfit planning.
+The paper line is a method paper about profile-first wardrobe planning, outfit recommendation, context engineering, and decision support.
 It is not framed as a benchmark or image-recognition validation paper.
 
 ## Entry Points

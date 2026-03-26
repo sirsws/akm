@@ -21,7 +21,7 @@
   <a href="./README.md">English</a> | <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
-**AKM Fitness = model the training reality first, then make the training decision.**
+**AKM Fitness = model the training reality first, then make the personalized training decision.**
 
 This branch is not a generic workout-plan generator.
 It is for the harder question: when goals conflict, the body has limits, equipment changes, and time is constrained, what training decision is actually valid today?
@@ -34,7 +34,7 @@ It is for the harder question: when goals conflict, the body has limits, equipme
 
 ## Paper Position
 
-The paper line is a method paper about profile-first fitness planning.
+The paper line is a method paper about profile-first fitness planning, user modeling, context engineering, and training decision support.
 It is not framed as a broad efficacy study.
 
 ## Entry Points

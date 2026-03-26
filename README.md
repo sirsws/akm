@@ -33,7 +33,7 @@
 
 **Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state. AKM defines how that state should be elicited, structured, updated, and reused before downstream agents begin to work.**
 
-AKM is a framework for active, structured user modeling in AI collaboration.
+AKM is a framework for active, structured user modeling, personalization, context engineering, and decision support in human-AI collaboration.
 It treats profile construction as infrastructure rather than prompt decoration.
 
 Platforms such as OpenClaw, ChatGPT, and Gemini already let users supply context.
@@ -54,7 +54,7 @@ Official OpenClaw anchors: [Context](https://docs.openclaw.ai/context/), [System
 - the elicited information is structured into reusable upstream assets
 - those assets are injected before planning, writing, advising, coding, or execution begins
 
-AKM exists because many AI systems already provide context surfaces without giving users a rigorous way to populate them:
+AKM exists because many AI systems already provide context surfaces without giving users a rigorous way to populate them for personalization, decision support, and reusable user modeling:
 
 - goals are not ranked before planning begins
 - constraints are not clarified before advice is generated

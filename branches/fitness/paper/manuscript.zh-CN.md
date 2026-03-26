@@ -5,7 +5,7 @@
 输出：供人工审阅与英文主稿同步使用的完整中文工作论文草稿。
 -->
 
-# Profile-First Fitness Planning Under Real Constraints: An AKM Branch Paper
+# Profile-First Fitness Planning Under Real Constraints: Active Knowledge Modeling for Personalized Training Decision Support
 
 ## 摘要
 

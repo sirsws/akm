@@ -5,11 +5,11 @@
 输出：供人工审阅、GitHub 展示和后续 LaTeX 转换使用的英文长稿。
 -->
 
-# Profile-First Wardrobe Planning Under Real Constraints: An AKM Branch Paper
+# Profile-First Wardrobe Planning Under Real Constraints: Active Knowledge Modeling for Personalized Outfit Decision Support
 
 ## Abstract
 
-Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they provide little guidance on how the state behind those surfaces should be elicited, structured, updated, and reused for real wardrobe decisions. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. This paper presents the fashion branch of `Active Knowledge Modeling (AKM)` as a profile-first method for wardrobe planning under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. The branch shows how styling workflows can be redesigned so that upstream user modeling becomes a stable decision layer rather than an afterthought attached to generic taste language.
+Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they provide little guidance on how the state behind those surfaces should be elicited, structured, updated, and reused for real wardrobe decisions. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. This paper presents the fashion branch of `Active Knowledge Modeling (AKM)` as a profile-first method for personalized outfit decision support under scene, asset, and functional constraints. Instead of generating styling output first, the branch elicits and structures body context, scene requirements, wardrobe assets, anti-preferences, purchase tolerance, and practical limits before producing an outfit or purchase recommendation. The contribution is methodological rather than benchmark-driven. The branch shows how wardrobe planning can be redesigned as an upstream user-modeling, profile-construction, context-engineering, and decision-support layer rather than an afterthought attached to generic taste language.
 
 ## 1. Introduction
 

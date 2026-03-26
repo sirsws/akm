@@ -5,7 +5,7 @@
 输出：供人工审阅、GitHub 展示和后续 LaTeX 转换使用的中文长稿。
 -->
 
-# Profile-First Wardrobe Planning Under Real Constraints: An AKM Branch Paper
+# Profile-First Wardrobe Planning Under Real Constraints: Active Knowledge Modeling for Personalized Outfit Decision Support
 
 ## 摘要
 

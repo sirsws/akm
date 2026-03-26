@@ -14,7 +14,7 @@
 **Canonical paper entry for the parent concept of Active Knowledge Modeling.**
 
 Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state.
-OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. This paper defines the upstream method for eliciting, structuring, updating, and reusing the state that should populate those surfaces.
+OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. This paper defines the upstream method for eliciting, structuring, updating, and reusing the state that should populate those surfaces across user modeling, personalization, context engineering, and decision support workflows.
 
 OpenClaw documentation anchors: [Context](https://docs.openclaw.ai/context/), [System Prompt](https://docs.openclaw.ai/concepts/system-prompt), [USER Template](https://docs.openclaw.ai/templates/USER)
 
@@ -22,7 +22,7 @@ OpenClaw documentation anchors: [Context](https://docs.openclaw.ai/context/), [S
 
 This paper does three things:
 
-1. defines `Active Knowledge Modeling (AKM)` as a parent method
+1. defines `Active Knowledge Modeling (AKM)` as a parent method for user modeling and context engineering
 2. separates AKM from passive personalization, one-off prompt tuning, and retrieval-only context stuffing
 3. provides the stable upstream reference for branch papers such as DaE, Fitness, and Fashion
 

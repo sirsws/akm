@@ -21,7 +21,7 @@
 \setstretch{1.12}
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{0pt}
-\title{Profile-First Fitness Planning Under Real Constraints: Active Knowledge Modeling in Training Decision Systems}
+\title{Profile-First Fitness Planning Under Real Constraints: Active Knowledge Modeling for Personalized Training Decision Support}
 \author{Weishi Shao}
 \date{March 2026}
 \begin{document}
@@ -29,7 +29,7 @@
 \begin{abstract}
 Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they provide little guidance on how the state behind those surfaces should be elicited, structured, updated, and reused in real decision environments. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. The gap becomes highly visible in fitness planning, where training decisions depend on ranked goals, injury history, recovery volatility, equipment access, and time budget. This paper presents the fitness branch of Active Knowledge Modeling (AKM) as a profile-first method for training decisions under real constraints. Instead of generating a workout plan first, the branch elicits and structures the state that should govern the decision, then routes downstream planning through an explicit execution contract. The contribution is methodological rather than outcome-validational. The paper clarifies why ordinary prompting, memory-only personalization, and split-based template logic break down in high-constraint training settings; specifies the branch workflow of elicitation, structured record, and execution decision; and shows how local design records can make workflow behavior inspectable without pretending to be broad clinical evidence.
 \end{abstract}
-\textbf{Keywords:} active knowledge modeling, profile-first planning, fitness decision systems, user-state modeling, constraint-aware prompting, training load monitoring, autoregulation
+\textbf{Keywords:} active knowledge modeling, fitness planning, personalized training decision support, user modeling, profile construction, context engineering, human-AI collaboration, decision support systems, training load monitoring, autoregulation
 \section{Introduction}
 Platforms such as OpenClaw, ChatGPT, and Gemini already provide persistent context surfaces for user and agent state, but they rarely provide a rigorous method for constructing the state that should populate them. OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction. In many tasks this omission is tolerable because the downside of generic output is only mediocre usefulness. In fitness planning the omission is more consequential. A generic answer can silently overwrite constraints that should dominate the decision: injury risk, movement limits, equipment availability, low recovery, or a hard session-time ceiling.
 
