@@ -1,9 +1,6 @@
-<!--
-文件：clawhub-copy.md
-核心功能：作为 Fitness skill 的正式发布页文案，供 ClawHub / OpenClaw 或同类技能市场直接复用。
-输入：Fitness 分支的 AKM 定位、方法结构、外部测试结论与使用边界。
-输出：可直接上线的技能页长版文案。
--->
+﻿<!--
+鏂囦欢锛歝lawhub-copy.md
+鏍稿績鍔熻兘锛氫綔涓?Fitness skill 鐨勬寮忓彂甯冮〉鏂囨锛屼緵 ClawHub / OpenClaw 鎴栧悓绫绘妧鑳藉競鍦虹洿鎺ュ鐢ㄣ€?杈撳叆锛欶itness 鍒嗘敮鐨?AKM 瀹氫綅銆佹柟娉曠粨鏋勩€佸閮ㄦ祴璇曠粨璁轰笌浣跨敤杈圭晫銆?杈撳嚭锛氬彲鐩存帴涓婄嚎鐨勬妧鑳介〉闀跨増鏂囨銆?-->
 
 # AKM Fitness ClawHub Skill Page
 
@@ -14,6 +11,12 @@
 ## One-line Description
 
 Build the training profile first, then make workout decisions that respect body limits, equipment reality, recovery, and time budget.
+
+## Install
+
+```bash
+npx skills add https://github.com/sirsws/akm --skill akm-fitness-planner --full-depth
+``` 
 
 ## What It Is
 

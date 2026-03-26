@@ -39,3 +39,10 @@ It is organized as a three-stage method rather than a single prompt.
 
 The core output is not generic workout language.
 The core output is a constraint-aware training decision.
+
+
+## Install
+
+```bash
+npx skills add https://github.com/sirsws/akm --skill akm-fitness-planner --full-depth
+```

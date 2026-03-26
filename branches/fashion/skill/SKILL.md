@@ -36,6 +36,12 @@ It turns styling into a profile-first decision process.
 
 When critical inputs are missing, the skill should expose `MissingInputs` rather than pretend the wardrobe is already known.
 
+## Install
+
+```bash
+npx skills add https://github.com/sirsws/akm --skill akm-fashion-strategist --full-depth
+``` 
+
 ## Workflow
 
 1. `ELICITATION_PROMPT.md`

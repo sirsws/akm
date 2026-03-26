@@ -39,3 +39,10 @@ It is organized as a three-stage method rather than a single prompt.
 
 The core output is not generic style talk.
 The core output is a scene-aware, wardrobe-aware decision.
+
+
+## Install
+
+```bash
+npx skills add https://github.com/sirsws/akm --skill akm-fashion-strategist --full-depth
+```

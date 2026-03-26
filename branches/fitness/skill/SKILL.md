@@ -37,6 +37,12 @@ It turns training planning into a profile-first decision process.
 
 When critical inputs are missing, the skill should expose `MissingInputs` rather than fabricate certainty.
 
+## Install
+
+```bash
+npx skills add https://github.com/sirsws/akm --skill akm-fitness-planner --full-depth
+``` 
+
 ## Workflow
 
 1. `ELICITATION_PROMPT.md`

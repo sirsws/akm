@@ -98,6 +98,16 @@ AKM exists because many AI systems already provide context surfaces without givi
 - PDF included in this repository: [AKM-main.pdf](./papers/akm/AKM-main.pdf)
 - SSRN status: in review, public URL pending
 
+### Skills CLI Install
+
+```bash
+# Fitness
+npx skills add https://github.com/sirsws/akm --skill akm-fitness-planner --full-depth
+
+# Fashion
+npx skills add https://github.com/sirsws/akm --skill akm-fashion-strategist --full-depth
+``` 
+
 ### Branch Papers
 
 - [DaE Paper Entry](./branches/dae/paper/README.md)
