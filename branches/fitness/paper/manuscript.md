@@ -42,7 +42,7 @@ The existence of a persistent context surface is not the same thing as a usable 
 - the system does not persist recent execution evidence as a reusable state layer
 - the system does not surface uncertainty as an explicit output object
 
-That is why fitness planning remains a strong example of the AKM thesis. Existing platform affordances allow users to store or inject context, but they do not define how the state behind those endpoints should be elicited, structured, updated, and reloaded before the next decision.
+That is why fitness planning remains a strong example of the AKM thesis. Existing platform affordances allow users to store or inject context, but they do not define how the state behind those surfaces should be elicited, structured, updated, and reloaded before the next decision.
 
 ## 3. Branch Method
 

@@ -37,7 +37,7 @@ AKM is a framework for active, structured user modeling in AI collaboration.
 It treats profile construction as infrastructure rather than prompt decoration.
 
 Platforms such as OpenClaw, ChatGPT, and Gemini already let users supply context.
-OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction across files such as `USER.md`, `IDENTITY.md`, `AGENTS.md`, and `MEMORY.md`. What these platforms usually lack is a repeatable method for eliciting, structuring, updating, and reusing the state that should populate those context endpoints.
+OpenClaw makes this especially explicit through injected workspace files and system-prompt reconstruction across files such as `USER.md`, `IDENTITY.md`, `AGENTS.md`, and `MEMORY.md`. What these platforms usually lack is a repeatable method for eliciting, structuring, updating, and reusing the state that should populate those context surfaces.
 AKM defines that missing upstream layer.
 
 Official OpenClaw anchors: [Context](https://docs.openclaw.ai/context/), [System Prompt](https://docs.openclaw.ai/concepts/system-prompt), [USER Template](https://docs.openclaw.ai/templates/USER), [IDENTITY Template](https://docs.openclaw.ai/reference/templates/IDENTITY), [AGENTS Template](https://docs.openclaw.ai/reference/templates/AGENTS), [Memory](https://docs.openclaw.ai/concepts/memory)
@@ -54,7 +54,7 @@ Official OpenClaw anchors: [Context](https://docs.openclaw.ai/context/), [System
 - the elicited information is structured into reusable upstream assets
 - those assets are injected before planning, writing, advising, coding, or execution begins
 
-AKM exists because many AI systems already provide context endpoints without giving users a rigorous way to populate them:
+AKM exists because many AI systems already provide context surfaces without giving users a rigorous way to populate them:
 
 - goals are not ranked before planning begins
 - constraints are not clarified before advice is generated

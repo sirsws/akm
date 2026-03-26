@@ -121,9 +121,9 @@ AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面
 - AKM 母定义：已完成
 - AKM 母论文：已完成，SSRN URL 待补
 - DaE 分支：已统一为 AKM 的首个完整参考实现
-- Fitness 分支：分支论文 + 双语 skill 包正在统一修订
-- Fashion 分支：分支论文 + 双语 skill 包正在统一修订
-- 双语公开层：正在统一 README、paper、skill 与 prompt 文件
+- Fitness 分支：分支论文 + 双语 skill 包已可用
+- Fashion 分支：分支论文 + 双语 skill 包已可用
+- 双语公开层：README、paper、skill 与 prompt 文件已统一
 
 ---
 
