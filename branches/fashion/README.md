@@ -1,7 +1,7 @@
 ﻿<!--
 文件：README.md
-核心功能：作为 Fashion 分支在 AKM 母港中的英文入口页，提供定位、方法结构、论文与 skill 入口。
-输入：穿搭规则、衣橱资产、场景偏好与 AKM 方法结构。
+核心功能：作为 Fashion 分支在 AKM 母港中的英文入口页，提供定位、方法结构、论文、skill 与公开样本入口。
+输入：穿搭规则、衣橱资产、场景偏好、公开样本与 AKM 方法结构。
 输出：供 GitHub 读者理解 Fashion 分支角色的英文 README。
 -->
 
@@ -41,4 +41,5 @@ It is not framed as a benchmark or image-recognition validation paper.
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
+- [Sample Record](./skill/SAMPLE_RECORD.md)
 - [AKM Mother Hub](../../README.md)

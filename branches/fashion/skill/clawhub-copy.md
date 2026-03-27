@@ -1,8 +1,4 @@
-﻿<!--
-鏂囦欢锛歝lawhub-copy.md
-鏍稿績鍔熻兘锛氫綔涓?Fashion skill 鐨勬寮忓彂甯冮〉鏂囨锛屼緵 ClawHub / OpenClaw 鎴栧悓绫绘妧鑳藉競鍦虹洿鎺ュ鐢ㄣ€?杈撳叆锛欶ashion 鍒嗘敮鐨?AKM 瀹氫綅銆佹柟娉曠粨鏋勩€佸閮ㄦ祴璇曠粨璁轰笌浣跨敤杈圭晫銆?杈撳嚭锛氬彲鐩存帴涓婄嚎鐨勬妧鑳介〉闀跨増鏂囨銆?-->
-
-# AKM Fashion ClawHub Skill Page
+﻿# AKM Fashion ClawHub Skill Page
 
 ## Skill Title
 
@@ -16,7 +12,11 @@ Model the user's body, scenes, wardrobe, and constraints first, then make outfit
 
 ```bash
 npx skills add https://github.com/sirsws/akm --skill akm-fashion-strategist --full-depth
-``` 
+```
+
+## Public Sample
+
+- GitHub sample record: `https://github.com/sirsws/akm/blob/main/branches/fashion/skill/SAMPLE_RECORD.md`
 
 ## What It Is
 

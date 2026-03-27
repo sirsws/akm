@@ -1,7 +1,7 @@
 ﻿<!--
 文件：README.zh-CN.md
-核心功能：作为 Fitness 分支在 AKM 母港中的中文入口页，提供定位、方法结构、论文与 skill 入口。
-输入：健身工作区规则、训练日志、身体指标与 AKM 方法结构。
+核心功能：作为 Fitness 分支在 AKM 母港中的中文入口页，提供定位、方法结构、论文、skill 与公开样本入口。
+输入：健身工作区规则、训练日志、身体指标、公开样本与 AKM 方法结构。
 输出：供 GitHub 中文读者理解 Fitness 分支角色的中文 README。
 -->
 
@@ -14,7 +14,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/branch-Fitness-68C1A2" alt="Fitness" />
   <img src="https://img.shields.io/badge/role-method_branch-2ea44f" alt="Role" />
-  <img src="https://img.shields.io/badge/output-paper_%2B_skill_%2B_prompts-6f42c1" alt="Output" />
+  <img src="https://img.shields.io/badge/output-paper_%2Bskill_%2Bprompts-6f42c1" alt="Output" />
 </p>
 
 <p align="center">
@@ -41,4 +41,5 @@
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
+- [Sample Record](./skill/SAMPLE_RECORD.md)
 - [AKM Mother Hub](../../README.md)

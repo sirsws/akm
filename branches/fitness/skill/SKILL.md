@@ -3,51 +3,84 @@ name: "akm-fitness-planner"
 description: "AKM implementation for training decision workflows. Models goals, body limits, equipment context, time budget, and recovery before outputting a workout decision."
 ---
 
-<!--
-文件：SKILL.md
-核心功能：作为 AKM Fitness skill 的英文正式说明页，定义其定位、输入要求、工作流、输出契约、双语规则与边界。
-输入：Fitness 分支方法结构、提示词文件、记录模板与公开 skill 设计。
-输出：供 GitHub、技能市场或代理工具直接引用的英文 skill 文档。
--->
+# AKM Fitness
 
-# AKM Fitness Skill
+AKM Fitness is a profile-first training decision skill for real-world constraints.
 
-<p align="center">
-  <a href="./SKILL.md">English</a> | <a href="./SKILL.zh-CN.md">简体中文</a>
-</p>
+It does not start with a workout template.
+It starts by modeling the operator:
+goals, body limits, equipment reality, time budget, recovery state, and adherence risk.
 
-**No profile, no serious plan.**
+## Quick Reference
 
-AKM Fitness is the operational skill package for training decision workflows under real constraints.
-It is designed for situations where body limits, equipment reality, time budget, recovery state, and goal hierarchy all materially affect what training is appropriate.
+| Item | Details |
+| --- | --- |
+| Primary outcome | a constraint-aware training decision |
+| Best use case | when generic workout advice fails because the user's actual constraints matter |
+| Public source | `https://github.com/sirsws/akm/tree/main/branches/fitness` |
+| Sample record | `https://github.com/sirsws/akm/blob/main/branches/fitness/skill/SAMPLE_RECORD.md` |
+| Research paper | `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6231465` |
+| Install source | `https://github.com/sirsws/akm` |
 
-## Position
+## Public Links
 
-AKM Fitness is not a generic workout Q&A tool.
-It turns training planning into a profile-first decision process.
+- GitHub branch: `https://github.com/sirsws/akm/tree/main/branches/fitness`
+- Skill files: `https://github.com/sirsws/akm/tree/main/branches/fitness/skill`
+- Sample record: `https://github.com/sirsws/akm/blob/main/branches/fitness/skill/SAMPLE_RECORD.md`
+- Branch paper: `https://github.com/sirsws/akm/tree/main/branches/fitness/paper`
+- SSRN paper: `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6231465`
 
-## Required Inputs
+## Installation
 
-- `training goals`
-- `body limitations or injury constraints`
-- `available equipment`
-- `weekly frequency`
-- `session time budget`
-- `recovery context`
+ClawHub / OpenClaw:
 
-When critical inputs are missing, the skill should expose `MissingInputs` rather than fabricate certainty.
+- install from this listing
 
-## Install
+Skills CLI:
 
 ```bash
 npx skills add https://github.com/sirsws/akm --skill akm-fitness-planner --full-depth
-``` 
+```
+
+## What This Skill Changes
+
+Most fitness agents answer too early.
+
+They assume the user has one clear goal, normal recovery, enough time, stable equipment, and no meaningful body limitation.
+That assumption is usually false.
+
+AKM Fitness changes the order of operations:
+profile first, decision second.
+
+## When to Use
+
+Use this skill when:
+
+- injuries or physical limits materially affect training choices
+- equipment availability changes what is realistic
+- time budget is hard and cannot be ignored
+- recovery state should alter the decision
+- generic training plans keep failing in practice
+
+Do not use this skill when:
+
+- the user only wants casual fitness chat
+- a medical diagnosis is being requested
+- rehabilitation planning should be handled by a qualified clinician
+- critical inputs are missing and the user refuses to provide them
+
+## Core Rule
+
+**No profile, no serious plan.**
+
+If the necessary state is unclear, the skill should surface `MissingInputs` instead of fabricating confidence.
 
 ## Workflow
 
 1. `ELICITATION_PROMPT.md`
 2. `RECORD_TEMPLATE.md`
 3. `EXECUTION_PROMPT.md`
+4. `SAMPLE_RECORD.md`
 
 ## Output Contract
 
@@ -61,15 +94,16 @@ Outputs should include:
 - `NonNegotiables`
 - `MissingInputs`
 
-## Language Rule
+## Operating Boundary
 
-Public landing pages are English-first with a Chinese toggle.
-Field keys stay in English for output stability.
-Operational prompting is available in both English and Chinese.
+AKM Fitness is a training decision aid.
+It is not a medical diagnosis tool, not a rehab replacement, and not a motivational wrapper for missing information.
 
-## Boundaries
+## Files to Load
 
-- not a medical diagnosis tool
-- not a rehabilitation substitute
-- not a bodybuilding template generator
-- not a place to hide uncertainty behind motivational language
+Read these files before running the skill:
+
+- `ELICITATION_PROMPT.md`
+- `RECORD_TEMPLATE.md`
+- `EXECUTION_PROMPT.md`
+- `SAMPLE_RECORD.md`

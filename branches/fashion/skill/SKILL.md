@@ -3,50 +3,84 @@ name: "akm-fashion-strategist"
 description: "AKM implementation for wardrobe and outfit decision workflows. Models body context, scenes, wardrobe assets, and functional constraints before outputting styling decisions."
 ---
 
-<!--
-文件：SKILL.md
-核心功能：作为 AKM Fashion skill 的英文正式说明页，定义其定位、输入要求、工作流、输出契约、双语规则与边界。
-输入：Fashion 分支方法结构、提示词文件、记录模板与公开 skill 设计。
-输出：供 GitHub、技能市场或代理工具直接引用的英文 skill 文档。
--->
+# AKM Fashion
 
-# AKM Fashion Skill
+AKM Fashion is a profile-first wardrobe and outfit decision skill for real scene and asset constraints.
 
-<p align="center">
-  <a href="./SKILL.md">English</a> | <a href="./SKILL.zh-CN.md">简体中文</a>
-</p>
+It does not start with a moodboard.
+It starts by modeling the operator:
+body context, scenes, wardrobe assets, functional needs, purchase tolerance, and anti-patterns.
 
-**No wardrobe model, no serious styling decision.**
+## Quick Reference
 
-AKM Fashion is the operational skill package for wardrobe and outfit decision workflows under real scene and asset constraints.
-It is designed for situations where body context, existing wardrobe, scene requirements, and functional constraints all materially affect what styling decision is appropriate.
+| Item | Details |
+| --- | --- |
+| Primary outcome | a wardrobe-aware outfit or purchase decision |
+| Best use case | when generic styling advice fails because the user's real wardrobe and scene constraints matter |
+| Public source | `https://github.com/sirsws/akm/tree/main/branches/fashion` |
+| Sample record | `https://github.com/sirsws/akm/blob/main/branches/fashion/skill/SAMPLE_RECORD.md` |
+| Research paper | `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6231466` |
+| Install source | `https://github.com/sirsws/akm` |
 
-## Position
+## Public Links
 
-AKM Fashion is not a moodboard generator.
-It turns styling into a profile-first decision process.
+- GitHub branch: `https://github.com/sirsws/akm/tree/main/branches/fashion`
+- Skill files: `https://github.com/sirsws/akm/tree/main/branches/fashion/skill`
+- Sample record: `https://github.com/sirsws/akm/blob/main/branches/fashion/skill/SAMPLE_RECORD.md`
+- Branch paper: `https://github.com/sirsws/akm/tree/main/branches/fashion/paper`
+- SSRN paper: `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6231466`
 
-## Required Inputs
+## Installation
 
-- `body shape or posture notes`
-- `primary scenes`
-- `style preferences`
-- `wardrobe assets already owned`
-- `functional constraints`
+ClawHub / OpenClaw:
 
-When critical inputs are missing, the skill should expose `MissingInputs` rather than pretend the wardrobe is already known.
+- install from this listing
 
-## Install
+Skills CLI:
 
 ```bash
 npx skills add https://github.com/sirsws/akm --skill akm-fashion-strategist --full-depth
-``` 
+```
+
+## What This Skill Changes
+
+Most styling agents answer too early.
+
+They do not know what the user already owns, which scenes matter, what body issues need handling, or which functional constraints dominate the decision.
+That is where generic taste talk starts.
+
+AKM Fashion changes the order of operations:
+profile first, decision second.
+
+## When to Use
+
+Use this skill when:
+
+- the user needs scene-specific outfit decisions
+- current wardrobe assets materially constrain the solution space
+- comfort and function matter, not only aesthetics
+- purchase priorities are more useful than vague inspiration
+- generic style advice keeps missing the real problem
+
+Do not use this skill when:
+
+- the user only wants casual fashion chat
+- image recognition or virtual try-on is being requested
+- the wardrobe state is unknown and the user refuses to provide it
+- the user wants pure aesthetic moodboarding without operational decisions
+
+## Core Rule
+
+**No wardrobe model, no serious styling decision.**
+
+If the necessary state is unclear, the skill should surface `MissingInputs` instead of pretending the wardrobe is already known.
 
 ## Workflow
 
 1. `ELICITATION_PROMPT.md`
 2. `RECORD_TEMPLATE.md`
 3. `EXECUTION_PROMPT.md`
+4. `SAMPLE_RECORD.md`
 
 ## Output Contract
 
@@ -59,15 +93,16 @@ Outputs should include:
 - `PurchasePriority`
 - `MissingInputs`
 
-## Language Rule
+## Operating Boundary
 
-Public landing pages are English-first with a Chinese toggle.
-Field keys stay in English for output stability.
-Operational prompting is available in both English and Chinese.
+AKM Fashion is a wardrobe decision aid.
+It is not an image-recognition tool, not a virtual try-on product, and not a generic taste generator that hides missing context behind aesthetic language.
 
-## Boundaries
+## Files to Load
 
-- not an image-recognition tool
-- not a virtual try-on product
-- not a generic taste generator
-- not a place to hide missing context behind aesthetic language
+Read these files before running the skill:
+
+- `ELICITATION_PROMPT.md`
+- `RECORD_TEMPLATE.md`
+- `EXECUTION_PROMPT.md`
+- `SAMPLE_RECORD.md`

@@ -1,7 +1,7 @@
 ﻿<!--
 文件：README.md
-核心功能：作为 Fitness 分支在 AKM 母港中的英文入口页，提供定位、方法结构、论文与 skill 入口。
-输入：健身工作区规则、训练日志、身体指标与 AKM 方法结构。
+核心功能：作为 Fitness 分支在 AKM 母港中的英文入口页，提供定位、方法结构、论文、skill 与公开样本入口。
+输入：健身工作区规则、训练日志、身体指标、公开样本与 AKM 方法结构。
 输出：供 GitHub 读者理解 Fitness 分支角色的英文 README。
 -->
 
@@ -41,4 +41,5 @@ It is not framed as a broad efficacy study.
 
 - [Paper](./paper/README.md)
 - [Skill](./skill/README.md)
+- [Sample Record](./skill/SAMPLE_RECORD.md)
 - [AKM Mother Hub](../../README.md)
