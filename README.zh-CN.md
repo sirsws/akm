@@ -1,8 +1,8 @@
 ﻿<!--
 文件：README.zh-CN.md
-核心功能：作为 AKM 母港的中文入口页，提供与英文主页对应的定位语、双语切换、快速导航、分支地图、研究入口与生态仓链接，并明确 AKM 对主流平台上下文承载面的上游方法论定位。
-输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口、旧 DaE 公共仓链接与状态信息。
-输出：供 GitHub 中文读者理解 AKM 方法框架的中文 README。
+核心功能：作为 AKM 母港的中文入口页，提供与英文主页对应的定位语、双语切换、快速导航、分支地图、研究入口、benchmark 入口与生态仓链接，并明确 AKM 对主流平台上下文承载面的上游方法论定位。
+输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口、synthetic-profile benchmark、旧 DaE 公共仓链接与状态信息。
+输出：供 GitHub 中文读者理解 AKM 方法框架、分支资产与 benchmark 复现实验的中文 README。
 -->
 
 # AKM - 主动知识建模
@@ -103,6 +103,10 @@ AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面
 - [DaE Paper Entry](./branches/dae/paper/README.md)
 - [Fitness Paper Entry](./branches/fitness/paper/README.md)
 - [Fashion Paper Entry](./branches/fashion/paper/README.md)
+
+### Benchmark Toolkit
+
+- [AKM-Benchmark-Toolkit v0.2](./experiments/synthetic_profile_eval/README.md)：synthetic profile evaluation，包含原始生成、AKM 诱导画像、盲评结果与当前边界说明。
 
 ---
 

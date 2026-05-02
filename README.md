@@ -1,8 +1,8 @@
 ﻿<!--
 文件：README.md
-核心功能：作为 AKM 母港的英文主入口页，提供适合 GitHub 项目首页展示的定位语、双语切换、快速导航、分支地图、研究入口与生态仓链接，并明确 AKM 对主流平台上下文承载面的上游方法论定位。
-输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口、旧 DaE 公共仓链接与状态信息。
-输出：供 GitHub 外部读者直接进入 AKM 方法框架的英文 README。
+核心功能：作为 AKM 母港的英文主入口页，提供适合 GitHub 项目首页展示的定位语、双语切换、快速导航、分支地图、研究入口、benchmark 入口与生态仓链接，并明确 AKM 对主流平台上下文承载面的上游方法论定位。
+输入：AKM 母定义、母论文入口、DaE/Fitness/Fashion 分支入口、synthetic-profile benchmark、旧 DaE 公共仓链接与状态信息。
+输出：供 GitHub 外部读者直接进入 AKM 方法框架、分支资产与 benchmark 复现实验的英文 README。
 -->
 
 # AKM - Active Knowledge Modeling
@@ -113,6 +113,10 @@ npx skills add https://github.com/sirsws/akm --skill akm-fashion-strategist --fu
 - [DaE Paper Entry](./branches/dae/paper/README.md)
 - [Fitness Paper Entry](./branches/fitness/paper/README.md)
 - [Fashion Paper Entry](./branches/fashion/paper/README.md)
+
+### Benchmark Toolkit
+
+- [AKM-Benchmark-Toolkit v0.2](./experiments/synthetic_profile_eval/README.md): synthetic profile evaluation with raw generations, AKM-elicited profiles, blind judgments, and current limits.
 
 ---
 

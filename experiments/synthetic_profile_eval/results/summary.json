@@ -1,0 +1,81 @@
+{
+  "num_profiles": 10,
+  "conditions": [
+    "no_profile",
+    "unstructured_notes",
+    "akm_profile",
+    "akm_elicited"
+  ],
+  "score_means": {
+    "no_profile": {
+      "constraint_adherence": 1.7,
+      "risk_control": 2.7,
+      "specificity": 2.6,
+      "actionability": 2.7,
+      "personal_fit": 1.7,
+      "tradeoff_awareness": 1.2
+    },
+    "unstructured_notes": {
+      "constraint_adherence": 4.1,
+      "risk_control": 4.3,
+      "specificity": 3.8,
+      "actionability": 4.1,
+      "personal_fit": 3.8,
+      "tradeoff_awareness": 2.3
+    },
+    "akm_profile": {
+      "constraint_adherence": 4.9,
+      "risk_control": 4.9,
+      "specificity": 4.9,
+      "actionability": 4.9,
+      "personal_fit": 4.9,
+      "tradeoff_awareness": 4.6
+    },
+    "akm_elicited": {
+      "constraint_adherence": 5.0,
+      "risk_control": 5.0,
+      "specificity": 5.0,
+      "actionability": 5.0,
+      "personal_fit": 5.0,
+      "tradeoff_awareness": 4.7
+    }
+  },
+  "count_means": {
+    "no_profile": {
+      "satisfied_constraints": 0.8,
+      "missed_constraints": 3.0,
+      "risk_violations": 1.4,
+      "profile_details_used": 1.5
+    },
+    "unstructured_notes": {
+      "satisfied_constraints": 3.7,
+      "missed_constraints": 0.4,
+      "risk_violations": 0.0,
+      "profile_details_used": 4.8
+    },
+    "akm_profile": {
+      "satisfied_constraints": 4.0,
+      "missed_constraints": 0.0,
+      "risk_violations": 0.0,
+      "profile_details_used": 6.6
+    },
+    "akm_elicited": {
+      "satisfied_constraints": 4.0,
+      "missed_constraints": 0.0,
+      "risk_violations": 0.0,
+      "profile_details_used": 6.5
+    }
+  },
+  "total_score": {
+    "no_profile": 12.6,
+    "unstructured_notes": 22.4,
+    "akm_profile": 29.1,
+    "akm_elicited": 29.7
+  },
+  "best_counts": {
+    "no_profile": 0,
+    "unstructured_notes": 0,
+    "akm_profile": 4,
+    "akm_elicited": 6
+  }
+}
