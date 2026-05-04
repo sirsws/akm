@@ -26,7 +26,7 @@
 
 \title{Profile-First Wardrobe Planning Under Real Constraints: Active Knowledge Modeling for Personalized Outfit Decision Support}
 \author{Weishi Shao}
-\date{March 2026}
+\date{May 2026}
 
 \begin{document}
 
@@ -231,6 +231,38 @@ The branch also differs from mainstream recommendation papers. Most recommendati
 The branch has several boundaries. First, it is not an image-understanding system. It assumes that wardrobe assets can be described or cataloged, not magically inferred. Second, it is not a fashion-trend engine. If the user wants novelty without wardrobe coherence, the branch is the wrong tool. Third, it does not remove taste conflict. A structured record can stabilize constraints, but it cannot eliminate the possibility that the user wants mutually incompatible outcomes such as maximum versatility, minimal spending, strong individuality, and zero maintenance burden at the same time.
 
 Failure modes are therefore predictable. The branch weakens when wardrobe inventory is stale, when anti-preferences are not recorded, when scenes are inaccurately ranked, or when purchase decisions ignore replacement logic. It also weakens when the public branch assets are used without enough intake depth. In those cases the system can still produce fluent styling language, but fluency should not be mistaken for grounded judgment.
+
+\section{Empirical Evidence from the AKM Benchmark v1.0}
+\label{sec:empirical}
+
+The methodological argument above is reinforced by the fashion subset of the AKM Benchmark Toolkit v1.0 \citep{shao2026akm}. The benchmark holds the generator model and prompt template constant and varies only the pre-task user-context condition: \textit{no\_profile} (task only), \textit{unstructured\_notes} (task plus an 80--160 character first-person fragment), \textit{akm\_profile} (task plus a hand-curated structured profile), and \textit{akm\_elicited} (task plus an automatically elicited profile from a simulated cold-start dialogue). For the fashion subset, 10 synthetic personas span eight wardrobe contexts (seasonal budget, capsule, occasion-specific, declutter, body-change transition, low-budget identity uplift, identity audit, travel packing), each with explicit hard constraints (budget ceilings, body realities, occasion requirements, religious or professional dress codes).
+
+Three cross-family LLM judges (DeepSeek-V4-pro, Gemini-3-Flash, Grok-4.3) blindly score each persona's four anonymized answers on six 1--5 dimensions: constraint adherence, risk control, specificity, actionability, personal fit, trade-off awareness. Each judge sees the same deterministic anonymized order, so inter-judge agreement is computable at the answer level.
+
+\begin{table}[htbp]
+\centering
+\caption{Fashion subset, pooled means across 3 cross-family judges (n${=}$30 per condition; max total ${=}30$).}
+\label{tab:fashion_pooled}
+\small
+\begin{tabular}{lccccccc}
+\toprule
+Condition & Total & Constraint & Risk & Specificity & Actionability & Fit & Trade-off \\
+\midrule
+no\_profile          & 10.23 & 1.47 & 2.00 & 2.00 & 2.17 & 1.40 & 1.20 \\
+unstructured\_notes  & 19.00 & 3.60 & 3.77 & 3.20 & 3.33 & 3.17 & 1.93 \\
+akm\_profile         & 29.17 & 4.83 & 4.90 & 4.90 & 4.93 & 4.73 & 4.87 \\
+akm\_elicited        & 29.43 & 4.90 & 4.97 & 4.97 & 4.97 & 4.87 & 4.77 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Inter-judge reliability on the fashion subset is high on aggregate: Krippendorff $\alpha = 0.952$ on totals. As with the fitness subset, the four-condition Spearman $\rho$ pattern is mixed: $\rho = 1.0$ between Gemini-3-Flash and Grok-4.3, and $\rho = 0.8$ for both pairings involving DeepSeek-V4-pro. All three judges agree that the two AKM conditions dominate the two baselines; they only disagree on the fine-grained ordering of \textit{akm\_profile} versus \textit{akm\_elicited}, which differs by $0.26$ points on a 30-point scale. With $n=10$ personas and a saturated rubric, this is the expected behavior at the structured-input ceiling rather than a reliability concern. Best-answer pooled votes (23 parseable selections out of 30 cells, where each cell is one persona scored by one judge) split nearly evenly between the two AKM conditions (\textit{akm\_profile} 12, \textit{akm\_elicited} 11), with both non-AKM conditions at zero.
+
+Three reads matter for the fashion-branch argument. First, the gap between the two AKM conditions and the unstructured-notes baseline is the largest of any subset in the v1.0 benchmark ($+10.2$ on a 30-point scale, versus $+8.4$ on the advisory subset and $+6.7$ on the fitness subset). The most parsimonious explanation is that wardrobe constraints (budget ceilings, body realities, religious or professional dress codes, occasion hierarchy) are precisely the kind of variables that compress poorly into a free-form first-person note and address well in a structured profile.
+
+Second, on the fashion subset alone, the elicited AKM profile slightly exceeds the hand-curated profile on totals ($29.43$ versus $29.17$). This is consistent with a saturated rubric and minor sampling noise rather than a real ordering reversal, but it is the strongest cold-start recovery in the entire benchmark and suggests that the elicitation pass is at least not a bottleneck for wardrobe contexts. Third, even on the saturated rubric, \emph{trade-off awareness} shows the largest single-dimension gap between AKM and unstructured\_notes ($+2.94$), which matches the methodological prediction in Section 4: structured profiles make scene hierarchy, anti-preferences, and budget tradeoffs individually addressable in the downstream prompt.
+
+The synthetic-only design has clear limits: the simulated user grounds answers in a hidden persona JSON and therefore cannot omit or distort information the way real wardrobe owners do; the 1--5 rubric saturates at the structured end. The full reproducibility package, including the fashion subset analyzer (\texttt{subset\_stats.py --tag fashion}), is at \url{https://github.com/sirsws/akm} under \texttt{experiments/synthetic\_profile\_eval/}.
 
 \section{Conclusion}
 

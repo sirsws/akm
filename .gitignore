@@ -1,0 +1,28 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.toc
+*.lot
+*.lof
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / debug scripts
+experiments/synthetic_profile_eval/_fix_one_judgment.py
+experiments/synthetic_profile_eval/outputs/v0.2/
+
+# arXiv staging
+AKM论文/arxiv_submit_staging/

@@ -1,0 +1,268 @@
+{
+  "by_judge": {
+    "deepseek_v4_pro": {
+      "no_profile": {
+        "n": 10,
+        "total_mean": 8.5,
+        "total_std": 1.91,
+        "dimensions": {
+          "constraint_adherence": 1.3,
+          "risk_control": 1.6,
+          "specificity": 1.7,
+          "actionability": 1.8,
+          "personal_fit": 1.0,
+          "tradeoff_awareness": 1.1
+        }
+      },
+      "unstructured_notes": {
+        "n": 10,
+        "total_mean": 22.9,
+        "total_std": 2.663,
+        "dimensions": {
+          "constraint_adherence": 4.1,
+          "risk_control": 4.3,
+          "specificity": 3.9,
+          "actionability": 4.0,
+          "personal_fit": 3.8,
+          "tradeoff_awareness": 2.8
+        }
+      },
+      "akm_profile": {
+        "n": 10,
+        "total_mean": 29.3,
+        "total_std": 2.1,
+        "dimensions": {
+          "constraint_adherence": 4.9,
+          "risk_control": 4.9,
+          "specificity": 4.9,
+          "actionability": 4.9,
+          "personal_fit": 4.9,
+          "tradeoff_awareness": 4.8
+        }
+      },
+      "akm_elicited": {
+        "n": 10,
+        "total_mean": 29.6,
+        "total_std": 0.8,
+        "dimensions": {
+          "constraint_adherence": 4.9,
+          "risk_control": 4.9,
+          "specificity": 5.0,
+          "actionability": 5.0,
+          "personal_fit": 5.0,
+          "tradeoff_awareness": 4.8
+        }
+      }
+    },
+    "gemini_3_flash": {
+      "no_profile": {
+        "n": 10,
+        "total_mean": 8.8,
+        "total_std": 2.272,
+        "dimensions": {
+          "constraint_adherence": 1.1,
+          "risk_control": 1.4,
+          "specificity": 1.9,
+          "actionability": 2.4,
+          "personal_fit": 1.0,
+          "tradeoff_awareness": 1.0
+        }
+      },
+      "unstructured_notes": {
+        "n": 10,
+        "total_mean": 22.1,
+        "total_std": 2.879,
+        "dimensions": {
+          "constraint_adherence": 3.9,
+          "risk_control": 4.3,
+          "specificity": 3.7,
+          "actionability": 4.4,
+          "personal_fit": 3.6,
+          "tradeoff_awareness": 2.2
+        }
+      },
+      "akm_profile": {
+        "n": 10,
+        "total_mean": 29.0,
+        "total_std": 1.612,
+        "dimensions": {
+          "constraint_adherence": 4.8,
+          "risk_control": 4.8,
+          "specificity": 4.9,
+          "actionability": 4.9,
+          "personal_fit": 4.8,
+          "tradeoff_awareness": 4.8
+        }
+      },
+      "akm_elicited": {
+        "n": 10,
+        "total_mean": 28.2,
+        "total_std": 1.47,
+        "dimensions": {
+          "constraint_adherence": 4.6,
+          "risk_control": 4.8,
+          "specificity": 4.9,
+          "actionability": 4.8,
+          "personal_fit": 4.6,
+          "tradeoff_awareness": 4.5
+        }
+      }
+    },
+    "grok_4_3": {
+      "no_profile": {
+        "n": 10,
+        "total_mean": 13.3,
+        "total_std": 3.407,
+        "dimensions": {
+          "constraint_adherence": 1.7,
+          "risk_control": 1.9,
+          "specificity": 3.2,
+          "actionability": 3.2,
+          "personal_fit": 1.5,
+          "tradeoff_awareness": 1.8
+        }
+      },
+      "unstructured_notes": {
+        "n": 10,
+        "total_mean": 22.5,
+        "total_std": 3.879,
+        "dimensions": {
+          "constraint_adherence": 3.7,
+          "risk_control": 4.2,
+          "specificity": 4.1,
+          "actionability": 4.3,
+          "personal_fit": 3.3,
+          "tradeoff_awareness": 2.9
+        }
+      },
+      "akm_profile": {
+        "n": 10,
+        "total_mean": 29.4,
+        "total_std": 1.02,
+        "dimensions": {
+          "constraint_adherence": 4.8,
+          "risk_control": 4.9,
+          "specificity": 5.0,
+          "actionability": 5.0,
+          "personal_fit": 4.8,
+          "tradeoff_awareness": 4.9
+        }
+      },
+      "akm_elicited": {
+        "n": 10,
+        "total_mean": 28.7,
+        "total_std": 1.269,
+        "dimensions": {
+          "constraint_adherence": 4.7,
+          "risk_control": 4.8,
+          "specificity": 5.0,
+          "actionability": 4.9,
+          "personal_fit": 4.6,
+          "tradeoff_awareness": 4.7
+        }
+      }
+    }
+  },
+  "pooled": {
+    "no_profile": {
+      "n": 30,
+      "total_mean": 10.2,
+      "total_std": 3.41,
+      "dimensions": {
+        "constraint_adherence": 1.367,
+        "risk_control": 1.633,
+        "specificity": 2.267,
+        "actionability": 2.467,
+        "personal_fit": 1.167,
+        "tradeoff_awareness": 1.3
+      }
+    },
+    "unstructured_notes": {
+      "n": 30,
+      "total_mean": 22.5,
+      "total_std": 3.202,
+      "dimensions": {
+        "constraint_adherence": 3.9,
+        "risk_control": 4.267,
+        "specificity": 3.9,
+        "actionability": 4.233,
+        "personal_fit": 3.567,
+        "tradeoff_awareness": 2.633
+      }
+    },
+    "akm_profile": {
+      "n": 30,
+      "total_mean": 29.233,
+      "total_std": 1.647,
+      "dimensions": {
+        "constraint_adherence": 4.833,
+        "risk_control": 4.867,
+        "specificity": 4.933,
+        "actionability": 4.933,
+        "personal_fit": 4.833,
+        "tradeoff_awareness": 4.833
+      }
+    },
+    "akm_elicited": {
+      "n": 30,
+      "total_mean": 28.833,
+      "total_std": 1.344,
+      "dimensions": {
+        "constraint_adherence": 4.733,
+        "risk_control": 4.833,
+        "specificity": 4.967,
+        "actionability": 4.9,
+        "personal_fit": 4.733,
+        "tradeoff_awareness": 4.667
+      }
+    }
+  },
+  "n_personas": 10,
+  "agreement": {
+    "krippendorff_alpha_total": 0.9398,
+    "krippendorff_alpha_per_dimension": {
+      "constraint_adherence": 0.9231,
+      "risk_control": 0.915,
+      "specificity": 0.8187,
+      "actionability": 0.8027,
+      "personal_fit": 0.9413,
+      "tradeoff_awareness": 0.8915
+    },
+    "spearman_pairwise_condition_means": {
+      "deepseek_v4_pro__vs__gemini_3_flash": 0.8,
+      "deepseek_v4_pro__vs__grok_4_3": 0.8,
+      "gemini_3_flash__vs__grok_4_3": 1.0
+    }
+  },
+  "best_answer_counts": {
+    "by_judge": {
+      "deepseek_v4_pro": {
+        "no_profile": 0,
+        "unstructured_notes": 0,
+        "akm_profile": 7,
+        "akm_elicited": 2
+      },
+      "gemini_3_flash": {
+        "no_profile": 0,
+        "unstructured_notes": 0,
+        "akm_profile": 2,
+        "akm_elicited": 2
+      },
+      "grok_4_3": {
+        "no_profile": 0,
+        "unstructured_notes": 0,
+        "akm_profile": 6,
+        "akm_elicited": 4
+      }
+    },
+    "pooled": {
+      "no_profile": 0,
+      "unstructured_notes": 0,
+      "akm_profile": 15,
+      "akm_elicited": 8
+    }
+  },
+  "domains": [
+    "fitness"
+  ]
+}

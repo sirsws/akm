@@ -14,7 +14,8 @@
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-0969da" alt="License" /></a>
   <img src="https://img.shields.io/badge/status-active-2ea44f" alt="Status" />
-  <img src="https://img.shields.io/badge/paper-SSRN_in_review-b31b1b" alt="Paper" />
+  <img src="https://img.shields.io/badge/papers-4_submitted-b31b1b" alt="Papers" />
+  <img src="https://img.shields.io/badge/benchmark-v1.0-ff6b35" alt="Benchmark" />
   <img src="https://img.shields.io/badge/branches-3-6f42c1" alt="Branches" />
   <img src="https://img.shields.io/github/stars/sirsws/akm?style=flat" alt="GitHub stars" />
 </p>
@@ -94,9 +95,29 @@ AKM exists because many AI systems already provide context surfaces without givi
 
 ### Parent Paper
 
-- [AKM Mother Paper](./papers/akm/README.md)
-- PDF included in this repository: [AKM-main.pdf](./papers/akm/AKM-main.pdf)
-- SSRN status: in review, public URL pending
+**Active Knowledge Modeling: A Reproducible Cross-Family LLM-as-Judge Benchmark for Pre-Task User-Profile Conditioning**
+
+- PDF: [AKM-main.pdf](./papers/akm/AKM-main.pdf) (May 2026, 11 pages)
+- SSRN: submitted 2026-05-04, under review
+- arXiv: submitted 2026-05-04 (cs.AI), awaiting moderation
+
+### Branch Papers (all submitted SSRN 2026-05-04)
+
+| Paper | Title | Venue |
+| --- | --- | --- |
+| DaE | [Cold-Start Profile Recovery in LLM Advisory](./branches/dae/paper/latex/main.pdf) | SSRN · Information Systems & eBusiness |
+| Fitness | [Profile-First Fitness Planning Under Real Constraints](./branches/fitness/paper/latex/main.pdf) | SSRN · Decision Sciences |
+| Fashion | [Profile-First Wardrobe Planning Under Real Constraints](./branches/fashion/paper/latex/main.pdf) | SSRN · Marketing Science |
+
+### Benchmark Toolkit
+
+**[AKM-Benchmark-Toolkit v1.0](./experiments/synthetic_profile_eval/README.md)** — fully reproducible, open-source:
+
+- 50 synthetic personas × 4 conditions × 3 cross-family judges = 600 blind judgments
+- Generator: DeepSeek-V4-pro | Judges: DeepSeek-V4-pro · Gemini-3-Flash · Grok-4.3
+- Inter-judge reliability: Krippendorff α = 0.948 · Spearman ρ = 1.0 (full benchmark)
+- Cold-start recovery: 99.2% of hand-curated upper bound
+- Verify any claim: `python experiments/synthetic_profile_eval/verify_paper_numbers.py`
 
 ### Skills CLI Install
 
@@ -106,17 +127,7 @@ npx skills add https://github.com/sirsws/akm --skill akm-fitness-planner --full-
 
 # Fashion
 npx skills add https://github.com/sirsws/akm --skill akm-fashion-strategist --full-depth
-``` 
-
-### Branch Papers
-
-- [DaE Paper Entry](./branches/dae/paper/README.md)
-- [Fitness Paper Entry](./branches/fitness/paper/README.md)
-- [Fashion Paper Entry](./branches/fashion/paper/README.md)
-
-### Benchmark Toolkit
-
-- [AKM-Benchmark-Toolkit v0.2](./experiments/synthetic_profile_eval/README.md): synthetic profile evaluation with raw generations, AKM-elicited profiles, blind judgments, and current limits.
+```
 
 ---
 
@@ -132,12 +143,15 @@ The two DaE repositories remain public historical entry points, but they now poi
 
 ## Current Status
 
-- AKM definition: completed
-- AKM parent paper: completed, SSRN URL pending
-- DaE branch: unified as AKM's first complete reference implementation
-- Fitness branch: branch paper + bilingual skill package available
-- Fashion branch: branch paper + bilingual skill package available
-- Bilingual public layer: standardized across README, paper, skill, and prompt files
+| Item | Status |
+| --- | --- |
+| AKM definition | ✅ Complete |
+| AKM parent paper | ✅ Submitted — SSRN (under review) + arXiv cs.AI (awaiting moderation) |
+| DaE empirical paper | ✅ Submitted — SSRN (under review) |
+| Fitness branch paper | ✅ Submitted — SSRN (under review) |
+| Fashion branch paper | ✅ Submitted — SSRN (under review) |
+| Benchmark Toolkit | ✅ v1.0 — 50 personas, 600 judgments, fully reproducible |
+| Bilingual skill packages | ✅ DaE · Fitness · Fashion |
 
 ---
 

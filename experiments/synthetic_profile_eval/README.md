@@ -1,109 +1,156 @@
 <!--
 文件：README.md
-核心功能：说明 AKM-Benchmark-Toolkit v0.2 的实验目标、输入输出、运行方式、环境变量配置、当前边界与 akm_elicited 条件。
-输入：profiles.jsonl、prompts/*.md、run_generation.py、run_judging.py、aggregate_results.py、DEEPSEEK_API_KEY 环境变量。
-输出：outputs/generations.jsonl、outputs/judgments.jsonl、results/summary.json、results/summary.md。
+核心功能：说明 AKM-Benchmark-Toolkit v1.0 的实验目标、数据规模、跨家族 LLM-as-judge 协议、复现命令、输出文件结构与边界声明。
+输入：profiles.jsonl（50 personas）、prompts/*.md、run_generation.py、run_judging_multi.py、aggregate_v1.py、DEEPSEEK_API_KEY、OPENROUTER_API_KEY（或 ora.txt）。
+输出：outputs/v1/generations.jsonl、outputs/v1/judgments_<judge>.jsonl、results/v1/scores_long.csv、scores_summary.json、best_answers.csv、agreement.json。
 -->
 
-# AKM-Benchmark-Toolkit v0.2
+# AKM Benchmark Toolkit v1.0
 
-This toolkit reproduces a synthetic profile evaluation for Active Knowledge Modeling (AKM).
+A reproducible synthetic-profile evaluation for **Active Knowledge Modeling (AKM)**.
+v1.0 expands on v0.2 with 50 personas, three cross-family LLM judges, and inter-judge agreement statistics.
 
-It compares downstream AI advice under four conditions:
+## What v1.0 measures
 
-1. no user profile,
-2. unstructured natural-language user notes,
-3. structured AKM-style user profiles,
-4. AKM-elicited profiles generated through a simulated pre-task elicitation chain.
+We compare downstream advice quality under **four pre-task user-context conditions**, holding the generator model and prompt template constant:
 
-The current v0.2 result is still a proof-of-concept benchmark. It is suitable for reproducing the published demo, inspecting raw outputs, and checking whether the elicitation chain narrows the gap between unstructured notes and ideal structured profiles.
+1. `no_profile` — task only, no user context.
+2. `unstructured_notes` — task plus a 80–160 character first-person natural-language self-description.
+3. `akm_profile` — task plus a hand-curated structured AKM profile (`goals / hard_constraints / soft_preferences / available_assets / risk_boundaries / decision_style`).
+4. `akm_elicited` — task plus an AKM profile **generated automatically** from a simulated AKM elicitation dialogue (5–7 follow-up questions, simulated user answers, then profile extraction).
 
-It does not test real-user satisfaction. It uses synthetic personas, DeepSeek generation, and DeepSeek LLM-as-judge evaluation.
+Conditions 3 and 4 isolate two separate claims:
+- (3) *If* a structured AKM profile already exists, does it help downstream tasks?
+- (4) Can the AKM elicitation protocol *itself* produce a good-enough profile from a cold start?
 
-## Conditions
+## Data
 
-- `no_profile`: the model receives only the task.
-- `unstructured_notes`: the model receives natural-language user notes.
-- `akm_profile`: the model receives a structured AKM profile.
-- `akm_elicited`: the model receives a structured AKM profile generated from a simulated AKM elicitation trace.
+- **50 synthetic personas** across 7 domains (advisory-heavy):
 
-## Main Question
+| Domain | n | Sub-scenario coverage |
+| --- | ---: | --- |
+| career | 6 | mid-life pivot, side project, project-acceptance, energy reallocation |
+| learning | 6 | 3-month plan, certification ROI, year-long uplift, work-study integration |
+| investment | 6 | 12-mo allocation, in/out timing, education fund, housing, passive income |
+| health_lifestyle | 6 | improvement plan, work-day routine, weekend recovery, top-risk, exam decision |
+| relationship | 6 | family repair, parental boundary, intimate communication, kids, workplace, friends |
+| fitness | 10 | 8-week plan, home setup, injury return, plateau, cut, mid-life, volume audit, travel |
+| fashion | 10 | seasonal budget, capsule, occasion, declutter, body-change, low-budget, identity, travel |
 
-Does a structured AKM profile improve constraint adherence, risk control, specificity, actionability, personal fit, and trade-off awareness? Does the `akm_elicited` chain preserve enough of that advantage to justify larger-scale paper evaluation?
+- Each persona has a `persona` (ground-truth state), an `unstructured_notes` first-person fragment, a hand-aligned `akm_profile`, and a `task`.
+- Total generated answers: **50 × 4 = 200**.
+- Total judgments: **200 × 3 = 600** (three judges score the same anonymized 4-answer set per profile).
 
-## Current Result
+## Models
 
-The included 10-profile run produced this aggregate pattern:
+| Role | Model | Provider | Why |
+| --- | --- | --- | --- |
+| Generator | `deepseek-v4-pro` (thinking disabled) | DeepSeek | Single high-capability generator to isolate the *condition* effect; cheap and recent (2026-04). |
+| Judge 1 | `deepseek-v4-pro` (thinking disabled) | DeepSeek | Same family as generator (self-judging baseline). |
+| Judge 2 | `google/gemini-3-flash-preview` | OpenRouter | Cross-family check (Google). |
+| Judge 3 | `x-ai/grok-4.3` | OpenRouter | Cross-family check (xAI). |
 
-| Condition | Total | Constraint | Risk | Specificity | Actionability | Fit | Trade-off |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `no_profile` | 12.6 | 1.7 | 2.7 | 2.6 | 2.7 | 1.7 | 1.2 |
-| `unstructured_notes` | 22.4 | 4.1 | 4.3 | 3.8 | 4.1 | 3.8 | 2.3 |
-| `akm_profile` | 29.1 | 4.9 | 4.9 | 4.9 | 4.9 | 4.9 | 4.6 |
-| `akm_elicited` | 29.7 | 5.0 | 5.0 | 5.0 | 5.0 | 5.0 | 4.7 |
+Each judge receives the **same anonymized 4-answer set** per persona (deterministic shuffle seeded by `profile_id`) and rates each anonymous answer on six 1–5 dimensions plus picks a `best_answer_label`.
 
-Best-answer counts:
+## Headline results
 
-- `no_profile`: 0
-- `unstructured_notes`: 0
-- `akm_profile`: 4
-- `akm_elicited`: 6
+```text
+Pooled across 3 judges, 50 personas (n=150 per condition):
 
-Do not treat a high score as a real-world "perfect proof". The useful signal is narrower: structured and elicited profiles can be compared against unstructured notes in a controlled synthetic setting.
+  no_profile          mean=10.57   std=4.4
+  unstructured_notes  mean=20.93   std=4.7
+  akm_profile         mean=29.34   std=1.7
+  akm_elicited        mean=29.11   std=1.4
 
-## Run
+Krippendorff alpha (interval, 3 raters): 0.948
+Per-dimension alpha:
+  constraint_adherence  0.937
+  risk_control          0.824
+  specificity           0.884
+  actionability         0.843
+  personal_fit          0.942
+  tradeoff_awareness    0.921
+
+Pairwise Spearman rho on condition rankings:
+  deepseek_v4_pro vs gemini_3_flash : 1.00
+  deepseek_v4_pro vs grok_4_3       : 1.00
+  gemini_3_flash  vs grok_4_3       : 1.00
+
+Best-answer votes (150 total):
+  no_profile           0
+  unstructured_notes   1
+  akm_profile         70
+  akm_elicited        47
+  (the remaining 32 votes were not parseable as a single answer label
+   in one judge's structured output and are excluded from the count;
+   they do not affect the dimension means above.)
+```
+
+## Reproduce
+
+Requirements:
+- Python 3.11+ (no third-party packages required for the core pipeline).
+- DeepSeek API key in env var `DEEPSEEK_API_KEY` or in `<workspace_root>/dsapi.txt`.
+- OpenRouter API key in env var `OPENROUTER_API_KEY` or in `<workspace_root>/ora.txt`.
 
 ```powershell
-python experiments\synthetic_profile_eval\run_generation.py
-python experiments\synthetic_profile_eval\run_judging.py
-python experiments\synthetic_profile_eval\aggregate_results.py
+cd experiments\synthetic_profile_eval
+
+# Step A: regenerate all 200 answers (skips records already in outputs\v1\generations.jsonl).
+python run_generation.py
+
+# Step B: run the three judges (each writes its own jsonl, fully resumable).
+python run_judging_multi.py --judge deepseek_v4_pro
+python run_judging_multi.py --judge gemini_3_flash
+python run_judging_multi.py --judge grok_4_3
+
+# Step C: aggregate.
+python aggregate_v1.py
 ```
 
-The scripts read the DeepSeek API key from the `DEEPSEEK_API_KEY` environment variable. The key is not written to output files.
+To regenerate the personas themselves:
 
-## Output
+```powershell
+python generate_profiles.py
+```
 
-- `outputs/generations.jsonl`: raw generated answers under all four conditions, including elicitation traces for `akm_elicited`.
-- `outputs/judgments.jsonl`: blind judge scores with randomized answer labels.
-- `results/summary.json`: aggregated metrics.
-- `results/summary.md`: human-readable summary for review and article revision.
-
-## What v0.2 Does Not Prove
-
-The `akm_profile` condition injects a pre-written structured profile. The `akm_elicited` condition adds a simulated elicitation chain, but it still uses synthetic personas and LLM-simulated user answers. Therefore v0.2 mainly tests these claims:
+## Output layout
 
 ```text
-Structured user context improves downstream constraint adherence compared with no profile or unstructured notes.
-AKM-style elicitation can generate a usable profile in this synthetic setting.
+outputs/
+  v1/
+    generations.jsonl                # 200 lines, one per (profile_id, condition)
+    judgments_deepseek_v4_pro.jsonl  # 50 lines
+    judgments_gemini_3_flash.jsonl   # 50 lines
+    judgments_grok_4_3.jsonl         # 50 lines
+    profiles_generation_log.jsonl    # provenance for each newly synthesized persona
+results/
+  v1/
+    scores_long.csv      # profile x judge x condition x dimension long table
+    scores_summary.json  # by_judge / pooled / by_domain means and stds
+    best_answers.csv     # best-answer counts per judge and pooled
+    agreement.json       # Krippendorff alpha (total + per-dim) and pairwise Spearman
 ```
-
-It does not yet prove this stronger real-world claim:
-
-```text
-Real users will provide enough information through AKM elicitation to outperform other profile-generation methods in production.
-```
-
-## akm_elicited Flow
-
-```text
-synthetic persona
-  -> simulated user answers AKM elicitation questions
-  -> profile extraction
-  -> downstream task generation
-  -> downstream task generation
-  -> blind LLM-as-judge evaluation
-```
-
-Implemented files:
-
-```text
-prompts/elicit_akm_profile.md
-outputs/generations.jsonl
-outputs/judgments.jsonl
-```
-
-Run `akm_elicited` on the existing 10 profiles before expanding to 30 or more profiles.
 
 ## Boundary
 
-This is a synthetic evaluation. It supports a narrow claim: under controlled synthetic profiles, structured pre-task profile elicitation can improve observable constraint adherence and profile fit. It does not claim clinical efficacy, behavioral change, real-user satisfaction, or universal personalization performance.
+This is a synthetic evaluation. It supports a narrow but defensible claim:
+**under controlled synthetic profiles and three independent cross-family LLM judges in near-perfect agreement, both a hand-curated AKM profile and an AKM-elicited profile substantially outperform an unstructured first-person note (and trivially outperform no profile at all) on six downstream advisory-quality dimensions.**
+
+It does **not** claim:
+- that real users will provide enough information through AKM elicitation in production,
+- clinical efficacy or behavioral change,
+- universal personalization performance across cultures or task types,
+- transfer to high-stakes decisions where calibration of *advice itself* matters more than constraint adherence.
+
+The judge models share at least one obvious failure mode: they all rated the *structured* condition near the ceiling (≈4.95/5 on every dimension), suggesting the rubric saturates quickly. Future work should add ceiling-resistant rubrics (e.g. forced ranking, per-constraint pass/fail counts) before scaling.
+
+## akm_elicited flow
+
+```text
+synthetic persona
+  -> simulated user answers AKM elicitation questions (DeepSeek-V4-pro)
+  -> profile extraction (DeepSeek-V4-pro JSON mode)
+  -> downstream task answer (DeepSeek-V4-pro)
+  -> blind 3-judge LLM-as-judge evaluation
+```

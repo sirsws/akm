@@ -1,0 +1,37 @@
+{
+  "n_profiles_with_any_judge": 50,
+  "krippendorff_alpha_total": 0.9483,
+  "krippendorff_alpha_per_dimension": {
+    "constraint_adherence": 0.9372,
+    "risk_control": 0.8243,
+    "specificity": 0.8839,
+    "actionability": 0.8434,
+    "personal_fit": 0.9417,
+    "tradeoff_awareness": 0.9212
+  },
+  "spearman_pairwise_condition_means": {
+    "deepseek_v4_pro__vs__gemini_3_flash": 1.0,
+    "deepseek_v4_pro__vs__grok_4_3": 1.0,
+    "gemini_3_flash__vs__grok_4_3": 1.0
+  },
+  "judge_condition_total_means": {
+    "deepseek_v4_pro": {
+      "no_profile": 9.34,
+      "unstructured_notes": 21.1,
+      "akm_profile": 29.64,
+      "akm_elicited": 29.4
+    },
+    "gemini_3_flash": {
+      "no_profile": 9.38,
+      "unstructured_notes": 20.3,
+      "akm_profile": 28.98,
+      "akm_elicited": 28.72
+    },
+    "grok_4_3": {
+      "no_profile": 12.98,
+      "unstructured_notes": 21.4,
+      "akm_profile": 29.4,
+      "akm_elicited": 29.22
+    }
+  }
+}

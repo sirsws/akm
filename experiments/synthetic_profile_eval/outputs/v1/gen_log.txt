@@ -1,0 +1,201 @@
+Resuming: 59 records already on disk; total target 200
+  [1/50] career_001 no_profile: SKIP (cached)
+  [1/50] career_001 unstructured_notes: SKIP (cached)
+  [1/50] career_001 akm_profile: SKIP (cached)
+  [1/50] career_001 akm_elicited: SKIP (cached)
+  [2/50] career_002 no_profile: SKIP (cached)
+  [2/50] career_002 unstructured_notes: SKIP (cached)
+  [2/50] career_002 akm_profile: SKIP (cached)
+  [2/50] career_002 akm_elicited: SKIP (cached)
+  [3/50] fitness_001 no_profile: SKIP (cached)
+  [3/50] fitness_001 unstructured_notes: SKIP (cached)
+  [3/50] fitness_001 akm_profile: SKIP (cached)
+  [3/50] fitness_001 akm_elicited: SKIP (cached)
+  [4/50] fitness_002 no_profile: SKIP (cached)
+  [4/50] fitness_002 unstructured_notes: SKIP (cached)
+  [4/50] fitness_002 akm_profile: SKIP (cached)
+  [4/50] fitness_002 akm_elicited: SKIP (cached)
+  [5/50] fashion_001 no_profile: SKIP (cached)
+  [5/50] fashion_001 unstructured_notes: SKIP (cached)
+  [5/50] fashion_001 akm_profile: SKIP (cached)
+  [5/50] fashion_001 akm_elicited: SKIP (cached)
+  [6/50] fashion_002 no_profile: SKIP (cached)
+  [6/50] fashion_002 unstructured_notes: SKIP (cached)
+  [6/50] fashion_002 akm_profile: SKIP (cached)
+  [6/50] fashion_002 akm_elicited: SKIP (cached)
+  [7/50] learning_001 no_profile: SKIP (cached)
+  [7/50] learning_001 unstructured_notes: SKIP (cached)
+  [7/50] learning_001 akm_profile: SKIP (cached)
+  [7/50] learning_001 akm_elicited: SKIP (cached)
+  [8/50] learning_002 no_profile: SKIP (cached)
+  [8/50] learning_002 unstructured_notes: SKIP (cached)
+  [8/50] learning_002 akm_profile: SKIP (cached)
+  [8/50] learning_002 akm_elicited: SKIP (cached)
+  [9/50] investment_001 no_profile: SKIP (cached)
+  [9/50] investment_001 unstructured_notes: SKIP (cached)
+  [9/50] investment_001 akm_profile: SKIP (cached)
+  [9/50] investment_001 akm_elicited: SKIP (cached)
+  [10/50] health_001 no_profile: SKIP (cached)
+  [10/50] health_001 unstructured_notes: SKIP (cached)
+  [10/50] health_001 akm_profile: SKIP (cached)
+  [10/50] health_001 akm_elicited: SKIP (cached)
+  [11/50] career_003 no_profile: SKIP (cached)
+  [11/50] career_003 unstructured_notes: SKIP (cached)
+  [11/50] career_003 akm_profile: SKIP (cached)
+  [11/50] career_003 akm_elicited: SKIP (cached)
+  [12/50] career_004 no_profile: SKIP (cached)
+  [12/50] career_004 unstructured_notes: SKIP (cached)
+  [12/50] career_004 akm_profile: SKIP (cached)
+  [12/50] career_004 akm_elicited: SKIP (cached)
+  [13/50] career_005 no_profile: SKIP (cached)
+  [13/50] career_005 unstructured_notes: SKIP (cached)
+  [13/50] career_005 akm_profile: SKIP (cached)
+  [13/50] career_005 akm_elicited: SKIP (cached)
+  [14/50] career_006 no_profile: SKIP (cached)
+  [14/50] career_006 unstructured_notes: SKIP (cached)
+  [14/50] career_006 akm_profile: SKIP (cached)
+  [14/50] career_006 akm_elicited: SKIP (cached)
+  [15/50] learning_003 no_profile: SKIP (cached)
+  [15/50] learning_003 unstructured_notes: SKIP (cached)
+  [15/50] learning_003 akm_profile: SKIP (cached)
+  [15/50] learning_003 akm_elicited: OK
+  [16/50] learning_004 no_profile: OK
+  [16/50] learning_004 unstructured_notes: OK
+  [16/50] learning_004 akm_profile: OK
+  [16/50] learning_004 akm_elicited: OK
+  [17/50] learning_005 no_profile: OK
+  [17/50] learning_005 unstructured_notes: OK
+  [17/50] learning_005 akm_profile: OK
+  [17/50] learning_005 akm_elicited: OK
+  [18/50] learning_006 no_profile: OK
+  [18/50] learning_006 unstructured_notes: OK
+  [18/50] learning_006 akm_profile: OK
+  [18/50] learning_006 akm_elicited: OK
+  [19/50] investment_002 no_profile: OK
+  [19/50] investment_002 unstructured_notes: OK
+  [19/50] investment_002 akm_profile: OK
+  [19/50] investment_002 akm_elicited: OK
+  [20/50] investment_003 no_profile: OK
+  [20/50] investment_003 unstructured_notes: OK
+  [20/50] investment_003 akm_profile: OK
+  [20/50] investment_003 akm_elicited: OK
+  [21/50] investment_004 no_profile: OK
+  [21/50] investment_004 unstructured_notes: OK
+  [21/50] investment_004 akm_profile: OK
+  [21/50] investment_004 akm_elicited: OK
+  [22/50] investment_005 no_profile: OK
+  [22/50] investment_005 unstructured_notes: OK
+  [22/50] investment_005 akm_profile: OK
+  [22/50] investment_005 akm_elicited: OK
+  [23/50] investment_006 no_profile: OK
+  [23/50] investment_006 unstructured_notes: OK
+  [23/50] investment_006 akm_profile: OK
+  [23/50] investment_006 akm_elicited: OK
+  [24/50] health_002 no_profile: OK
+  [24/50] health_002 unstructured_notes: OK
+  [24/50] health_002 akm_profile: OK
+  [24/50] health_002 akm_elicited: OK
+  [25/50] health_003 no_profile: OK
+  [25/50] health_003 unstructured_notes: OK
+  [25/50] health_003 akm_profile: OK
+  [25/50] health_003 akm_elicited: OK
+  [26/50] health_004 no_profile: OK
+  [26/50] health_004 unstructured_notes: OK
+  [26/50] health_004 akm_profile: OK
+  [26/50] health_004 akm_elicited: OK
+  [27/50] health_006 no_profile: OK
+  [27/50] health_006 unstructured_notes: OK
+  [27/50] health_006 akm_profile: OK
+  [27/50] health_006 akm_elicited: OK
+  [28/50] relationship_001 no_profile: OK
+  [28/50] relationship_001 unstructured_notes: OK
+  [28/50] relationship_001 akm_profile: OK
+  [28/50] relationship_001 akm_elicited: OK
+  [29/50] relationship_002 no_profile: OK
+  [29/50] relationship_002 unstructured_notes: OK
+  [29/50] relationship_002 akm_profile: OK
+  [29/50] relationship_002 akm_elicited: OK
+  [30/50] relationship_003 no_profile: OK
+  [30/50] relationship_003 unstructured_notes: OK
+  [30/50] relationship_003 akm_profile: OK
+  [30/50] relationship_003 akm_elicited: OK
+  [31/50] relationship_004 no_profile: OK
+  [31/50] relationship_004 unstructured_notes: OK
+  [31/50] relationship_004 akm_profile: OK
+  [31/50] relationship_004 akm_elicited: OK
+  [32/50] relationship_005 no_profile: OK
+  [32/50] relationship_005 unstructured_notes: OK
+  [32/50] relationship_005 akm_profile: OK
+  [32/50] relationship_005 akm_elicited: OK
+  [33/50] relationship_006 no_profile: OK
+  [33/50] relationship_006 unstructured_notes: OK
+  [33/50] relationship_006 akm_profile: OK
+  [33/50] relationship_006 akm_elicited: OK
+  [34/50] fitness_003 no_profile: OK
+  [34/50] fitness_003 unstructured_notes: OK
+  [34/50] fitness_003 akm_profile: OK
+  [34/50] fitness_003 akm_elicited: OK
+  [35/50] fitness_004 no_profile: OK
+  [35/50] fitness_004 unstructured_notes: OK
+  [35/50] fitness_004 akm_profile: OK
+  [35/50] fitness_004 akm_elicited: OK
+  [36/50] fitness_005 no_profile: OK
+  [36/50] fitness_005 unstructured_notes: OK
+  [36/50] fitness_005 akm_profile: OK
+  [36/50] fitness_005 akm_elicited: OK
+  [37/50] fitness_006 no_profile: OK
+  [37/50] fitness_006 unstructured_notes: OK
+  [37/50] fitness_006 akm_profile: OK
+  [37/50] fitness_006 akm_elicited: OK
+  [38/50] fitness_007 no_profile: OK
+  [38/50] fitness_007 unstructured_notes: OK
+  [38/50] fitness_007 akm_profile: OK
+  [38/50] fitness_007 akm_elicited: OK
+  [39/50] fitness_008 no_profile: OK
+  [39/50] fitness_008 unstructured_notes: OK
+  [39/50] fitness_008 akm_profile: OK
+  [39/50] fitness_008 akm_elicited: OK
+  [40/50] fitness_009 no_profile: OK
+  [40/50] fitness_009 unstructured_notes: OK
+  [40/50] fitness_009 akm_profile: OK
+  [40/50] fitness_009 akm_elicited: OK
+  [41/50] fitness_010 no_profile: OK
+  [41/50] fitness_010 unstructured_notes: OK
+  [41/50] fitness_010 akm_profile: OK
+  [41/50] fitness_010 akm_elicited: OK
+  [42/50] fashion_003 no_profile: OK
+  [42/50] fashion_003 unstructured_notes: OK
+  [42/50] fashion_003 akm_profile: OK
+  [42/50] fashion_003 akm_elicited: OK
+  [43/50] fashion_004 no_profile: OK
+  [43/50] fashion_004 unstructured_notes: OK
+  [43/50] fashion_004 akm_profile: OK
+  [43/50] fashion_004 akm_elicited: OK
+  [44/50] fashion_005 no_profile: OK
+  [44/50] fashion_005 unstructured_notes: OK
+  [44/50] fashion_005 akm_profile: OK
+  [44/50] fashion_005 akm_elicited: OK
+  [45/50] fashion_006 no_profile: OK
+  [45/50] fashion_006 unstructured_notes: OK
+  [45/50] fashion_006 akm_profile: OK
+  [45/50] fashion_006 akm_elicited: OK
+  [46/50] fashion_007 no_profile: OK
+  [46/50] fashion_007 unstructured_notes: OK
+  [46/50] fashion_007 akm_profile: OK
+  [46/50] fashion_007 akm_elicited: OK
+  [47/50] fashion_008 no_profile: OK
+  [47/50] fashion_008 unstructured_notes: OK
+  [47/50] fashion_008 akm_profile: OK
+  [47/50] fashion_008 akm_elicited: OK
+  [48/50] fashion_009 no_profile: OK
+  [48/50] fashion_009 unstructured_notes: OK
+  [48/50] fashion_009 akm_profile: OK
+  [48/50] fashion_009 akm_elicited: OK
+  [49/50] fashion_010 no_profile: OK
+  [49/50] fashion_010 unstructured_notes: OK
+  [49/50] fashion_010 akm_profile: OK
+  [49/50] fashion_010 akm_elicited: OK
+  [50/50] health_005 no_profile: OK
+  [50/50] health_005 unstructured_notes: OK
+  [50/50] health_005 akm_profile: OK
+  [50/50] health_005 akm_elicited: OK

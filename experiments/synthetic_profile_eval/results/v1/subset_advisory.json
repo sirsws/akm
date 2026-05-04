@@ -1,0 +1,272 @@
+{
+  "by_judge": {
+    "deepseek_v4_pro": {
+      "no_profile": {
+        "n": 30,
+        "total_mean": 9.833,
+        "total_std": 3.494,
+        "dimensions": {
+          "constraint_adherence": 1.433,
+          "risk_control": 2.567,
+          "specificity": 1.567,
+          "actionability": 1.667,
+          "personal_fit": 1.333,
+          "tradeoff_awareness": 1.31
+        }
+      },
+      "unstructured_notes": {
+        "n": 30,
+        "total_mean": 21.233,
+        "total_std": 4.145,
+        "dimensions": {
+          "constraint_adherence": 3.833,
+          "risk_control": 4.233,
+          "specificity": 3.433,
+          "actionability": 3.567,
+          "personal_fit": 3.6,
+          "tradeoff_awareness": 2.75
+        }
+      },
+      "akm_profile": {
+        "n": 30,
+        "total_mean": 29.633,
+        "total_std": 1.251,
+        "dimensions": {
+          "constraint_adherence": 5.0,
+          "risk_control": 5.0,
+          "specificity": 5.0,
+          "actionability": 5.0,
+          "personal_fit": 5.0,
+          "tradeoff_awareness": 4.964
+        }
+      },
+      "akm_elicited": {
+        "n": 30,
+        "total_mean": 29.167,
+        "total_std": 1.614,
+        "dimensions": {
+          "constraint_adherence": 4.933,
+          "risk_control": 4.967,
+          "specificity": 4.9,
+          "actionability": 4.9,
+          "personal_fit": 4.9,
+          "tradeoff_awareness": 4.893
+        }
+      }
+    },
+    "gemini_3_flash": {
+      "no_profile": {
+        "n": 30,
+        "total_mean": 9.733,
+        "total_std": 3.812,
+        "dimensions": {
+          "constraint_adherence": 1.333,
+          "risk_control": 1.933,
+          "specificity": 1.7,
+          "actionability": 2.267,
+          "personal_fit": 1.267,
+          "tradeoff_awareness": 1.233
+        }
+      },
+      "unstructured_notes": {
+        "n": 30,
+        "total_mean": 20.233,
+        "total_std": 3.964,
+        "dimensions": {
+          "constraint_adherence": 3.5,
+          "risk_control": 3.8,
+          "specificity": 3.3,
+          "actionability": 3.867,
+          "personal_fit": 3.3,
+          "tradeoff_awareness": 2.467
+        }
+      },
+      "akm_profile": {
+        "n": 30,
+        "total_mean": 29.2,
+        "total_std": 1.376,
+        "dimensions": {
+          "constraint_adherence": 4.967,
+          "risk_control": 4.933,
+          "specificity": 4.9,
+          "actionability": 4.933,
+          "personal_fit": 4.8,
+          "tradeoff_awareness": 4.667
+        }
+      },
+      "akm_elicited": {
+        "n": 30,
+        "total_mean": 28.833,
+        "total_std": 1.44,
+        "dimensions": {
+          "constraint_adherence": 4.9,
+          "risk_control": 5.0,
+          "specificity": 4.8,
+          "actionability": 4.7,
+          "personal_fit": 4.8,
+          "tradeoff_awareness": 4.633
+        }
+      }
+    },
+    "grok_4_3": {
+      "no_profile": {
+        "n": 30,
+        "total_mean": 12.833,
+        "total_std": 4.39,
+        "dimensions": {
+          "constraint_adherence": 1.533,
+          "risk_control": 2.833,
+          "specificity": 2.567,
+          "actionability": 2.833,
+          "personal_fit": 1.4,
+          "tradeoff_awareness": 1.667
+        }
+      },
+      "unstructured_notes": {
+        "n": 30,
+        "total_mean": 21.7,
+        "total_std": 3.689,
+        "dimensions": {
+          "constraint_adherence": 3.733,
+          "risk_control": 4.233,
+          "specificity": 3.5,
+          "actionability": 4.133,
+          "personal_fit": 3.333,
+          "tradeoff_awareness": 2.767
+        }
+      },
+      "akm_profile": {
+        "n": 30,
+        "total_mean": 29.467,
+        "total_std": 1.31,
+        "dimensions": {
+          "constraint_adherence": 4.867,
+          "risk_control": 4.933,
+          "specificity": 4.967,
+          "actionability": 4.9,
+          "personal_fit": 4.9,
+          "tradeoff_awareness": 4.9
+        }
+      },
+      "akm_elicited": {
+        "n": 30,
+        "total_mean": 29.3,
+        "total_std": 1.487,
+        "dimensions": {
+          "constraint_adherence": 4.8,
+          "risk_control": 4.833,
+          "specificity": 4.967,
+          "actionability": 4.933,
+          "personal_fit": 4.867,
+          "tradeoff_awareness": 4.9
+        }
+      }
+    }
+  },
+  "pooled": {
+    "no_profile": {
+      "n": 90,
+      "total_mean": 10.8,
+      "total_std": 4.172,
+      "dimensions": {
+        "constraint_adherence": 1.433,
+        "risk_control": 2.444,
+        "specificity": 1.944,
+        "actionability": 2.256,
+        "personal_fit": 1.333,
+        "tradeoff_awareness": 1.404
+      }
+    },
+    "unstructured_notes": {
+      "n": 90,
+      "total_mean": 21.056,
+      "total_std": 3.984,
+      "dimensions": {
+        "constraint_adherence": 3.689,
+        "risk_control": 4.089,
+        "specificity": 3.411,
+        "actionability": 3.856,
+        "personal_fit": 3.411,
+        "tradeoff_awareness": 2.659
+      }
+    },
+    "akm_profile": {
+      "n": 90,
+      "total_mean": 29.433,
+      "total_std": 1.325,
+      "dimensions": {
+        "constraint_adherence": 4.944,
+        "risk_control": 4.956,
+        "specificity": 4.956,
+        "actionability": 4.944,
+        "personal_fit": 4.9,
+        "tradeoff_awareness": 4.841
+      }
+    },
+    "akm_elicited": {
+      "n": 90,
+      "total_mean": 29.1,
+      "total_std": 1.528,
+      "dimensions": {
+        "constraint_adherence": 4.878,
+        "risk_control": 4.933,
+        "specificity": 4.889,
+        "actionability": 4.844,
+        "personal_fit": 4.856,
+        "tradeoff_awareness": 4.807
+      }
+    }
+  },
+  "n_personas": 30,
+  "agreement": {
+    "krippendorff_alpha_total": 0.9498,
+    "krippendorff_alpha_per_dimension": {
+      "constraint_adherence": 0.942,
+      "risk_control": 0.7795,
+      "specificity": 0.9092,
+      "actionability": 0.8558,
+      "personal_fit": 0.9427,
+      "tradeoff_awareness": 0.9219
+    },
+    "spearman_pairwise_condition_means": {
+      "deepseek_v4_pro__vs__gemini_3_flash": 1.0,
+      "deepseek_v4_pro__vs__grok_4_3": 1.0,
+      "gemini_3_flash__vs__grok_4_3": 1.0
+    }
+  },
+  "best_answer_counts": {
+    "by_judge": {
+      "deepseek_v4_pro": {
+        "no_profile": 0,
+        "unstructured_notes": 1,
+        "akm_profile": 17,
+        "akm_elicited": 11
+      },
+      "gemini_3_flash": {
+        "no_profile": 0,
+        "unstructured_notes": 0,
+        "akm_profile": 8,
+        "akm_elicited": 5
+      },
+      "grok_4_3": {
+        "no_profile": 0,
+        "unstructured_notes": 0,
+        "akm_profile": 18,
+        "akm_elicited": 12
+      }
+    },
+    "pooled": {
+      "no_profile": 0,
+      "unstructured_notes": 1,
+      "akm_profile": 43,
+      "akm_elicited": 28
+    }
+  },
+  "domains": [
+    "career",
+    "learning",
+    "investment",
+    "health_lifestyle",
+    "relationship"
+  ]
+}

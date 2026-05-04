@@ -1,0 +1,348 @@
+{
+  "by_judge": {
+    "deepseek_v4_pro": {
+      "no_profile": {
+        "n": 50,
+        "total_mean": 9.34,
+        "total_std": 3.153,
+        "dimensions": {
+          "constraint_adherence": 1.42,
+          "risk_control": 2.22,
+          "specificity": 1.56,
+          "actionability": 1.66,
+          "personal_fit": 1.28,
+          "tradeoff_awareness": 1.224
+        }
+      },
+      "unstructured_notes": {
+        "n": 50,
+        "total_mean": 21.1,
+        "total_std": 4.387,
+        "dimensions": {
+          "constraint_adherence": 3.86,
+          "risk_control": 4.14,
+          "specificity": 3.46,
+          "actionability": 3.58,
+          "personal_fit": 3.56,
+          "tradeoff_awareness": 2.604
+        }
+      },
+      "akm_profile": {
+        "n": 50,
+        "total_mean": 29.64,
+        "total_std": 1.368,
+        "dimensions": {
+          "constraint_adherence": 4.98,
+          "risk_control": 4.98,
+          "specificity": 4.98,
+          "actionability": 4.98,
+          "personal_fit": 4.98,
+          "tradeoff_awareness": 4.938
+        }
+      },
+      "akm_elicited": {
+        "n": 50,
+        "total_mean": 29.4,
+        "total_std": 1.342,
+        "dimensions": {
+          "constraint_adherence": 4.94,
+          "risk_control": 4.96,
+          "specificity": 4.94,
+          "actionability": 4.94,
+          "personal_fit": 4.94,
+          "tradeoff_awareness": 4.875
+        }
+      }
+    },
+    "gemini_3_flash": {
+      "no_profile": {
+        "n": 50,
+        "total_mean": 9.38,
+        "total_std": 3.446,
+        "dimensions": {
+          "constraint_adherence": 1.28,
+          "risk_control": 1.76,
+          "specificity": 1.74,
+          "actionability": 2.24,
+          "personal_fit": 1.22,
+          "tradeoff_awareness": 1.14
+        }
+      },
+      "unstructured_notes": {
+        "n": 50,
+        "total_mean": 20.3,
+        "total_std": 4.177,
+        "dimensions": {
+          "constraint_adherence": 3.56,
+          "risk_control": 3.92,
+          "specificity": 3.36,
+          "actionability": 3.88,
+          "personal_fit": 3.3,
+          "tradeoff_awareness": 2.28
+        }
+      },
+      "akm_profile": {
+        "n": 50,
+        "total_mean": 28.98,
+        "total_std": 1.643,
+        "dimensions": {
+          "constraint_adherence": 4.86,
+          "risk_control": 4.88,
+          "specificity": 4.88,
+          "actionability": 4.9,
+          "personal_fit": 4.76,
+          "tradeoff_awareness": 4.7
+        }
+      },
+      "akm_elicited": {
+        "n": 50,
+        "total_mean": 28.72,
+        "total_std": 1.443,
+        "dimensions": {
+          "constraint_adherence": 4.82,
+          "risk_control": 4.94,
+          "specificity": 4.84,
+          "actionability": 4.76,
+          "personal_fit": 4.76,
+          "tradeoff_awareness": 4.6
+        }
+      }
+    },
+    "grok_4_3": {
+      "no_profile": {
+        "n": 50,
+        "total_mean": 12.98,
+        "total_std": 4.047,
+        "dimensions": {
+          "constraint_adherence": 1.58,
+          "risk_control": 2.6,
+          "specificity": 2.76,
+          "actionability": 2.94,
+          "personal_fit": 1.44,
+          "tradeoff_awareness": 1.66
+        }
+      },
+      "unstructured_notes": {
+        "n": 50,
+        "total_mean": 21.4,
+        "total_std": 4.147,
+        "dimensions": {
+          "constraint_adherence": 3.72,
+          "risk_control": 4.12,
+          "specificity": 3.58,
+          "actionability": 4.02,
+          "personal_fit": 3.32,
+          "tradeoff_awareness": 2.64
+        }
+      },
+      "akm_profile": {
+        "n": 50,
+        "total_mean": 29.4,
+        "total_std": 1.2,
+        "dimensions": {
+          "constraint_adherence": 4.86,
+          "risk_control": 4.92,
+          "specificity": 4.96,
+          "actionability": 4.94,
+          "personal_fit": 4.82,
+          "tradeoff_awareness": 4.9
+        }
+      },
+      "akm_elicited": {
+        "n": 50,
+        "total_mean": 29.22,
+        "total_std": 1.346,
+        "dimensions": {
+          "constraint_adherence": 4.8,
+          "risk_control": 4.86,
+          "specificity": 4.98,
+          "actionability": 4.94,
+          "personal_fit": 4.8,
+          "tradeoff_awareness": 4.84
+        }
+      }
+    }
+  },
+  "pooled": {
+    "no_profile": {
+      "n": 150,
+      "total_mean": 10.567,
+      "total_std": 3.955,
+      "dimensions": {
+        "constraint_adherence": 1.427,
+        "risk_control": 2.193,
+        "specificity": 2.02,
+        "actionability": 2.28,
+        "personal_fit": 1.313,
+        "tradeoff_awareness": 1.342
+      }
+    },
+    "unstructured_notes": {
+      "n": 150,
+      "total_mean": 20.933,
+      "total_std": 4.264,
+      "dimensions": {
+        "constraint_adherence": 3.713,
+        "risk_control": 4.06,
+        "specificity": 3.467,
+        "actionability": 3.827,
+        "personal_fit": 3.393,
+        "tradeoff_awareness": 2.507
+      }
+    },
+    "akm_profile": {
+      "n": 150,
+      "total_mean": 29.34,
+      "total_std": 1.441,
+      "dimensions": {
+        "constraint_adherence": 4.9,
+        "risk_control": 4.927,
+        "specificity": 4.94,
+        "actionability": 4.94,
+        "personal_fit": 4.853,
+        "tradeoff_awareness": 4.845
+      }
+    },
+    "akm_elicited": {
+      "n": 150,
+      "total_mean": 29.113,
+      "total_std": 1.407,
+      "dimensions": {
+        "constraint_adherence": 4.853,
+        "risk_control": 4.92,
+        "specificity": 4.92,
+        "actionability": 4.88,
+        "personal_fit": 4.833,
+        "tradeoff_awareness": 4.77
+      }
+    }
+  },
+  "by_domain": {
+    "career": {
+      "no_profile": {
+        "n": 18,
+        "total_mean": 9.056
+      },
+      "unstructured_notes": {
+        "n": 18,
+        "total_mean": 21.444
+      },
+      "akm_profile": {
+        "n": 18,
+        "total_mean": 29.722
+      },
+      "akm_elicited": {
+        "n": 18,
+        "total_mean": 28.944
+      }
+    },
+    "fashion": {
+      "no_profile": {
+        "n": 30,
+        "total_mean": 10.233
+      },
+      "unstructured_notes": {
+        "n": 30,
+        "total_mean": 19.0
+      },
+      "akm_profile": {
+        "n": 30,
+        "total_mean": 29.167
+      },
+      "akm_elicited": {
+        "n": 30,
+        "total_mean": 29.433
+      }
+    },
+    "fitness": {
+      "no_profile": {
+        "n": 30,
+        "total_mean": 10.2
+      },
+      "unstructured_notes": {
+        "n": 30,
+        "total_mean": 22.5
+      },
+      "akm_profile": {
+        "n": 30,
+        "total_mean": 29.233
+      },
+      "akm_elicited": {
+        "n": 30,
+        "total_mean": 28.833
+      }
+    },
+    "health_lifestyle": {
+      "no_profile": {
+        "n": 18,
+        "total_mean": 9.667
+      },
+      "unstructured_notes": {
+        "n": 18,
+        "total_mean": 22.111
+      },
+      "akm_profile": {
+        "n": 18,
+        "total_mean": 29.389
+      },
+      "akm_elicited": {
+        "n": 18,
+        "total_mean": 29.611
+      }
+    },
+    "investment": {
+      "no_profile": {
+        "n": 18,
+        "total_mean": 11.556
+      },
+      "unstructured_notes": {
+        "n": 18,
+        "total_mean": 20.278
+      },
+      "akm_profile": {
+        "n": 18,
+        "total_mean": 29.556
+      },
+      "akm_elicited": {
+        "n": 18,
+        "total_mean": 28.778
+      }
+    },
+    "learning": {
+      "no_profile": {
+        "n": 18,
+        "total_mean": 11.222
+      },
+      "unstructured_notes": {
+        "n": 18,
+        "total_mean": 23.056
+      },
+      "akm_profile": {
+        "n": 18,
+        "total_mean": 29.278
+      },
+      "akm_elicited": {
+        "n": 18,
+        "total_mean": 28.889
+      }
+    },
+    "relationship": {
+      "no_profile": {
+        "n": 18,
+        "total_mean": 12.5
+      },
+      "unstructured_notes": {
+        "n": 18,
+        "total_mean": 18.389
+      },
+      "akm_profile": {
+        "n": 18,
+        "total_mean": 29.222
+      },
+      "akm_elicited": {
+        "n": 18,
+        "total_mean": 29.278
+      }
+    }
+  }
+}

@@ -23,7 +23,7 @@
 \setlength{\parindent}{0pt}
 \title{Profile-First Fitness Planning Under Real Constraints: Active Knowledge Modeling for Personalized Training Decision Support}
 \author{Weishi Shao}
-\date{March 2026}
+\date{May 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -158,6 +158,36 @@ The branch also changes how operator labor is spent. Without a profile-first lay
 This paper is not a medical paper. The branch does not replace physicians, rehabilitation specialists, or in-person coaching. Its claim is narrower: AKM can be implemented as a profile-first planning system in a high-constraint training environment.
 
 The branch can still fail. The main failure modes are stale state that no longer matches current recovery or injury reality, insufficient honesty at the elicitation stage, incorrect transfer from private constraints to public branch assets, and downstream misuse when a user treats the branch as a medical authority. These are not arguments against the method. They are arguments for preserving explicit uncertainty and update discipline inside the workflow.
+\section{Empirical Evidence from the AKM Benchmark v1.0}
+\label{sec:empirical}
+
+The methodological argument above is reinforced by the fitness subset of the AKM Benchmark Toolkit v1.0 \citep{shao2026akm}. The benchmark holds the generator model and prompt template constant and varies only the pre-task user-context condition: \textit{no\_profile} (task only), \textit{unstructured\_notes} (task plus an 80--160 character first-person fragment), \textit{akm\_profile} (task plus a hand-curated structured profile), and \textit{akm\_elicited} (task plus an automatically elicited profile from a simulated cold-start dialogue). For the fitness subset, 10 synthetic personas span eight training contexts (8-week plan, home-only setup, injury return, plateau, cut, mid-life maintenance, volume audit, travel continuity), each with explicit hard constraints (injury history, time budget, equipment access, family load).
+
+Three cross-family LLM judges (DeepSeek-V4-pro, Gemini-3-Flash, Grok-4.3) blindly score each persona's four anonymized answers on six 1--5 dimensions: constraint adherence, risk control, specificity, actionability, personal fit, trade-off awareness. Each judge sees the same deterministic anonymized order, so inter-judge agreement is computable at the answer level.
+
+\begin{table}[htbp]
+\centering
+\caption{Fitness subset, pooled means across 3 cross-family judges (n${=}$30 per condition; max total ${=}30$).}
+\label{tab:fitness_pooled}
+\small
+\begin{tabular}{lccccccc}
+\toprule
+Condition & Total & Constraint & Risk & Specificity & Actionability & Fit & Trade-off \\
+\midrule
+no\_profile          & 10.20 & 1.37 & 1.63 & 2.27 & 2.47 & 1.17 & 1.30 \\
+unstructured\_notes  & 22.50 & 3.90 & 4.27 & 3.90 & 4.23 & 3.57 & 2.63 \\
+akm\_profile         & 29.23 & 4.83 & 4.87 & 4.93 & 4.93 & 4.83 & 4.83 \\
+akm\_elicited        & 28.83 & 4.73 & 4.83 & 4.97 & 4.90 & 4.73 & 4.67 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Inter-judge reliability on the fitness subset is high on aggregate: Krippendorff $\alpha = 0.940$ on totals. The four-condition Spearman $\rho$ pattern is more textured than on the full benchmark: $\rho = 1.0$ between Gemini-3-Flash and Grok-4.3, and $\rho = 0.8$ for both pairings involving DeepSeek-V4-pro. The disagreement is not on \textit{whether} the two AKM conditions dominate the two baselines (all three judges agree they do, by a wide margin), but only on the relative order of \textit{akm\_profile} versus \textit{akm\_elicited}: DeepSeek ranks elicited slightly above curated ($29.6$ vs $29.3$) while Gemini and Grok rank curated above elicited. With $n=10$ personas and a saturated rubric, a $0.01$ mean-score shift can flip this fine-grained ordering, so we read the $\rho = 0.8$ pattern as expected behavior at the structured-input ceiling rather than as a reliability concern. Best-answer pooled votes (23 parseable selections out of 30 cells, where each cell is one persona scored by one judge) put \textit{akm\_profile} at 15, \textit{akm\_elicited} at 8, and the two non-AKM conditions at zero.
+
+Two empirical reads matter for the methodological argument in this paper. First, a structured pre-task profile (whether curated or elicited) sits roughly $6.7$ to $19.0$ points higher than the non-AKM baselines on a 30-point scale, with the largest gap on \emph{trade-off awareness} ($+2.20$ over the unstructured note). Under high-constraint training conditions, the upstream layer is not stylistic --- it changes whether the downstream answer respects the constraints at all. Second, the gap between curated and elicited AKM is small ($0.40$ points on totals), consistent with the conclusion that an automatic single-pass elicitation can usefully substitute for a hand-curated profile in this synthetic setting.
+
+The synthetic-only design has clear limits: the simulated user grounds answers in a hidden persona JSON and therefore cannot omit or distort information the way real trainees do; the 1--5 rubric saturates at the structured end. The full reproducibility package, including the fitness subset analyzer (\texttt{subset\_stats.py --tag fitness}), is at \url{https://github.com/sirsws/akm} under \texttt{experiments/synthetic\_profile\_eval/}.
+
 \section{Conclusion}
 The fitness branch matters because it shows how AKM converts workout generation into a decision process grounded in user state, constraints, and explicit uncertainty. The contribution is methodological: better upstream modeling can matter more than better downstream phrasing.
 
