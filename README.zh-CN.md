@@ -106,7 +106,8 @@ AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面
 
 ### Benchmark Toolkit
 
-- [AKM-Benchmark-Toolkit v0.2](./experiments/synthetic_profile_eval/README.md)：synthetic profile evaluation，包含原始生成、AKM 诱导画像、盲评结果与当前边界说明。
+- **[AKM-Benchmark-Toolkit v1.0](./experiments/synthetic_profile_eval/README.md)**：50 personas × 4 conditions × 3 cross-family judges = 600 盲评，DeepSeek-V4-pro 单生成器，Krippendorff α = 0.948。
+- **[v1.1 多生成器补充实验](./experiments/synthetic_profile_eval/supplement_v1.1.md)**：把 v1.0 实验在 6 个跨家族生成器上重做（DeepSeek / GPT-5.4-mini / Qwen3.6-Plus / GLM-5.1 / Kimi-K2.6 / Gemma-4-31b-it），AKM 相对 no_profile 的 lift 在 6/6 模型上稳定为 +13.82 ~ +19.81，并诚实披露 GLM ceiling 与 Kimi/Gemma 的 OpenRouter 限速导致的 partial-N。验证脚本：`python experiments/synthetic_profile_eval/verify_v11.py`。
 
 ---
 
@@ -123,10 +124,12 @@ AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面
 ## 当前状态
 
 - AKM 母定义：已完成
-- AKM 母论文：已完成，SSRN URL 待补
-- DaE 分支：已统一为 AKM 的首个完整参考实现
+- AKM 母论文 / DaE / Fitness / Fashion：均已提交 SSRN（审核中），母论文同步提交 arXiv（cs.AI，等待 moderation）
+- DaE 分支：AKM 的首个完整参考实现
 - Fitness 分支：分支论文 + 双语 skill 包已可用
 - Fashion 分支：分支论文 + 双语 skill 包已可用
+- Benchmark v1.0：50 personas, 600 judgments, fully reproducible
+- Benchmark v1.1：6-generator 补充实验，AKM lift holds on 6/6
 - 双语公开层：README、paper、skill 与 prompt 文件已统一
 
 ---

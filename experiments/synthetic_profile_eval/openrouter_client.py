@@ -3,11 +3,15 @@
 核心功能：统一封装 OpenRouter chat/completions 调用，供多模型 judge 流水线复用。
 输入：模型 ID、prompt、可选采样参数、可选模型 fallback 列表；从环境变量 OPENROUTER_API_KEY 或 ../../../../ora.txt 读 key。
 输出：模型返回的字符串内容；失败时抛出异常并记录上下文。
+维护要求：catch 列表必须涵盖 socket/IO 中断（IncompleteRead / TimeoutError / ConnectionError），否则 v1.1 多家
+        generator 并发跑时会因单次网络抖动崩进程，导致大量数据漏掉。
 """
 from __future__ import annotations
 
+import http.client
 import json
 import os
+import socket
 import sys
 import time
 import urllib.request
@@ -96,16 +100,18 @@ def call_openrouter(
             if content is None or not str(content).strip():
                 raise RuntimeError("Empty content returned")
             return str(content)
-        except (urllib.error.HTTPError, urllib.error.URLError, RuntimeError, KeyError, json.JSONDecodeError) as exc:
+        except (urllib.error.HTTPError, urllib.error.URLError, RuntimeError, KeyError,
+                json.JSONDecodeError, http.client.IncompleteRead, http.client.RemoteDisconnected,
+                socket.timeout, ConnectionError, TimeoutError) as exc:
             last_error = exc
             err_body = ""
             if isinstance(exc, urllib.error.HTTPError):
                 try:
                     err_body = exc.read().decode("utf-8", errors="replace")[:500]
-                except Exception:
+                except OSError:
                     err_body = "<could not read error body>"
             print(
-                f"  [WARN] {model} attempt {attempt}/{retries} failed: {exc}; body: {err_body}",
+                f"  [WARN] {model} attempt {attempt}/{retries} failed: {type(exc).__name__}: {exc}; body: {err_body}",
                 file=sys.stderr,
             )
             if attempt < retries:

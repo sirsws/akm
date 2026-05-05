@@ -154,3 +154,66 @@ synthetic persona
   -> downstream task answer (DeepSeek-V4-pro)
   -> blind 3-judge LLM-as-judge evaluation
 ```
+
+---
+
+## v1.1 — Multi-Generator Supplement
+
+**Why v1.1:** v1.0's most cited limitation is the single-generator design. v1.1 repeats the v1.0 protocol (same 50 personas, same 4 conditions, same 3 cross-family judges, same rubric) across **6 cross-family generators** to test whether the AKM advantage generalizes.
+
+| Generator | Family | OpenRouter rank | n | Δ AKM |
+|---|---|---:|---:|---:|
+| `deepseek_v4_pro` | DeepSeek (v1.0 baseline) | 24 | 50 | +18.77 |
+| `gpt_5_4_mini` | OpenAI | 33 | 50 | +16.86 |
+| `qwen_3_6_plus` | Alibaba | 25 | 50 | +19.73 |
+| `glm_5_1` | Zhipu | 18 | 49 | +14.56 |
+| `kimi_k2_6` (partial) | Moonshot | 28 | 13 | +13.82 |
+| `gemma_4_31b_it` (partial) | Google open-weights | 38 | 13 | +18.71 |
+
+**Headline:** The AKM lift over `no_profile` ranges +13.82 to +19.81 and holds on **6/6** generators, including the deliberately weakest one (Gemma rank 38) and a generator with a visibly lower absolute ceiling (GLM-5.1). v1.0 is not an artifact of generator choice.
+
+**Honest disclosures (full text in `supplement_v1.1.md`):**
+
+- Kimi-K2.6 and Gemma-4-31b-it could not be completed to N=50 because the OpenRouter Kimi/Gemma upstreams returned empty content / 429 throttling persistently for our long Chinese prompts. They are reported as partial, not extrapolated.
+- GLM-5.1 hits an `akm_profile` ceiling of 24.27 vs. ~29–30 for the other strong generators. AKM still gives it +14.56, but the absolute level is generator-bottlenecked. We discuss this in §5 of the supplement.
+- 38 `format_repair` events (out of ~600 elicitation calls) re-emitted broken JSON via DeepSeek-V4-pro without changing semantic content. Logged at `outputs/v1.1/format_repair_log.jsonl` for audit.
+
+### Reproduce v1.1
+
+```powershell
+cd experiments\synthetic_profile_eval
+
+# Step A: per-generator generation (resumable; --generator selects one of the 6 ids)
+python run_generation_v11.py --generator gpt_5_4_mini
+python run_generation_v11.py --generator qwen_3_6_plus
+python run_generation_v11.py --generator glm_5_1
+python run_generation_v11.py --generator kimi_k2_6        # partial expected
+python run_generation_v11.py --generator gemma_4_31b_it   # partial expected
+# (deepseek_v4_pro is reused from v1.0; no need to regenerate)
+
+# Step B: judges (per generator x per judge, fully resumable)
+foreach ($g in 'gpt_5_4_mini','qwen_3_6_plus','glm_5_1','kimi_k2_6','gemma_4_31b_it') {
+  foreach ($j in 'deepseek_v4_pro','gemini_3_flash','grok_4_3') {
+    python run_judging_v11.py --judge $j --generator $g
+  }
+}
+
+# Step C: aggregate + verify supplement numbers (must report 0 mismatch)
+python aggregate_v11.py
+python verify_v11.py
+```
+
+### v1.1 outputs
+
+```text
+outputs/v1.1/
+  generations_<generator>.jsonl
+  judgments_<judge>__<generator>.jsonl
+  format_repair_log.jsonl
+results/v1.1/
+  scores_long.csv
+  scores_summary_v11.json
+  agreement_v11.json
+  akm_lift_by_generator.json   # core supplement table
+supplement_v1.1.md             # human-readable supplement, 0-mismatch verified
+```

@@ -24,5 +24,9 @@ Thumbs.db
 experiments/synthetic_profile_eval/_fix_one_judgment.py
 experiments/synthetic_profile_eval/outputs/v0.2/
 
+# v1.1 process logs (keep raw .jsonl data, ignore process stdout/stderr)
+experiments/synthetic_profile_eval/outputs/v1.1/*_log.txt
+experiments/synthetic_profile_eval/outputs/v1.1/*_err.txt
+
 # arXiv staging
 AKM论文/arxiv_submit_staging/

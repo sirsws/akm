@@ -1,0 +1,106 @@
+{
+  "by_generator": {
+    "deepseek_v4_pro": {
+      "krippendorff_alpha_total": 0.948,
+      "krippendorff_alpha_per_dimension": {
+        "constraint_adherence": 0.937,
+        "risk_control": 0.824,
+        "specificity": 0.884,
+        "actionability": 0.843,
+        "personal_fit": 0.942,
+        "tradeoff_awareness": 0.921
+      },
+      "spearman_pairwise_condition_means": {
+        "deepseek_v4_pro__vs__gemini_3_flash": 1.0,
+        "deepseek_v4_pro__vs__grok_4_3": 1.0,
+        "gemini_3_flash__vs__grok_4_3": 1.0
+      },
+      "n_units_for_alpha": 200
+    },
+    "gpt_5_4_mini": {
+      "krippendorff_alpha_total": 0.894,
+      "krippendorff_alpha_per_dimension": {
+        "constraint_adherence": 0.93,
+        "risk_control": 0.808,
+        "specificity": 0.746,
+        "actionability": 0.697,
+        "personal_fit": 0.933,
+        "tradeoff_awareness": 0.83
+      },
+      "spearman_pairwise_condition_means": {
+        "deepseek_v4_pro__vs__gemini_3_flash": 0.9487,
+        "deepseek_v4_pro__vs__grok_4_3": 0.9487,
+        "gemini_3_flash__vs__grok_4_3": 1.0
+      },
+      "n_units_for_alpha": 200
+    },
+    "qwen_3_6_plus": {
+      "krippendorff_alpha_total": 0.949,
+      "krippendorff_alpha_per_dimension": {
+        "constraint_adherence": 0.954,
+        "risk_control": 0.853,
+        "specificity": 0.869,
+        "actionability": 0.829,
+        "personal_fit": 0.954,
+        "tradeoff_awareness": 0.934
+      },
+      "spearman_pairwise_condition_means": {
+        "deepseek_v4_pro__vs__gemini_3_flash": 1.0,
+        "deepseek_v4_pro__vs__grok_4_3": 1.0,
+        "gemini_3_flash__vs__grok_4_3": 1.0
+      },
+      "n_units_for_alpha": 200
+    },
+    "kimi_k2_6": {
+      "krippendorff_alpha_total": 0.859,
+      "krippendorff_alpha_per_dimension": {
+        "constraint_adherence": 0.876,
+        "risk_control": 0.813,
+        "specificity": 0.753,
+        "actionability": 0.66,
+        "personal_fit": 0.887,
+        "tradeoff_awareness": 0.799
+      },
+      "spearman_pairwise_condition_means": {
+        "deepseek_v4_pro__vs__gemini_3_flash": 1.0,
+        "deepseek_v4_pro__vs__grok_4_3": 1.0,
+        "gemini_3_flash__vs__grok_4_3": 1.0
+      },
+      "n_units_for_alpha": 52
+    },
+    "glm_5_1": {
+      "krippendorff_alpha_total": 0.935,
+      "krippendorff_alpha_per_dimension": {
+        "constraint_adherence": 0.921,
+        "risk_control": 0.766,
+        "specificity": 0.876,
+        "actionability": 0.831,
+        "personal_fit": 0.94,
+        "tradeoff_awareness": 0.935
+      },
+      "spearman_pairwise_condition_means": {
+        "deepseek_v4_pro__vs__gemini_3_flash": 1.0,
+        "deepseek_v4_pro__vs__grok_4_3": 1.0,
+        "gemini_3_flash__vs__grok_4_3": 1.0
+      },
+      "n_units_for_alpha": 196
+    },
+    "gemma_4_31b_it": {
+      "krippendorff_alpha_total": 0.923,
+      "krippendorff_alpha_per_dimension": {
+        "constraint_adherence": 0.945,
+        "risk_control": 0.82,
+        "specificity": 0.761,
+        "actionability": 0.736,
+        "personal_fit": 0.951,
+        "tradeoff_awareness": 0.948
+      },
+      "spearman_pairwise_condition_means": {
+        "deepseek_v4_pro__vs__gemini_3_flash": 0.8,
+        "deepseek_v4_pro__vs__grok_4_3": 1.0,
+        "gemini_3_flash__vs__grok_4_3": 0.8
+      },
+      "n_units_for_alpha": 52
+    }
+  }
+}
