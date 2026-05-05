@@ -43,7 +43,7 @@ AKM defines that missing upstream layer.
 
 Official OpenClaw anchors: [Context](https://docs.openclaw.ai/context/), [System Prompt](https://docs.openclaw.ai/concepts/system-prompt), [USER Template](https://docs.openclaw.ai/templates/USER), [IDENTITY Template](https://docs.openclaw.ai/reference/templates/IDENTITY), [AGENTS Template](https://docs.openclaw.ai/reference/templates/AGENTS), [Memory](https://docs.openclaw.ai/concepts/memory)
 
-> Academic foundation: parent paper at SSRN (Abstract ID 6708819, awaiting submission approval) and arXiv (submission ID 7549904, on hold pending moderation). Public landing page: [AKM Mother Paper](./papers/akm/README.md)
+> Academic foundation: parent paper at [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6708819) (Abstract ID 6708819, currently under SSRN review — abstract page shows the standard "under review" notice until SSRN approves) and arXiv (submission ID 7549904, on hold pending cs.AI moderation). Public landing page: [AKM Mother Paper](./papers/akm/README.md)
 
 ---
 
@@ -98,16 +98,16 @@ AKM exists because many AI systems already provide context surfaces without givi
 **Active Knowledge Modeling: A Reproducible Cross-Family LLM-as-Judge Benchmark for Pre-Task User-Profile Conditioning**
 
 - PDF: [AKM-main.pdf](./papers/akm/AKM-main.pdf) (May 2026, 11 pages)
-- SSRN Abstract ID: **6708819** (uploaded 2026-05-04, pending submission approval; abstract page will appear at `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6708819` after approval)
-- arXiv Submission ID: **7549904** (cs.AI, uploaded 2026-05-04, on hold pending moderation; canonical URL will be `https://arxiv.org/abs/<arXiv-id>` once moderation completes)
+- **SSRN**: [`abstract_id=6708819`](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6708819) — submitted 2026-05-04, under SSRN review (abstract page currently shows the standard "under review" notice; full abstract becomes public after SSRN approval)
+- **arXiv**: Submission ID **7549904** (cs.AI, uploaded 2026-05-04, on hold pending moderation; canonical URL will be `https://arxiv.org/abs/<arXiv-id>` once moderation completes)
 
-### Branch Papers (all uploaded to SSRN 2026-05-04, pending approval)
+### Branch Papers (all submitted to SSRN 2026-05-04, under review)
 
-| Paper | Title | Venue / SSRN Abstract ID |
+| Paper | Title | SSRN |
 | --- | --- | --- |
-| DaE | [Cold-Start Profile Recovery in LLM Advisory](./branches/dae/paper/latex/main.pdf) | SSRN · Information Systems & eBusiness · ID **6708998** |
-| Fitness | [Profile-First Fitness Planning Under Real Constraints](./branches/fitness/paper/latex/main.pdf) | SSRN · Decision Sciences · ID **6709039** |
-| Fashion | [Profile-First Wardrobe Planning Under Real Constraints](./branches/fashion/paper/latex/main.pdf) | SSRN · Marketing Science · ID **6709078** |
+| DaE | [Cold-Start Profile Recovery in LLM Advisory](./branches/dae/paper/latex/main.pdf) | [`abstract_id=6708998`](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6708998) · Information Systems & eBusiness |
+| Fitness | [Profile-First Fitness Planning Under Real Constraints](./branches/fitness/paper/latex/main.pdf) | [`abstract_id=6709039`](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6709039) · Decision Sciences |
+| Fashion | [Profile-First Wardrobe Planning Under Real Constraints](./branches/fashion/paper/latex/main.pdf) | [`abstract_id=6709078`](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6709078) · Marketing Science |
 
 ### Benchmark Toolkit
 
@@ -155,10 +155,10 @@ The two DaE repositories remain public historical entry points, but they now poi
 | Item | Status |
 | --- | --- |
 | AKM definition | ✅ Complete |
-| AKM parent paper | ✅ Uploaded — SSRN ID 6708819 (pending approval) + arXiv submission 7549904 (on hold) |
-| DaE empirical paper | ✅ Uploaded — SSRN ID 6708998 (pending approval) |
-| Fitness branch paper | ✅ Uploaded — SSRN ID 6709039 (pending approval) |
-| Fashion branch paper | ✅ Uploaded — SSRN ID 6709078 (pending approval) |
+| AKM parent paper | ✅ Submitted — [SSRN 6708819](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6708819) (under review) + arXiv 7549904 (on hold) |
+| DaE empirical paper | ✅ Submitted — [SSRN 6708998](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6708998) (under review) |
+| Fitness branch paper | ✅ Submitted — [SSRN 6709039](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6709039) (under review) |
+| Fashion branch paper | ✅ Submitted — [SSRN 6709078](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6709078) (under review) |
 | Benchmark Toolkit v1.0 | ✅ 50 personas, 600 judgments, fully reproducible (DeepSeek generator) |
 | Benchmark Toolkit v1.1 | ✅ Multi-generator supplement — 5 cross-family generators, AKM lift holds on 5/5 (Kimi-K2.6 attempted-but-excluded due to OpenRouter endpoint failure) |
 | Bilingual skill packages | ✅ DaE · Fitness · Fashion |
