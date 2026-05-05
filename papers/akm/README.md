@@ -34,7 +34,9 @@ This paper does three things:
 
 - local paper project: completed
 - PDF: generated
-- SSRN: submitted, public URL pending
+- SSRN: uploaded 2026-05-04, Abstract ID **6708819**, status PRELIMINARY_UPLOAD (pending SSRN approval; abstract page will appear at `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6708819` once approved)
+- arXiv: uploaded 2026-05-04, Submission ID **7549904**, status on hold (cs.AI moderation pending)
+- v1.1 multi-generator supplement: see [`experiments/synthetic_profile_eval/supplement_v1.1.md`](../../experiments/synthetic_profile_eval/supplement_v1.1.md)
 
 
 

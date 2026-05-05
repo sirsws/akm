@@ -42,7 +42,7 @@ AKM 定义的，就是这一层上游方法。
 
 OpenClaw 官方依据：[Context](https://docs.openclaw.ai/context/)、[System Prompt](https://docs.openclaw.ai/concepts/system-prompt)、[USER Template](https://docs.openclaw.ai/templates/USER)、[IDENTITY Template](https://docs.openclaw.ai/reference/templates/IDENTITY)、[AGENTS Template](https://docs.openclaw.ai/reference/templates/AGENTS)、[Memory](https://docs.openclaw.ai/concepts/memory)
 
-> 学术入口：母论文已提交 SSRN，公开 URL 待补。当前入口见 [AKM Mother Paper](./papers/akm/README.md)
+> 学术入口：母论文已上传 SSRN（Abstract ID **6708819**，等待 SSRN 审核通过后公开页面）+ arXiv（Submission ID **7549904**，cs.AI，on hold 等 moderation）。当前入口见 [AKM Mother Paper](./papers/akm/README.md)
 
 ---
 
@@ -96,13 +96,16 @@ AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面
 
 - [AKM Mother Paper](./papers/akm/README.md)
 - 仓内 PDF：[AKM-main.pdf](./papers/akm/AKM-main.pdf)
-- SSRN 状态：已提交，公开 URL 待补
+- SSRN Abstract ID **6708819**（PRELIMINARY_UPLOAD，等 SSRN 审批；通过后页面会出现在 `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6708819`）
+- arXiv Submission ID **7549904**（cs.AI，on hold 等 moderation；通过后会有 `https://arxiv.org/abs/<id>` 形式的正式 URL）
 
 ### 分支论文
 
-- [DaE Paper Entry](./branches/dae/paper/README.md)
-- [Fitness Paper Entry](./branches/fitness/paper/README.md)
-- [Fashion Paper Entry](./branches/fashion/paper/README.md)
+| 分支 | SSRN Abstract ID | 状态 |
+|---|---|---|
+| [DaE](./branches/dae/paper/README.md) | **6708998** | PRELIMINARY_UPLOAD |
+| [Fitness](./branches/fitness/paper/README.md) | **6709039** | PRELIMINARY_UPLOAD |
+| [Fashion](./branches/fashion/paper/README.md) | **6709078** | PRELIMINARY_UPLOAD |
 
 ### Benchmark Toolkit
 
@@ -124,7 +127,7 @@ AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面
 ## 当前状态
 
 - AKM 母定义：已完成
-- AKM 母论文 / DaE / Fitness / Fashion：均已提交 SSRN（审核中），母论文同步提交 arXiv（cs.AI，等待 moderation）
+- AKM 母论文 / DaE / Fitness / Fashion：均已上传 SSRN（PRELIMINARY_UPLOAD 状态，等审批通过后公开 URL；4 个 Abstract ID 见研究入口章节）；母论文同步上传 arXiv（cs.AI，Submission ID 7549904，on hold 等 moderation）
 - DaE 分支：AKM 的首个完整参考实现
 - Fitness 分支：分支论文 + 双语 skill 包已可用
 - Fashion 分支：分支论文 + 双语 skill 包已可用
