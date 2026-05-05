@@ -51,23 +51,6 @@
       },
       "n_units_for_alpha": 200
     },
-    "kimi_k2_6": {
-      "krippendorff_alpha_total": 0.859,
-      "krippendorff_alpha_per_dimension": {
-        "constraint_adherence": 0.876,
-        "risk_control": 0.813,
-        "specificity": 0.753,
-        "actionability": 0.66,
-        "personal_fit": 0.887,
-        "tradeoff_awareness": 0.799
-      },
-      "spearman_pairwise_condition_means": {
-        "deepseek_v4_pro__vs__gemini_3_flash": 1.0,
-        "deepseek_v4_pro__vs__grok_4_3": 1.0,
-        "gemini_3_flash__vs__grok_4_3": 1.0
-      },
-      "n_units_for_alpha": 52
-    },
     "glm_5_1": {
       "krippendorff_alpha_total": 0.935,
       "krippendorff_alpha_per_dimension": {
@@ -86,21 +69,21 @@
       "n_units_for_alpha": 196
     },
     "gemma_4_31b_it": {
-      "krippendorff_alpha_total": 0.923,
+      "krippendorff_alpha_total": 0.937,
       "krippendorff_alpha_per_dimension": {
-        "constraint_adherence": 0.945,
-        "risk_control": 0.82,
-        "specificity": 0.761,
-        "actionability": 0.736,
-        "personal_fit": 0.951,
-        "tradeoff_awareness": 0.948
+        "constraint_adherence": 0.955,
+        "risk_control": 0.842,
+        "specificity": 0.828,
+        "actionability": 0.795,
+        "personal_fit": 0.953,
+        "tradeoff_awareness": 0.938
       },
       "spearman_pairwise_condition_means": {
         "deepseek_v4_pro__vs__gemini_3_flash": 0.8,
         "deepseek_v4_pro__vs__grok_4_3": 1.0,
         "gemini_3_flash__vs__grok_4_3": 0.8
       },
-      "n_units_for_alpha": 52
+      "n_units_for_alpha": 200
     }
   }
 }

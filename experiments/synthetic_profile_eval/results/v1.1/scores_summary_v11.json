@@ -747,255 +747,6 @@
         }
       }
     },
-    "kimi_k2_6": {
-      "n_personas_with_scores": 13,
-      "by_judge": {
-        "deepseek_v4_pro": {
-          "no_profile": {
-            "n": 13,
-            "total_mean": 11.231,
-            "total_std": 3.704,
-            "dimensions": {
-              "constraint_adherence": 1.615,
-              "risk_control": 2.385,
-              "specificity": 2.154,
-              "actionability": 2.154,
-              "personal_fit": 1.462,
-              "tradeoff_awareness": 1.462
-            }
-          },
-          "unstructured_notes": {
-            "n": 13,
-            "total_mean": 23.462,
-            "total_std": 5.759,
-            "dimensions": {
-              "constraint_adherence": 4.308,
-              "risk_control": 4.692,
-              "specificity": 3.615,
-              "actionability": 3.846,
-              "personal_fit": 3.923,
-              "tradeoff_awareness": 3.077
-            }
-          },
-          "akm_profile": {
-            "n": 13,
-            "total_mean": 26.692,
-            "total_std": 6.568,
-            "dimensions": {
-              "constraint_adherence": 4.538,
-              "risk_control": 4.538,
-              "specificity": 4.385,
-              "actionability": 4.385,
-              "personal_fit": 4.538,
-              "tradeoff_awareness": 4.308
-            }
-          },
-          "akm_elicited": {
-            "n": 13,
-            "total_mean": 29.846,
-            "total_std": 0.533,
-            "dimensions": {
-              "constraint_adherence": 5.0,
-              "risk_control": 5.0,
-              "specificity": 4.923,
-              "actionability": 4.923,
-              "personal_fit": 5.0,
-              "tradeoff_awareness": 5.0
-            }
-          }
-        },
-        "gemini_3_flash": {
-          "no_profile": {
-            "n": 13,
-            "total_mean": 11.231,
-            "total_std": 3.378,
-            "dimensions": {
-              "constraint_adherence": 1.308,
-              "risk_control": 2.231,
-              "specificity": 2.308,
-              "actionability": 2.769,
-              "personal_fit": 1.308,
-              "tradeoff_awareness": 1.308
-            }
-          },
-          "unstructured_notes": {
-            "n": 13,
-            "total_mean": 23.231,
-            "total_std": 4.079,
-            "dimensions": {
-              "constraint_adherence": 4.385,
-              "risk_control": 4.538,
-              "specificity": 3.462,
-              "actionability": 4.077,
-              "personal_fit": 3.846,
-              "tradeoff_awareness": 2.923
-            }
-          },
-          "akm_profile": {
-            "n": 13,
-            "total_mean": 26.615,
-            "total_std": 4.342,
-            "dimensions": {
-              "constraint_adherence": 4.615,
-              "risk_control": 5.0,
-              "specificity": 4.231,
-              "actionability": 3.923,
-              "personal_fit": 4.462,
-              "tradeoff_awareness": 4.385
-            }
-          },
-          "akm_elicited": {
-            "n": 13,
-            "total_mean": 27.385,
-            "total_std": 5.414,
-            "dimensions": {
-              "constraint_adherence": 4.538,
-              "risk_control": 5.0,
-              "specificity": 4.462,
-              "actionability": 4.385,
-              "personal_fit": 4.538,
-              "tradeoff_awareness": 4.462
-            }
-          }
-        },
-        "grok_4_3": {
-          "no_profile": {
-            "n": 12,
-            "total_mean": 16.917,
-            "total_std": 3.226,
-            "dimensions": {
-              "constraint_adherence": 2.0,
-              "risk_control": 3.0,
-              "specificity": 3.583,
-              "actionability": 3.833,
-              "personal_fit": 1.833,
-              "tradeoff_awareness": 2.667
-            }
-          },
-          "unstructured_notes": {
-            "n": 12,
-            "total_mean": 23.5,
-            "total_std": 4.406,
-            "dimensions": {
-              "constraint_adherence": 4.167,
-              "risk_control": 4.417,
-              "specificity": 3.75,
-              "actionability": 4.083,
-              "personal_fit": 4.0,
-              "tradeoff_awareness": 3.083
-            }
-          },
-          "akm_profile": {
-            "n": 12,
-            "total_mean": 27.25,
-            "total_std": 4.126,
-            "dimensions": {
-              "constraint_adherence": 4.75,
-              "risk_control": 4.917,
-              "specificity": 4.167,
-              "actionability": 4.333,
-              "personal_fit": 4.75,
-              "tradeoff_awareness": 4.333
-            }
-          },
-          "akm_elicited": {
-            "n": 12,
-            "total_mean": 28.0,
-            "total_std": 3.851,
-            "dimensions": {
-              "constraint_adherence": 4.833,
-              "risk_control": 4.917,
-              "specificity": 4.333,
-              "actionability": 4.5,
-              "personal_fit": 4.917,
-              "tradeoff_awareness": 4.5
-            }
-          }
-        }
-      },
-      "pooled": {
-        "no_profile": {
-          "n": 38,
-          "total_mean": 13.026,
-          "total_std": 4.344,
-          "dimensions": {
-            "constraint_adherence": 1.632,
-            "risk_control": 2.526,
-            "specificity": 2.658,
-            "actionability": 2.895,
-            "personal_fit": 1.526,
-            "tradeoff_awareness": 1.789
-          }
-        },
-        "unstructured_notes": {
-          "n": 38,
-          "total_mean": 23.395,
-          "total_std": 4.815,
-          "dimensions": {
-            "constraint_adherence": 4.289,
-            "risk_control": 4.553,
-            "specificity": 3.605,
-            "actionability": 4.0,
-            "personal_fit": 3.921,
-            "tradeoff_awareness": 3.026
-          }
-        },
-        "akm_profile": {
-          "n": 38,
-          "total_mean": 26.842,
-          "total_std": 5.163,
-          "dimensions": {
-            "constraint_adherence": 4.632,
-            "risk_control": 4.816,
-            "specificity": 4.263,
-            "actionability": 4.211,
-            "personal_fit": 4.579,
-            "tradeoff_awareness": 4.342
-          }
-        },
-        "akm_elicited": {
-          "n": 38,
-          "total_mean": 28.421,
-          "total_std": 3.991,
-          "dimensions": {
-            "constraint_adherence": 4.789,
-            "risk_control": 4.974,
-            "specificity": 4.579,
-            "actionability": 4.605,
-            "personal_fit": 4.816,
-            "tradeoff_awareness": 4.658
-          }
-        }
-      },
-      "best_answer_counts": {
-        "by_judge": {
-          "deepseek_v4_pro": {
-            "no_profile": 0,
-            "unstructured_notes": 1,
-            "akm_profile": 5,
-            "akm_elicited": 6
-          },
-          "gemini_3_flash": {
-            "no_profile": 0,
-            "unstructured_notes": 0,
-            "akm_profile": 3,
-            "akm_elicited": 1
-          },
-          "grok_4_3": {
-            "no_profile": 0,
-            "unstructured_notes": 1,
-            "akm_profile": 4,
-            "akm_elicited": 8
-          }
-        },
-        "pooled": {
-          "no_profile": 0,
-          "unstructured_notes": 2,
-          "akm_profile": 12,
-          "akm_elicited": 15
-        }
-      }
-    },
     "glm_5_1": {
       "n_personas_with_scores": 49,
       "by_judge": {
@@ -1246,222 +997,222 @@
       }
     },
     "gemma_4_31b_it": {
-      "n_personas_with_scores": 13,
+      "n_personas_with_scores": 50,
       "by_judge": {
         "deepseek_v4_pro": {
           "no_profile": {
-            "n": 13,
-            "total_mean": 8.923,
-            "total_std": 3.173,
+            "n": 50,
+            "total_mean": 8.42,
+            "total_std": 3.182,
             "dimensions": {
-              "constraint_adherence": 1.231,
-              "risk_control": 2.385,
-              "specificity": 1.462,
-              "actionability": 1.538,
-              "personal_fit": 1.154,
-              "tradeoff_awareness": 1.154
+              "constraint_adherence": 1.3,
+              "risk_control": 1.94,
+              "specificity": 1.38,
+              "actionability": 1.44,
+              "personal_fit": 1.22,
+              "tradeoff_awareness": 1.14
             }
           },
           "unstructured_notes": {
-            "n": 13,
-            "total_mean": 17.769,
-            "total_std": 4.335,
+            "n": 50,
+            "total_mean": 17.44,
+            "total_std": 4.001,
             "dimensions": {
-              "constraint_adherence": 3.769,
-              "risk_control": 4.231,
-              "specificity": 2.462,
-              "actionability": 2.692,
-              "personal_fit": 3.0,
-              "tradeoff_awareness": 1.615
+              "constraint_adherence": 3.48,
+              "risk_control": 3.82,
+              "specificity": 2.58,
+              "actionability": 2.7,
+              "personal_fit": 2.94,
+              "tradeoff_awareness": 1.92
             }
           },
           "akm_profile": {
-            "n": 13,
-            "total_mean": 29.923,
-            "total_std": 0.266,
+            "n": 50,
+            "total_mean": 29.84,
+            "total_std": 0.857,
             "dimensions": {
-              "constraint_adherence": 5.0,
-              "risk_control": 5.0,
-              "specificity": 5.0,
-              "actionability": 5.0,
-              "personal_fit": 5.0,
-              "tradeoff_awareness": 4.923
+              "constraint_adherence": 4.98,
+              "risk_control": 4.98,
+              "specificity": 4.98,
+              "actionability": 4.98,
+              "personal_fit": 4.98,
+              "tradeoff_awareness": 4.94
             }
           },
           "akm_elicited": {
-            "n": 13,
-            "total_mean": 30.0,
-            "total_std": 0.0,
+            "n": 50,
+            "total_mean": 29.88,
+            "total_std": 0.84,
             "dimensions": {
-              "constraint_adherence": 5.0,
-              "risk_control": 5.0,
-              "specificity": 5.0,
-              "actionability": 5.0,
-              "personal_fit": 5.0,
-              "tradeoff_awareness": 5.0
+              "constraint_adherence": 4.98,
+              "risk_control": 4.98,
+              "specificity": 4.98,
+              "actionability": 4.98,
+              "personal_fit": 4.98,
+              "tradeoff_awareness": 4.98
             }
           }
         },
         "gemini_3_flash": {
           "no_profile": {
-            "n": 12,
-            "total_mean": 9.417,
-            "total_std": 3.616,
+            "n": 49,
+            "total_mean": 8.51,
+            "total_std": 2.734,
             "dimensions": {
-              "constraint_adherence": 1.417,
-              "risk_control": 1.917,
-              "specificity": 1.833,
-              "actionability": 2.0,
-              "personal_fit": 1.167,
-              "tradeoff_awareness": 1.083
+              "constraint_adherence": 1.184,
+              "risk_control": 1.633,
+              "specificity": 1.653,
+              "actionability": 1.878,
+              "personal_fit": 1.102,
+              "tradeoff_awareness": 1.061
             }
           },
           "unstructured_notes": {
-            "n": 12,
-            "total_mean": 20.417,
-            "total_std": 2.985,
+            "n": 49,
+            "total_mean": 18.694,
+            "total_std": 3.302,
             "dimensions": {
-              "constraint_adherence": 4.167,
-              "risk_control": 4.583,
-              "specificity": 2.833,
-              "actionability": 3.75,
-              "personal_fit": 3.5,
-              "tradeoff_awareness": 1.583
+              "constraint_adherence": 3.571,
+              "risk_control": 3.918,
+              "specificity": 2.837,
+              "actionability": 3.408,
+              "personal_fit": 3.163,
+              "tradeoff_awareness": 1.796
             }
           },
           "akm_profile": {
-            "n": 12,
-            "total_mean": 29.75,
-            "total_std": 0.433,
+            "n": 49,
+            "total_mean": 29.694,
+            "total_std": 0.542,
             "dimensions": {
               "constraint_adherence": 5.0,
               "risk_control": 5.0,
-              "specificity": 4.917,
-              "actionability": 5.0,
-              "personal_fit": 5.0,
-              "tradeoff_awareness": 4.833
+              "specificity": 4.918,
+              "actionability": 4.98,
+              "personal_fit": 4.959,
+              "tradeoff_awareness": 4.837
             }
           },
           "akm_elicited": {
-            "n": 12,
-            "total_mean": 29.167,
-            "total_std": 1.951,
+            "n": 49,
+            "total_mean": 29.306,
+            "total_std": 1.46,
             "dimensions": {
-              "constraint_adherence": 4.917,
-              "risk_control": 4.917,
-              "specificity": 4.75,
-              "actionability": 4.833,
-              "personal_fit": 4.917,
-              "tradeoff_awareness": 4.833
+              "constraint_adherence": 4.918,
+              "risk_control": 4.98,
+              "specificity": 4.857,
+              "actionability": 4.837,
+              "personal_fit": 4.878,
+              "tradeoff_awareness": 4.837
             }
           }
         },
         "grok_4_3": {
           "no_profile": {
-            "n": 13,
-            "total_mean": 14.846,
-            "total_std": 2.685,
+            "n": 50,
+            "total_mean": 13.42,
+            "total_std": 3.06,
             "dimensions": {
-              "constraint_adherence": 1.846,
-              "risk_control": 2.615,
-              "specificity": 3.615,
-              "actionability": 3.385,
-              "personal_fit": 1.538,
-              "tradeoff_awareness": 1.846
+              "constraint_adherence": 1.62,
+              "risk_control": 2.46,
+              "specificity": 3.06,
+              "actionability": 3.12,
+              "personal_fit": 1.38,
+              "tradeoff_awareness": 1.78
             }
           },
           "unstructured_notes": {
-            "n": 13,
-            "total_mean": 20.385,
-            "total_std": 2.497,
+            "n": 50,
+            "total_mean": 19.86,
+            "total_std": 2.871,
             "dimensions": {
-              "constraint_adherence": 3.923,
-              "risk_control": 4.462,
-              "specificity": 3.0,
-              "actionability": 3.615,
-              "personal_fit": 3.615,
-              "tradeoff_awareness": 1.769
+              "constraint_adherence": 3.68,
+              "risk_control": 4.18,
+              "specificity": 3.04,
+              "actionability": 3.56,
+              "personal_fit": 3.36,
+              "tradeoff_awareness": 2.04
             }
           },
           "akm_profile": {
-            "n": 13,
-            "total_mean": 29.769,
-            "total_std": 0.576,
+            "n": 50,
+            "total_mean": 29.68,
+            "total_std": 0.646,
             "dimensions": {
-              "constraint_adherence": 5.0,
-              "risk_control": 5.0,
-              "specificity": 4.923,
-              "actionability": 4.923,
-              "personal_fit": 5.0,
-              "tradeoff_awareness": 4.923
+              "constraint_adherence": 4.96,
+              "risk_control": 4.98,
+              "specificity": 4.92,
+              "actionability": 4.98,
+              "personal_fit": 4.92,
+              "tradeoff_awareness": 4.92
             }
           },
           "akm_elicited": {
-            "n": 13,
-            "total_mean": 29.846,
-            "total_std": 0.361,
+            "n": 50,
+            "total_mean": 29.78,
+            "total_std": 0.61,
             "dimensions": {
               "constraint_adherence": 5.0,
-              "risk_control": 5.0,
-              "specificity": 4.923,
-              "actionability": 5.0,
-              "personal_fit": 5.0,
-              "tradeoff_awareness": 4.923
+              "risk_control": 4.98,
+              "specificity": 4.9,
+              "actionability": 4.98,
+              "personal_fit": 4.98,
+              "tradeoff_awareness": 4.94
             }
           }
         }
       },
       "pooled": {
         "no_profile": {
-          "n": 38,
-          "total_mean": 11.105,
-          "total_std": 4.166,
+          "n": 149,
+          "total_mean": 10.128,
+          "total_std": 3.804,
           "dimensions": {
-            "constraint_adherence": 1.5,
-            "risk_control": 2.316,
-            "specificity": 2.316,
-            "actionability": 2.316,
-            "personal_fit": 1.289,
-            "tradeoff_awareness": 1.368
+            "constraint_adherence": 1.369,
+            "risk_control": 2.013,
+            "specificity": 2.034,
+            "actionability": 2.148,
+            "personal_fit": 1.235,
+            "tradeoff_awareness": 1.329
           }
         },
         "unstructured_notes": {
-          "n": 38,
-          "total_mean": 19.5,
-          "total_std": 3.596,
+          "n": 149,
+          "total_mean": 18.664,
+          "total_std": 3.565,
           "dimensions": {
-            "constraint_adherence": 3.947,
-            "risk_control": 4.421,
-            "specificity": 2.763,
-            "actionability": 3.342,
-            "personal_fit": 3.368,
-            "tradeoff_awareness": 1.658
+            "constraint_adherence": 3.577,
+            "risk_control": 3.973,
+            "specificity": 2.819,
+            "actionability": 3.221,
+            "personal_fit": 3.154,
+            "tradeoff_awareness": 1.919
           }
         },
         "akm_profile": {
-          "n": 38,
-          "total_mean": 29.816,
-          "total_std": 0.45,
+          "n": 149,
+          "total_mean": 29.738,
+          "total_std": 0.699,
           "dimensions": {
-            "constraint_adherence": 5.0,
-            "risk_control": 5.0,
-            "specificity": 4.947,
-            "actionability": 4.974,
-            "personal_fit": 5.0,
-            "tradeoff_awareness": 4.895
+            "constraint_adherence": 4.98,
+            "risk_control": 4.987,
+            "specificity": 4.94,
+            "actionability": 4.98,
+            "personal_fit": 4.953,
+            "tradeoff_awareness": 4.899
           }
         },
         "akm_elicited": {
-          "n": 38,
-          "total_mean": 29.684,
-          "total_std": 1.172,
+          "n": 149,
+          "total_mean": 29.658,
+          "total_std": 1.06,
           "dimensions": {
-            "constraint_adherence": 4.974,
-            "risk_control": 4.974,
-            "specificity": 4.895,
-            "actionability": 4.947,
-            "personal_fit": 4.974,
-            "tradeoff_awareness": 4.921
+            "constraint_adherence": 4.966,
+            "risk_control": 4.98,
+            "specificity": 4.913,
+            "actionability": 4.933,
+            "personal_fit": 4.946,
+            "tradeoff_awareness": 4.919
           }
         }
       },
@@ -1470,27 +1221,27 @@
           "deepseek_v4_pro": {
             "no_profile": 0,
             "unstructured_notes": 0,
-            "akm_profile": 8,
-            "akm_elicited": 5
+            "akm_profile": 23,
+            "akm_elicited": 27
           },
           "gemini_3_flash": {
             "no_profile": 0,
             "unstructured_notes": 0,
-            "akm_profile": 7,
-            "akm_elicited": 2
+            "akm_profile": 15,
+            "akm_elicited": 12
           },
           "grok_4_3": {
             "no_profile": 0,
             "unstructured_notes": 0,
-            "akm_profile": 11,
-            "akm_elicited": 2
+            "akm_profile": 30,
+            "akm_elicited": 20
           }
         },
         "pooled": {
           "no_profile": 0,
           "unstructured_notes": 0,
-          "akm_profile": 26,
-          "akm_elicited": 9
+          "akm_profile": 68,
+          "akm_elicited": 59
         }
       }
     }

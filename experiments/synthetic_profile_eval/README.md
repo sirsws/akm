@@ -159,40 +159,41 @@ synthetic persona
 
 ## v1.1 — Multi-Generator Supplement
 
-**Why v1.1:** v1.0's most cited limitation is the single-generator design. v1.1 repeats the v1.0 protocol (same 50 personas, same 4 conditions, same 3 cross-family judges, same rubric) across **6 cross-family generators** to test whether the AKM advantage generalizes.
+**Why v1.1:** v1.0's most cited limitation is the single-generator design. v1.1 repeats the v1.0 protocol (same 50 personas, same 4 conditions, same 3 cross-family judges, same rubric) across **5 cross-family generators** (a sixth, Kimi-K2.6, was attempted but excluded — see honest disclosures below).
 
-| Generator | Family | OpenRouter rank | n | Δ AKM |
-|---|---|---:|---:|---:|
-| `deepseek_v4_pro` | DeepSeek (v1.0 baseline) | 24 | 50 | +18.77 |
-| `gpt_5_4_mini` | OpenAI | 33 | 50 | +16.86 |
-| `qwen_3_6_plus` | Alibaba | 25 | 50 | +19.73 |
-| `glm_5_1` | Zhipu | 18 | 49 | +14.56 |
-| `kimi_k2_6` (partial) | Moonshot | 28 | 13 | +13.82 |
-| `gemma_4_31b_it` (partial) | Google open-weights | 38 | 13 | +18.71 |
+| Generator | Family | OpenRouter rank | n | Δ AKM | Status |
+|---|---|---:|---:|---:|---|
+| `deepseek_v4_pro` | DeepSeek (v1.0 baseline) | 24 | 50 | +18.77 | ✓ in main analysis |
+| `gpt_5_4_mini` | OpenAI | 33 | 50 | +16.86 | ✓ in main analysis |
+| `qwen_3_6_plus` | Alibaba | 25 | 50 | +19.73 | ✓ in main analysis |
+| `glm_5_1` | Zhipu | 18 | 49 | +14.56 | ✓ in main analysis (1 persona drop) |
+| `gemma_4_31b_it` | Google open-weights | 38 | 50 | +19.61 | ✓ in main analysis (heavily throttled but completed) |
+| `kimi_k2_6` | Moonshot | 28 | (78/200, 39%) | — | attempted-but-excluded; raw data preserved |
 
-**Headline:** The AKM lift over `no_profile` ranges +13.82 to +19.81 and holds on **6/6** generators, including the deliberately weakest one (Gemma rank 38) and a generator with a visibly lower absolute ceiling (GLM-5.1). v1.0 is not an artifact of generator choice.
+**Headline:** The AKM lift over `no_profile` ranges +14.56 to +19.81 and holds on **5/5** main-analysis generators, including the deliberately weakest one (Gemma rank 38) and a generator with a visibly lower absolute ceiling (GLM-5.1). v1.0 is not an artifact of generator choice.
 
 **Honest disclosures (full text in `supplement_v1.1.md`):**
 
-- Kimi-K2.6 and Gemma-4-31b-it could not be completed to N=50 because the OpenRouter Kimi/Gemma upstreams returned empty content / 429 throttling persistently for our long Chinese prompts. They are reported as partial, not extrapolated.
-- GLM-5.1 hits an `akm_profile` ceiling of 24.27 vs. ~29–30 for the other strong generators. AKM still gives it +14.56, but the absolute level is generator-bottlenecked. We discuss this in §5 of the supplement.
-- 38 `format_repair` events (out of ~600 elicitation calls) re-emitted broken JSON via DeepSeek-V4-pro without changing semantic content. Logged at `outputs/v1.1/format_repair_log.jsonl` for audit.
+- **Kimi-K2.6 attempted-but-excluded.** OpenRouter's Kimi endpoint returned empty content for our long Chinese prompts despite retries. Only 78/200 generations completed, with non-uniform failure across conditions. Reporting a partial-N lift would be biased toward the easier conditions, so Kimi is excluded from §3 entirely. Its raw data is preserved in `outputs/v1.1/generations_kimi_k2_6.jsonl` for any reviewer who can complete the missing 122 generations on a non-OpenRouter route.
+- **Gemma-4-31b-it heavily throttled but completed.** OpenRouter's Gemma route hit 429 throttling on a rotating set of upstream providers, taking ~3.5 hours wall-clock vs ~30 minutes for the other generators. The last persona (`fashion_010` `akm_profile`) required a separate temperature-jitter retry; final n=50/50.
+- **GLM-5.1 ceiling.** Hits `akm_profile` ceiling of 24.27 vs. ~29–30 for the other strong generators. AKM still gives it +14.56, but the absolute level is generator-bottlenecked. We discuss this in §5 of the supplement.
+- **38 `format_repair` events** out of ~500 elicitation calls. DeepSeek-V4-pro re-emitted broken JSON without changing semantic content. Logged at `outputs/v1.1/format_repair_log.jsonl` for audit.
 
 ### Reproduce v1.1
 
 ```powershell
 cd experiments\synthetic_profile_eval
 
-# Step A: per-generator generation (resumable; --generator selects one of the 6 ids)
+# Step A: per-generator generation (resumable; --generator selects the id)
 python run_generation_v11.py --generator gpt_5_4_mini
 python run_generation_v11.py --generator qwen_3_6_plus
 python run_generation_v11.py --generator glm_5_1
-python run_generation_v11.py --generator kimi_k2_6        # partial expected
-python run_generation_v11.py --generator gemma_4_31b_it   # partial expected
+python run_generation_v11.py --generator gemma_4_31b_it   # partial expected (OpenRouter throttling)
+python run_generation_v11.py --generator kimi_k2_6        # will fail at ~39%; data preserved but excluded from main analysis
 # (deepseek_v4_pro is reused from v1.0; no need to regenerate)
 
 # Step B: judges (per generator x per judge, fully resumable)
-foreach ($g in 'gpt_5_4_mini','qwen_3_6_plus','glm_5_1','kimi_k2_6','gemma_4_31b_it') {
+foreach ($g in 'gpt_5_4_mini','qwen_3_6_plus','glm_5_1','gemma_4_31b_it') {
   foreach ($j in 'deepseek_v4_pro','gemini_3_flash','grok_4_3') {
     python run_judging_v11.py --judge $j --generator $g
   }

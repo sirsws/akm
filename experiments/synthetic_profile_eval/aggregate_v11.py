@@ -1,12 +1,14 @@
 """
 文件：aggregate_v11.py
-核心功能：v1.1 multi-generator supplement —— 聚合 4 家新 generator (GPT-5.4-mini / Qwen3.6-Plus / Kimi-K2.6 / GLM-5.1) +
+核心功能：v1.1 multi-generator supplement —— 聚合 4 家新 generator (GPT-5.4-mini / Qwen3.6-Plus / GLM-5.1 / Gemma-4-31b-it) +
         v1.0 已有 DS-V4-pro 的所有 (generator, condition) 单元，按 generator 维度切片。
         每个 generator 独立计算：6 维 mean/std + total + 三 judge Krippendorff α。
         最后产出"AKM 优势 generator-wise"对比表，显式标注任何 generator 上 AKM 优势消失或反向的反例。
-输入：outputs/v1.1/judgments_<judge>__<generator>.jsonl × 12 个文件 + outputs/v1/judgments_<judge>.jsonl × 3 个 (DS 视为 v1.0 generator)
+        Kimi-K2.6 在 OpenRouter 上对长中文 prompt 持续返空，39% 完成度后被判定为 attempted-but-excluded，
+        其原始数据保留在 outputs/v1.1/ 供审计，但不进入 lift 表 / agreement 主结论。
+输入：outputs/v1.1/judgments_<judge>__<generator>.jsonl × 多文件 + outputs/v1/judgments_<judge>.jsonl × 3 个 (DS 视为 v1.0 generator)
 输出：results/v1.1/scores_long.csv (含 generator 列)、scores_summary_v11.json (含 by_generator)、
-     agreement_v11.json (per-generator α)、generator_summary.json (核心 supplement 表)。
+     agreement_v11.json (per-generator α)、akm_lift_by_generator.json (核心 supplement 表)。
 维护要求：每次 v1.1 数据有更新都必须重跑本脚本；任何 reviewer 质疑的数字都应该能从输出 JSON 直接核对。
 """
 
@@ -34,8 +36,14 @@ from aggregate_v1 import (
 
 ROOT = Path(__file__).resolve().parent
 CONDITIONS = ["no_profile", "unstructured_notes", "akm_profile", "akm_elicited"]
-NEW_GENERATORS = ["gpt_5_4_mini", "qwen_3_6_plus", "kimi_k2_6", "glm_5_1", "gemma_4_31b_it"]
+# Kimi-K2.6 was attempted but excluded from main analysis (OpenRouter upstream
+# returned empty content persistently; 39% completion). Its raw data is kept in
+# outputs/v1.1/ for audit but the aggregator treats it as "attempted_excluded".
+ATTEMPTED_EXCLUDED = ["kimi_k2_6"]
+NEW_GENERATORS = ["gpt_5_4_mini", "qwen_3_6_plus", "glm_5_1", "gemma_4_31b_it"]
 ALL_GENERATORS = ["deepseek_v4_pro"] + NEW_GENERATORS
+# When walking output directories we still see the excluded generator's files;
+# load_all_judgments() filters them out so they don't enter the main aggregates.
 JUDGES = ["deepseek_v4_pro", "gemini_3_flash", "grok_4_3"]
 
 

@@ -107,7 +107,7 @@ AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面
 ### Benchmark Toolkit
 
 - **[AKM-Benchmark-Toolkit v1.0](./experiments/synthetic_profile_eval/README.md)**：50 personas × 4 conditions × 3 cross-family judges = 600 盲评，DeepSeek-V4-pro 单生成器，Krippendorff α = 0.948。
-- **[v1.1 多生成器补充实验](./experiments/synthetic_profile_eval/supplement_v1.1.md)**：把 v1.0 实验在 6 个跨家族生成器上重做（DeepSeek / GPT-5.4-mini / Qwen3.6-Plus / GLM-5.1 / Kimi-K2.6 / Gemma-4-31b-it），AKM 相对 no_profile 的 lift 在 6/6 模型上稳定为 +13.82 ~ +19.81，并诚实披露 GLM ceiling 与 Kimi/Gemma 的 OpenRouter 限速导致的 partial-N。验证脚本：`python experiments/synthetic_profile_eval/verify_v11.py`。
+- **[v1.1 多生成器补充实验](./experiments/synthetic_profile_eval/supplement_v1.1.md)**：把 v1.0 实验在 5 个跨家族生成器上重做（DeepSeek / GPT-5.4-mini / Qwen3.6-Plus / GLM-5.1 / Gemma-4-31b-it），每家全 N=50（GLM 49/50），AKM 相对 no_profile 的 lift 在 5/5 模型上稳定为 +14.56 ~ +19.81。第六个尝试模型 Kimi-K2.6 因 OpenRouter 端持续返空（39% 完成度）被列为 attempted-but-excluded，原始数据保留供审计但不进入主分析。诚实披露 GLM ceiling 比其他强模型低 5 分；Gemma 被 OpenRouter 重度限速但跑齐了 50/50。验证脚本：`python experiments/synthetic_profile_eval/verify_v11.py`。
 
 ---
 
@@ -129,7 +129,7 @@ AKM 之所以存在，是因为很多 AI 系统虽然已经有上下文承载面
 - Fitness 分支：分支论文 + 双语 skill 包已可用
 - Fashion 分支：分支论文 + 双语 skill 包已可用
 - Benchmark v1.0：50 personas, 600 judgments, fully reproducible
-- Benchmark v1.1：6-generator 补充实验，AKM lift holds on 6/6
+- Benchmark v1.1：5-generator 补充实验，AKM lift holds on 5/5（Kimi-K2.6 因 OpenRouter 端失败被列为 attempted-but-excluded）
 - 双语公开层：README、paper、skill 与 prompt 文件已统一
 
 ---

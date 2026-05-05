@@ -36,18 +36,6 @@
     "note": "OK"
   },
   {
-    "generator": "kimi_k2_6",
-    "n_personas": 13,
-    "no_profile": 13.026,
-    "unstructured": 23.395,
-    "akm_profile": 26.842,
-    "akm_elicited": 28.421,
-    "delta_akm_vs_no": 13.816,
-    "delta_elicited_vs_no": 15.395,
-    "akm_advantage_holds": true,
-    "note": "OK"
-  },
-  {
     "generator": "glm_5_1",
     "n_personas": 49,
     "no_profile": 9.715,
@@ -61,13 +49,13 @@
   },
   {
     "generator": "gemma_4_31b_it",
-    "n_personas": 13,
-    "no_profile": 11.105,
-    "unstructured": 19.5,
-    "akm_profile": 29.816,
-    "akm_elicited": 29.684,
-    "delta_akm_vs_no": 18.711,
-    "delta_elicited_vs_no": 18.579,
+    "n_personas": 50,
+    "no_profile": 10.128,
+    "unstructured": 18.664,
+    "akm_profile": 29.738,
+    "akm_elicited": 29.658,
+    "delta_akm_vs_no": 19.61,
+    "delta_elicited_vs_no": 19.53,
     "akm_advantage_holds": true,
     "note": "OK"
   }

@@ -15,7 +15,7 @@
   <a href="./LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-0969da" alt="License" /></a>
   <img src="https://img.shields.io/badge/status-active-2ea44f" alt="Status" />
   <img src="https://img.shields.io/badge/papers-4_submitted-b31b1b" alt="Papers" />
-  <img src="https://img.shields.io/badge/benchmark-v1.1_(6_generators)-ff6b35" alt="Benchmark" />
+  <img src="https://img.shields.io/badge/benchmark-v1.1_(5_generators)-ff6b35" alt="Benchmark" />
   <img src="https://img.shields.io/badge/branches-3-6f42c1" alt="Branches" />
   <img src="https://img.shields.io/github/stars/sirsws/akm?style=flat" alt="GitHub stars" />
 </p>
@@ -119,12 +119,13 @@ AKM exists because many AI systems already provide context surfaces without givi
 - Cold-start recovery: 99.2% of hand-curated upper bound
 - Verify any claim: `python experiments/synthetic_profile_eval/verify_paper_numbers.py`
 
-**[v1.1 Multi-Generator Supplement](./experiments/synthetic_profile_eval/supplement_v1.1.md)** — generalization test across 6 cross-family generators:
+**[v1.1 Multi-Generator Supplement](./experiments/synthetic_profile_eval/supplement_v1.1.md)** — generalization test across 5 cross-family generators:
 
-- Generators: DeepSeek-V4-pro · GPT-5.4-mini · Qwen3.6-Plus · GLM-5.1 · Kimi-K2.6 (partial) · Gemma-4-31b-it (partial)
-- AKM lift over no_profile: **+13.82 to +19.81** (0–30 rubric), holds on **6/6** generators
-- Includes a deliberately weaker generator (Gemma rank 38) to falsify the "AKM only helps strong models" hypothesis — it does not
-- Honest disclosures: GLM ceiling 5 pts below other strong generators; Kimi/Gemma OpenRouter throttling forced partial-N reporting
+- In main analysis (5 generators, full N=50 each): DeepSeek-V4-pro · GPT-5.4-mini · Qwen3.6-Plus · GLM-5.1 (49/50) · Gemma-4-31b-it
+- Attempted-but-excluded: Kimi-K2.6 (OpenRouter endpoint failed at 39% completion; raw evidence preserved, not aggregated)
+- AKM lift over no_profile: **+14.56 to +19.81** (0–30 rubric), holds on **5/5** main-analysis generators
+- Includes a deliberately weaker generator (Gemma rank 38, lift +19.61) to falsify the "AKM only helps strong models" hypothesis — it does not
+- Honest disclosures: GLM ceiling 5 pts below other strong generators; Kimi attempted-but-excluded; Gemma heavily throttled but completed
 - Verify any claim: `python experiments/synthetic_profile_eval/verify_v11.py`
 
 ### Skills CLI Install
@@ -159,7 +160,7 @@ The two DaE repositories remain public historical entry points, but they now poi
 | Fitness branch paper | ✅ Submitted — SSRN (under review) |
 | Fashion branch paper | ✅ Submitted — SSRN (under review) |
 | Benchmark Toolkit v1.0 | ✅ 50 personas, 600 judgments, fully reproducible (DeepSeek generator) |
-| Benchmark Toolkit v1.1 | ✅ Multi-generator supplement — 6 cross-family generators, AKM lift holds on 6/6 |
+| Benchmark Toolkit v1.1 | ✅ Multi-generator supplement — 5 cross-family generators, AKM lift holds on 5/5 (Kimi-K2.6 attempted-but-excluded due to OpenRouter endpoint failure) |
 | Bilingual skill packages | ✅ DaE · Fitness · Fashion |
 
 ---
