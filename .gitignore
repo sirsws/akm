@@ -30,3 +30,7 @@ experiments/synthetic_profile_eval/outputs/v1.1/*_err.txt
 
 # arXiv staging
 AKM论文/arxiv_submit_staging/
+
+# Commit message scratch files
+commit_msg*.txt
+
