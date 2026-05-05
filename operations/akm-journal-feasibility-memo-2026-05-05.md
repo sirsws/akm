@@ -48,7 +48,7 @@
 | 19 轮判断 | v1.1 落地后实测 | 调整方向 |
 |---|---|---|
 | 「单 generator」是 reviewer 第一刀 | 5/5 generator 全成立 + 1 attempted-but-excluded 诚实记录 | **第一刀 已挡** |
-| 「合稿 25-35h」 | 已有 4 篇 LaTeX + supplement 完整，合稿主要工作是 abstract/intro 重写 | **降到 12-18h** |
+| 「合稿 25-35h」 | 已有 4 篇 LaTeX + supplement 完整，但 TMLR 双盲匿名化是硬约束（3-5h） | **维持 28-30h（v2 修正：v1 草稿写 12-18h 严重低估，已 deprecated；以 §3.2 完整 WBS 为准）** |
 | 「中档 IF~3-9 可试」 | TMLR 明确不要求 novelty/SOTA + 同期 ICLR 2026 接收 synthetic-persona LLM-as-judge 论文 | **TMLR 比中档 IF 更适合** |
 
 **两个意外发现**：
